@@ -1,0 +1,27 @@
+# Local build state
+**/.gradle/
+**/build/
+**/local.properties
+**/.idea/
+**/*.iml
+.DS_Store
+
+# Publisher signing material and credentials
+**/private/
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.pfx
+**/android-signing.properties
+**/AndroidSigningBackup.zip
+.env
+.env.*
+!.env.example
+
+# Generated application packages
+**/dist/
+*.apk
+*.aab
+*.dmg
+*.msi
+*.exe
