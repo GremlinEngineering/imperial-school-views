@@ -18,9 +18,9 @@ Dynamic scenes are received as finished server-rendered JPEGs. The current Andro
 
 ## Repository status
 
-This repository currently contains the project documentation. The Android 1.3.8 source import is pending; macOS and Windows sources will be added separately after their current versions are checked.
+The Android 1.3.9 source is in [`android/`](android/). macOS and Windows clients exist; their source imports will follow after the current versions are checked.
 
-Platform features and build instructions will be documented with each source import. The application features described above are not a claim that all platforms have identical capabilities.
+Build instructions for Android are in [`android/README.md`](android/README.md). Other platforms will have their own feature and build documentation. The application features described above are not a claim that all platforms have identical capabilities.
 
 ## Downloads and resources
 
@@ -28,10 +28,12 @@ Platform features and build instructions will be documented with each source imp
 - [Project blog](https://oopssre.ru/)
 - [Telegram](https://t.me/oopsSRE)
 
-Application packages and large wallpaper collections are distributed separately from the source repository.
+Official APKs and large wallpaper collections are distributed on the [website](https://games.oopssre.ru/).
 
 ## Signing and licensing
 
 Publisher signing keys, passwords and personal signing backups must stay outside this repository. Contributors will use their own signing configuration.
 
-The code license will be specified with the source import. Third-party components retain their respective licenses; wallpaper artwork has its own licensing terms.
+Third-party components retain their respective licenses and notices in [`android/app/src/main/assets/`](android/app/src/main/assets/). Wallpaper artwork has its own licensing terms, separate from application code.
+
+The application code license has not yet been specified.

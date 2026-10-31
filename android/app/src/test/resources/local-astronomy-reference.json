@@ -1,0 +1,650 @@
+[
+  {
+    "city": {
+      "name": "Moscow",
+      "latitude": 55.75,
+      "longitude": 37.62,
+      "timezone": "Europe/Moscow"
+    },
+    "date": "2026-01-15",
+    "expected": {
+      "date": "2026-01-15",
+      "dawn": 1768453488000,
+      "sunrise": 1768456189000,
+      "sunset": 1768483705000,
+      "dusk": 1768486407000,
+      "moon_phase": "waning_crescent",
+      "moon_value": 25.155666666666665
+    }
+  },
+  {
+    "city": {
+      "name": "Moscow",
+      "latitude": 55.75,
+      "longitude": 37.62,
+      "timezone": "Europe/Moscow"
+    },
+    "date": "2026-03-08",
+    "expected": {
+      "date": "2026-03-08",
+      "dawn": 1772940369000,
+      "sunrise": 1772942617000,
+      "sunset": 1772983082000,
+      "dusk": 1772985336000,
+      "moon_phase": "waning_gibbous",
+      "moon_value": 18.622333333333334
+    }
+  },
+  {
+    "city": {
+      "name": "Moscow",
+      "latitude": 55.75,
+      "longitude": 37.62,
+      "timezone": "Europe/Moscow"
+    },
+    "date": "2026-06-21",
+    "expected": {
+      "date": "2026-06-21",
+      "dawn": 1781998935000,
+      "sunrise": 1782002700000,
+      "sunset": 1782065857000,
+      "dusk": 1782069623000,
+      "moon_phase": "first_quarter",
+      "moon_value": 6.644555555555556
+    }
+  },
+  {
+    "city": {
+      "name": "Moscow",
+      "latitude": 55.75,
+      "longitude": 37.62,
+      "timezone": "Europe/Moscow"
+    },
+    "date": "2026-10-25",
+    "expected": {
+      "date": "2026-10-25",
+      "dawn": 1792899706000,
+      "sunrise": 1792902054000,
+      "sunset": 1792937119000,
+      "dusk": 1792939464000,
+      "moon_phase": "full_moon",
+      "moon_value": 13.255666666666668
+    }
+  },
+  {
+    "city": {
+      "name": "Moscow",
+      "latitude": 55.75,
+      "longitude": 37.62,
+      "timezone": "Europe/Moscow"
+    },
+    "date": "2026-11-01",
+    "expected": {
+      "date": "2026-11-01",
+      "dawn": 1793505327000,
+      "sunrise": 1793507736000,
+      "sunset": 1793540980000,
+      "dusk": 1793543386000,
+      "moon_phase": "last_quarter",
+      "moon_value": 20.566777777777776
+    }
+  },
+  {
+    "city": {
+      "name": "Moscow",
+      "latitude": 55.75,
+      "longitude": 37.62,
+      "timezone": "Europe/Moscow"
+    },
+    "date": "2026-12-21",
+    "expected": {
+      "date": "2026-12-21",
+      "dawn": 1797829795000,
+      "sunrise": 1797832669000,
+      "sunset": 1797857834000,
+      "dusk": 1797860708000,
+      "moon_phase": "waxing_gibbous",
+      "moon_value": 11.155666666666667
+    }
+  },
+  {
+    "city": {
+      "name": "Tromso",
+      "latitude": 69.65,
+      "longitude": 18.96,
+      "timezone": "Europe/Oslo"
+    },
+    "date": "2026-01-15",
+    "expected": {
+      "date": "2026-01-15",
+      "dawn": 1768463768000,
+      "sunrise": null,
+      "sunset": null,
+      "dusk": 1768485104000,
+      "moon_phase": "waning_crescent",
+      "moon_value": 25.155666666666665
+    }
+  },
+  {
+    "city": {
+      "name": "Tromso",
+      "latitude": 69.65,
+      "longitude": 18.96,
+      "timezone": "Europe/Oslo"
+    },
+    "date": "2026-03-08",
+    "expected": {
+      "date": "2026-03-08",
+      "dawn": 1772944684000,
+      "sunrise": 1772948330000,
+      "sunset": 1772986373000,
+      "dusk": 1772990037000,
+      "moon_phase": "waning_gibbous",
+      "moon_value": 18.622333333333334
+    }
+  },
+  {
+    "city": {
+      "name": "Tromso",
+      "latitude": 69.65,
+      "longitude": 18.96,
+      "timezone": "Europe/Oslo"
+    },
+    "date": "2026-06-21",
+    "expected": {
+      "date": "2026-06-21",
+      "dawn": null,
+      "sunrise": null,
+      "sunset": null,
+      "dusk": null,
+      "moon_phase": "first_quarter",
+      "moon_value": 6.644555555555556
+    }
+  },
+  {
+    "city": {
+      "name": "Tromso",
+      "latitude": 69.65,
+      "longitude": 18.96,
+      "timezone": "Europe/Oslo"
+    },
+    "date": "2026-10-25",
+    "expected": {
+      "date": "2026-10-25",
+      "dawn": 1792906224000,
+      "sunrise": 1792910313000,
+      "sunset": 1792937781000,
+      "dusk": 1792941861000,
+      "moon_phase": "full_moon",
+      "moon_value": 13.255666666666668
+    }
+  },
+  {
+    "city": {
+      "name": "Tromso",
+      "latitude": 69.65,
+      "longitude": 18.96,
+      "timezone": "Europe/Oslo"
+    },
+    "date": "2026-11-01",
+    "expected": {
+      "date": "2026-11-01",
+      "dawn": 1793512637000,
+      "sunrise": 1793517067000,
+      "sunset": 1793540575000,
+      "dusk": 1793544998000,
+      "moon_phase": "last_quarter",
+      "moon_value": 20.566777777777776
+    }
+  },
+  {
+    "city": {
+      "name": "Tromso",
+      "latitude": 69.65,
+      "longitude": 18.96,
+      "timezone": "Europe/Oslo"
+    },
+    "date": "2026-12-21",
+    "expected": {
+      "date": "2026-12-21",
+      "dawn": 1797841797000,
+      "sunrise": null,
+      "sunset": null,
+      "dusk": 1797857667000,
+      "moon_phase": "waxing_gibbous",
+      "moon_value": 11.155666666666667
+    }
+  },
+  {
+    "city": {
+      "name": "Sydney",
+      "latitude": -33.86,
+      "longitude": 151.2,
+      "timezone": "Australia/Sydney"
+    },
+    "date": "2026-01-15",
+    "expected": {
+      "date": "2026-01-15",
+      "dawn": 1768415454000,
+      "sunrise": 1768417187000,
+      "sunset": 1768468126000,
+      "dusk": 1768469855000,
+      "moon_phase": "waning_crescent",
+      "moon_value": 25.155666666666665
+    }
+  },
+  {
+    "city": {
+      "name": "Sydney",
+      "latitude": -33.86,
+      "longitude": 151.2,
+      "timezone": "Australia/Sydney"
+    },
+    "date": "2026-03-08",
+    "expected": {
+      "date": "2026-03-08",
+      "dawn": 1772911384000,
+      "sunrise": 1772912923000,
+      "sunset": 1772958168000,
+      "dusk": 1772959704000,
+      "moon_phase": "waning_gibbous",
+      "moon_value": 18.622333333333334
+    }
+  },
+  {
+    "city": {
+      "name": "Sydney",
+      "latitude": -33.86,
+      "longitude": 151.2,
+      "timezone": "Australia/Sydney"
+    },
+    "date": "2026-06-21",
+    "expected": {
+      "date": "2026-06-21",
+      "dawn": 1781987517000,
+      "sunrise": 1781989212000,
+      "sunset": 1782024819000,
+      "dusk": 1782026514000,
+      "moon_phase": "first_quarter",
+      "moon_value": 6.644555555555556
+    }
+  },
+  {
+    "city": {
+      "name": "Sydney",
+      "latitude": -33.86,
+      "longitude": 151.2,
+      "timezone": "Australia/Sydney"
+    },
+    "date": "2026-10-25",
+    "expected": {
+      "date": "2026-10-25",
+      "dawn": 1792866973000,
+      "sunrise": 1792868562000,
+      "sunset": 1792916183000,
+      "dusk": 1792917777000,
+      "moon_phase": "full_moon",
+      "moon_value": 13.255666666666668
+    }
+  },
+  {
+    "city": {
+      "name": "Sydney",
+      "latitude": -33.86,
+      "longitude": 151.2,
+      "timezone": "Australia/Sydney"
+    },
+    "date": "2026-11-01",
+    "expected": {
+      "date": "2026-11-01",
+      "dawn": 1793471307000,
+      "sunrise": 1793472923000,
+      "sunset": 1793521357000,
+      "dusk": 1793522978000,
+      "moon_phase": "last_quarter",
+      "moon_value": 20.566777777777776
+    }
+  },
+  {
+    "city": {
+      "name": "Sydney",
+      "latitude": -33.86,
+      "longitude": 151.2,
+      "timezone": "Australia/Sydney"
+    },
+    "date": "2026-12-21",
+    "expected": {
+      "date": "2026-12-21",
+      "dawn": 1797790273000,
+      "sunrise": 1797792057000,
+      "sunset": 1797843911000,
+      "dusk": 1797845695000,
+      "moon_phase": "waxing_gibbous",
+      "moon_value": 11.155666666666667
+    }
+  },
+  {
+    "city": {
+      "name": "Kathmandu",
+      "latitude": 27.7,
+      "longitude": 85.32,
+      "timezone": "Asia/Kathmandu"
+    },
+    "date": "2026-01-15",
+    "expected": {
+      "date": "2026-01-15",
+      "dawn": 1768437915000,
+      "sunrise": 1768439456000,
+      "sunset": 1768477520000,
+      "dusk": 1768479061000,
+      "moon_phase": "waning_crescent",
+      "moon_value": 25.155666666666665
+    }
+  },
+  {
+    "city": {
+      "name": "Kathmandu",
+      "latitude": 27.7,
+      "longitude": 85.32,
+      "timezone": "Asia/Kathmandu"
+    },
+    "date": "2026-03-08",
+    "expected": {
+      "date": "2026-03-08",
+      "dawn": 1772928756000,
+      "sunrise": 1772930186000,
+      "sunset": 1772972580000,
+      "dusk": 1772974011000,
+      "moon_phase": "waning_gibbous",
+      "moon_value": 18.622333333333334
+    }
+  },
+  {
+    "city": {
+      "name": "Kathmandu",
+      "latitude": 27.7,
+      "longitude": 85.32,
+      "timezone": "Asia/Kathmandu"
+    },
+    "date": "2026-06-21",
+    "expected": {
+      "date": "2026-06-21",
+      "dawn": 1781996199000,
+      "sunrise": 1781997828000,
+      "sunset": 1782047830000,
+      "dusk": 1782049460000,
+      "moon_phase": "first_quarter",
+      "moon_value": 6.644555555555556
+    }
+  },
+  {
+    "city": {
+      "name": "Kathmandu",
+      "latitude": 27.7,
+      "longitude": 85.32,
+      "timezone": "Asia/Kathmandu"
+    },
+    "date": "2026-10-25",
+    "expected": {
+      "date": "2026-10-25",
+      "dawn": 1792886431000,
+      "sunrise": 1792887890000,
+      "sunset": 1792928421000,
+      "dusk": 1792929880000,
+      "moon_phase": "full_moon",
+      "moon_value": 13.255666666666668
+    }
+  },
+  {
+    "city": {
+      "name": "Kathmandu",
+      "latitude": 27.7,
+      "longitude": 85.32,
+      "timezone": "Asia/Kathmandu"
+    },
+    "date": "2026-11-01",
+    "expected": {
+      "date": "2026-11-01",
+      "dawn": 1793491493000,
+      "sunrise": 1793492968000,
+      "sunset": 1793532882000,
+      "dusk": 1793534357000,
+      "moon_phase": "last_quarter",
+      "moon_value": 20.566777777777776
+    }
+  },
+  {
+    "city": {
+      "name": "Kathmandu",
+      "latitude": 27.7,
+      "longitude": 85.32,
+      "timezone": "Asia/Kathmandu"
+    },
+    "date": "2026-12-21",
+    "expected": {
+      "date": "2026-12-21",
+      "dawn": 1797813539000,
+      "sunrise": 1797815112000,
+      "sunset": 1797852488000,
+      "dusk": 1797854061000,
+      "moon_phase": "waxing_gibbous",
+      "moon_value": 11.155666666666667
+    }
+  },
+  {
+    "city": {
+      "name": "New York",
+      "latitude": 40.71,
+      "longitude": -74,
+      "timezone": "America/New_York"
+    },
+    "date": "2026-01-15",
+    "expected": {
+      "date": "2026-01-15",
+      "dawn": 1768477646000,
+      "sunrise": 1768479487000,
+      "sunset": 1768513989000,
+      "dusk": 1768515830000,
+      "moon_phase": "waning_crescent",
+      "moon_value": 25.155666666666665
+    }
+  },
+  {
+    "city": {
+      "name": "New York",
+      "latitude": 40.71,
+      "longitude": -74,
+      "timezone": "America/New_York"
+    },
+    "date": "2026-03-08",
+    "expected": {
+      "date": "2026-03-08",
+      "dawn": 1772967076000,
+      "sunrise": 1772968744000,
+      "sunset": 1773010497000,
+      "dusk": 1773012168000,
+      "moon_phase": "waning_gibbous",
+      "moon_value": 18.622333333333334
+    }
+  },
+  {
+    "city": {
+      "name": "New York",
+      "latitude": 40.71,
+      "longitude": -74,
+      "timezone": "America/New_York"
+    },
+    "date": "2026-06-21",
+    "expected": {
+      "date": "2026-06-21",
+      "dawn": 1782031872000,
+      "sunrise": 1782033916000,
+      "sunset": 1782088227000,
+      "dusk": 1782090271000,
+      "moon_phase": "first_quarter",
+      "moon_value": 6.644555555555556
+    }
+  },
+  {
+    "city": {
+      "name": "New York",
+      "latitude": 40.71,
+      "longitude": -74,
+      "timezone": "America/New_York"
+    },
+    "date": "2026-10-25",
+    "expected": {
+      "date": "2026-10-25",
+      "dawn": 1792925398000,
+      "sunrise": 1792927112000,
+      "sunset": 1792965654000,
+      "dusk": 1792967367000,
+      "moon_phase": "full_moon",
+      "moon_value": 13.255666666666668
+    }
+  },
+  {
+    "city": {
+      "name": "New York",
+      "latitude": 40.71,
+      "longitude": -74,
+      "timezone": "America/New_York"
+    },
+    "date": "2026-11-01",
+    "expected": {
+      "date": "2026-11-01",
+      "dawn": 1793530658000,
+      "sunrise": 1793532396000,
+      "sunset": 1793569915000,
+      "dusk": 1793571653000,
+      "moon_phase": "last_quarter",
+      "moon_value": 20.566777777777776
+    }
+  },
+  {
+    "city": {
+      "name": "New York",
+      "latitude": 40.71,
+      "longitude": -74,
+      "timezone": "America/New_York"
+    },
+    "date": "2026-12-21",
+    "expected": {
+      "date": "2026-12-21",
+      "dawn": 1797853513000,
+      "sunrise": 1797855409000,
+      "sunset": 1797888692000,
+      "dusk": 1797890587000,
+      "moon_phase": "waxing_gibbous",
+      "moon_value": 11.155666666666667
+    }
+  },
+  {
+    "city": {
+      "name": "Apia",
+      "latitude": -13.83,
+      "longitude": -171.75,
+      "timezone": "Pacific/Apia"
+    },
+    "date": "2026-01-15",
+    "expected": {
+      "date": "2026-01-15",
+      "dawn": 1768409228000,
+      "sunrise": 1768410641000,
+      "sunset": 1768456898000,
+      "dusk": 1768458309000,
+      "moon_phase": "waning_crescent",
+      "moon_value": 25.155666666666665
+    }
+  },
+  {
+    "city": {
+      "name": "Apia",
+      "latitude": -13.83,
+      "longitude": -171.75,
+      "timezone": "Pacific/Apia"
+    },
+    "date": "2026-03-08",
+    "expected": {
+      "date": "2026-03-08",
+      "dawn": 1772903270000,
+      "sunrise": 1772904579000,
+      "sunset": 1772948753000,
+      "dusk": 1772950060000,
+      "moon_phase": "waning_gibbous",
+      "moon_value": 18.622333333333334
+    }
+  },
+  {
+    "city": {
+      "name": "Apia",
+      "latitude": -13.83,
+      "longitude": -171.75,
+      "timezone": "Pacific/Apia"
+    },
+    "date": "2026-06-21",
+    "expected": {
+      "date": "2026-06-21",
+      "dawn": 1781976358000,
+      "sunrise": 1781977776000,
+      "sunset": 1782018468000,
+      "dusk": 1782019886000,
+      "moon_phase": "first_quarter",
+      "moon_value": 6.644555555555556
+    }
+  },
+  {
+    "city": {
+      "name": "Apia",
+      "latitude": -13.83,
+      "longitude": -171.75,
+      "timezone": "Pacific/Apia"
+    },
+    "date": "2026-10-25",
+    "expected": {
+      "date": "2026-10-25",
+      "dawn": 1792859616000,
+      "sunrise": 1792860952000,
+      "sunset": 1792905989000,
+      "dusk": 1792907327000,
+      "moon_phase": "full_moon",
+      "moon_value": 13.255666666666668
+    }
+  },
+  {
+    "city": {
+      "name": "Apia",
+      "latitude": -13.83,
+      "longitude": -171.75,
+      "timezone": "Pacific/Apia"
+    },
+    "date": "2026-11-01",
+    "expected": {
+      "date": "2026-11-01",
+      "dawn": 1793464219000,
+      "sunrise": 1793465570000,
+      "sunset": 1793510906000,
+      "dusk": 1793512258000,
+      "moon_phase": "last_quarter",
+      "moon_value": 20.566777777777776
+    }
+  },
+  {
+    "city": {
+      "name": "Apia",
+      "latitude": -13.83,
+      "longitude": -171.75,
+      "timezone": "Pacific/Apia"
+    },
+    "date": "2026-12-21",
+    "expected": {
+      "date": "2026-12-21",
+      "dawn": 1797784358000,
+      "sunrise": 1797785797000,
+      "sunset": 1797832381000,
+      "dusk": 1797833819000,
+      "moon_phase": "waxing_gibbous",
+      "moon_value": 11.155666666666667
+    }
+  }
+]

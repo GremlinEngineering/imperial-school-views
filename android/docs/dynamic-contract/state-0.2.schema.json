@@ -1,0 +1,775 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gremlin:dynamic-state:0.2",
+  "type": "object",
+  "required": [
+    "schema",
+    "type",
+    "theme_id",
+    "device",
+    "at",
+    "inputs",
+    "recipe",
+    "asset_sha256",
+    "theme_archive",
+    "provenance",
+    "renderer",
+    "drawing_key",
+    "image",
+    "preview",
+    "valid_until",
+    "state_archive",
+    "history_url",
+    "id",
+    "schema_version",
+    "life"
+  ],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "type": {
+      "const": "dynamic-state"
+    },
+    "theme_id": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.2"
+        },
+        "device": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "active": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "season.spring",
+              "season.summer",
+              "season.autumn",
+              "season.winter",
+              "time.dawn",
+              "time.day",
+              "time.dusk",
+              "time.night",
+              "weather.clear",
+              "weather.cloudy",
+              "weather.fog",
+              "weather.rain",
+              "weather.snow",
+              "weather.thunderstorm",
+              "moon.new_moon",
+              "moon.waxing_crescent",
+              "moon.first_quarter",
+              "moon.waxing_gibbous",
+              "moon.full_moon",
+              "moon.waning_gibbous",
+              "moon.last_quarter",
+              "moon.waning_crescent",
+              "game.neutral",
+              "game.playing",
+              "game.achievement",
+              "game.rare_achievement",
+              "game.beaten",
+              "game.completed",
+              "game.mastered",
+              "game.rank_drop",
+              "game.record",
+              "game.new_game",
+              "game.new_recommendation",
+              "game.new_backlog"
+            ]
+          }
+        },
+        "weather": {
+          "type": "object",
+          "properties": {
+            "temperature_2m": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "apparent_temperature": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "dew_point_2m": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "wet_bulb_temperature_2m": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "soil_temperature_0cm": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "relative_humidity_2m": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 100
+            },
+            "cloud_cover": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 100
+            },
+            "cloud_cover_low": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 100
+            },
+            "cloud_cover_mid": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 100
+            },
+            "cloud_cover_high": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 100
+            },
+            "precipitation_probability": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 100
+            },
+            "pressure_msl": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "exclusiveMinimum": 0
+            },
+            "surface_pressure": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "exclusiveMinimum": 0
+            },
+            "visibility": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "wind_speed_10m": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "wind_gusts_10m": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "snow_depth": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "shortwave_radiation": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "direct_radiation": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "diffuse_radiation": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "uv_index": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "cape": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "wind_direction_10m": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "exclusiveMaximum": 360
+            },
+            "precipitation": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "rain": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "showers": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "snowfall": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "sunshine_duration": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 3600
+            },
+            "freezing_level_height": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "soil_moisture_0_to_1cm": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "is_day": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "enum": [
+                0,
+                1,
+                null
+              ]
+            },
+            "weather_code": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 99
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "sun": {
+          "type": "object",
+          "properties": {
+            "azimuth": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "exclusiveMaximum": 360
+            },
+            "elevation": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": -90,
+              "maximum": 90
+            },
+            "daylight_duration": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 86400
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "derived": {
+          "type": "object",
+          "properties": {
+            "pressure_change_3h": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "temperature_change_3h": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "life_slot": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 23,
+              "description": "Server-decided local hour; null skips all life rules.",
+              "readOnly": true
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "device",
+        "at",
+        "active"
+      ],
+      "additionalProperties": false,
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "allOf": [
+        {
+          "properties": {
+            "active": {
+              "contains": {
+                "enum": [
+                  "season.spring",
+                  "season.summer",
+                  "season.autumn",
+                  "season.winter"
+                ]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "active": {
+              "contains": {
+                "enum": [
+                  "time.dawn",
+                  "time.day",
+                  "time.dusk",
+                  "time.night"
+                ]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "active": {
+              "contains": {
+                "enum": [
+                  "weather.clear",
+                  "weather.cloudy",
+                  "weather.fog",
+                  "weather.rain",
+                  "weather.snow",
+                  "weather.thunderstorm"
+                ]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "active": {
+              "contains": {
+                "enum": [
+                  "moon.new_moon",
+                  "moon.waxing_crescent",
+                  "moon.first_quarter",
+                  "moon.waxing_gibbous",
+                  "moon.full_moon",
+                  "moon.waning_gibbous",
+                  "moon.last_quarter",
+                  "moon.waning_crescent"
+                ]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "active": {
+              "contains": {
+                "enum": [
+                  "game.neutral",
+                  "game.playing",
+                  "game.achievement",
+                  "game.rare_achievement",
+                  "game.beaten",
+                  "game.completed",
+                  "game.mastered",
+                  "game.rank_drop"
+                ]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            }
+          }
+        }
+      ]
+    },
+    "recipe": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.2"
+        },
+        "theme_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "device": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "layers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]*$"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]*$"
+              },
+              "order": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "opacity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "file": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "asset",
+              "order",
+              "opacity",
+              "file"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "theme_id",
+        "device",
+        "width",
+        "height",
+        "layers"
+      ],
+      "additionalProperties": false,
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "asset_sha256": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "theme_archive": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "renderer": {
+      "type": "object"
+    },
+    "drawing_key": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "image": {
+      "type": "object",
+      "required": [
+        "url",
+        "width",
+        "height",
+        "format",
+        "bytes",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "format": {
+          "const": "jpg"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "preview": {
+      "type": "object",
+      "required": [
+        "url",
+        "width",
+        "height",
+        "format",
+        "bytes",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "format": {
+          "const": "jpg"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state_archive": {
+      "type": "string"
+    },
+    "history_url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "schema_version": {
+      "const": "0.2"
+    },
+    "life": {
+      "type": "object",
+      "properties": {
+        "timezone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hour_start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "previous": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "base_key": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "blocked_hour_start": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "base_key",
+                "blocked_hour_start"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "base_key": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "blocked_hour_start": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason": {
+          "enum": [
+            "first_build",
+            "base_changed",
+            "hour_blocked",
+            "stable_base"
+          ]
+        },
+        "source_context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "renderer_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "request_key": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "timezone",
+        "hour_start",
+        "previous",
+        "base_key",
+        "blocked_hour_start",
+        "reason",
+        "source_context",
+        "renderer_version",
+        "request_key"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

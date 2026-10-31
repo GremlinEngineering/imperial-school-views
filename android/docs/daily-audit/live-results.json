@@ -1,0 +1,40 @@
+[
+  {
+    "source": "real",
+    "document_type": "weather-of-day",
+    "status": "ready",
+    "collection": "elevator-action-weather",
+    "formats": [
+      "display",
+      "macbook",
+      "phone",
+      "ultrawide"
+    ],
+    "encoding": "br",
+    "phone_sha_matches": true,
+    "phone_bytes": 1681973,
+    "phone_dimensions": [
+      1440,
+      3120
+    ]
+  },
+  {
+    "source": "game-world",
+    "document_type": "weather-of-day",
+    "status": "ready",
+    "collection": "elevator-action-weather",
+    "formats": [
+      "display",
+      "macbook",
+      "phone",
+      "ultrawide"
+    ],
+    "encoding": "br",
+    "phone_sha_matches": true,
+    "phone_bytes": 1710369,
+    "phone_dimensions": [
+      1440,
+      3120
+    ]
+  }
+]

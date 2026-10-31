@@ -1,0 +1,7 @@
+AndroidX WorkManager — Android Open Source Project, Apache License 2.0.
+Kotlin standard library — JetBrains, Apache License 2.0.
+Oswald, Literata, PT Mono — лицензии OFL в соседних файлах.
+Rhino 1.7.15.1 — Mozilla, MPL 2.0; local-weather/rhino-LICENSE.txt и rhino-NOTICE.txt.
+Астрономические формулы — Astral 3.2, Simon Kennedy, Apache 2.0; local-weather/astral-LICENSE.txt.
+Погода — Open-Meteo (https://open-meteo.com/), CC BY 4.0. Поиск городов — GeoNames через Open-Meteo.
+Brotli Java decoder 0.1.2 — The Brotli Authors, MIT; local-weather/brotli-LICENSE.txt.

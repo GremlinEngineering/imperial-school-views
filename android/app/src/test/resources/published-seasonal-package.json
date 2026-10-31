@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "id": "seasonal",
+  "title": "Четыре сезона",
+  "version": "2026.10.26.1",
+  "schedule": {
+    "seasonal": {
+      "winter": "season-01",
+      "spring": "season-02",
+      "summer": "season-03",
+      "autumn": "season-04"
+    }
+  },
+  "items": [
+    {
+      "id": "season-01",
+      "kind": "season",
+      "title": "Река среди елей",
+      "title_en": "River among the firs",
+      "label": "Зима",
+      "theme_id": "winter",
+      "theme_title": "Зима",
+      "motif": "winter wilderness",
+      "preview": "previews/season-01.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "files/season-01-macbook-3840x2400.jpg",
+          "bytes": 3204384,
+          "sha256": "5a77da7d29d88b92e568260e5f1a46b575bd9dc600f32244968d6e2a8509e71d",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "files/season-01-display-3840x2160.jpg",
+          "bytes": 2910524,
+          "sha256": "0383f6bbf174991581ea6a7eb90b4cd237c03057ee1d169183f131c8185e610b",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "files/season-01-phone-1440x3120.jpg",
+          "bytes": 2495774,
+          "sha256": "734fa51de944adafab0c3e80b1755f9495a321e95f6d307a1a7bc620ff56decd",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "winter"
+    },
+    {
+      "id": "season-02",
+      "kind": "season",
+      "title": "Сад Аптекаря",
+      "title_en": "The Apothecary's garden",
+      "label": "Весна",
+      "theme_id": "apothecary",
+      "theme_title": "Мао Мао · Аптекарь",
+      "motif": "imperial garden",
+      "preview": "previews/season-02.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "files/season-02-macbook-3840x2400.jpg",
+          "bytes": 3670058,
+          "sha256": "62ff231cb87a0120dd2a37670c5381d05672b280df33a5f61c2ef20e287f256f",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "files/season-02-display-3840x2160.jpg",
+          "bytes": 3333245,
+          "sha256": "19d62b18afb41b44ddb8a144aadfeaf35fd723d2b3e3fccb02992fd976890ae2",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "files/season-02-phone-1440x3120.jpg",
+          "bytes": 2703003,
+          "sha256": "f7ac5073ee91fea522e6ac1c4a111c0229425bfbd3736487c12717c759790644",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "spring"
+    },
+    {
+      "id": "season-03",
+      "kind": "season",
+      "title": "Казань. Вид на Кремль",
+      "title_en": "Kazan. View of the Kremlin",
+      "label": "Лето",
+      "theme_id": "kazan",
+      "theme_title": "Казан в Казани",
+      "motif": "river panorama",
+      "preview": "previews/season-03.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "files/season-03-macbook-3840x2400.jpg",
+          "bytes": 3479005,
+          "sha256": "05b2ad0deb770ebb9bf9a5718544b5c71e7535ea9428fc87fe0d2972f69fc545",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "files/season-03-display-3840x2160.jpg",
+          "bytes": 3099722,
+          "sha256": "60c98cf5f607d7fd50a837d855ac2c4936d18095dbb119157526ea2af56747a0",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "files/season-03-phone-1440x3120.jpg",
+          "bytes": 2896394,
+          "sha256": "a250cd70df74edc333321b2589e6e2736cd446b7e91a9da1740d90218e3971f7",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "summer"
+    },
+    {
+      "id": "season-04",
+      "kind": "season",
+      "title": "Крепость Mortal Kombat",
+      "title_en": "Mortal Kombat fortress",
+      "label": "Осень",
+      "theme_id": "mortal-kombat",
+      "theme_title": "Mortal Kombat",
+      "motif": "mountain citadel",
+      "preview": "previews/season-04.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "files/season-04-macbook-3840x2400.jpg",
+          "bytes": 2969868,
+          "sha256": "a9eb7750890301052dfb9f669c8660b690b54dbe101ee4b0ce582983c319f7c7",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "files/season-04-display-3840x2160.jpg",
+          "bytes": 2689908,
+          "sha256": "95b8f8ea42741838fa89fbbee8891d07852abfc290edbcd33fccb8f147d5b182",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "files/season-04-phone-1440x3120.jpg",
+          "bytes": 2441139,
+          "sha256": "13724e45cefd19814dedc5cb46f7b564947ca11cb2bccd63877cf8f1a4be5446",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "autumn"
+    }
+  ]
+}
