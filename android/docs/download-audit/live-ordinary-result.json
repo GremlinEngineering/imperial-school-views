@@ -1,0 +1,42 @@
+[
+  {
+    "collection": "collection-194x-under-the-wing",
+    "bytes": 49550370,
+    "sha_matches": true,
+    "schema": 1,
+    "id": "194x-under-the-wing",
+    "unsupported_entries": [],
+    "items": 12,
+    "phone_images": 12
+  },
+  {
+    "collection": "collection-194x-world-with-depth",
+    "bytes": 43688276,
+    "sha_matches": true,
+    "schema": 1,
+    "id": "194x-world-with-depth",
+    "unsupported_entries": [],
+    "items": 4,
+    "phone_images": 4
+  },
+  {
+    "collection": "collection-monthly",
+    "bytes": 113902178,
+    "sha_matches": true,
+    "schema": 1,
+    "id": "monthly",
+    "unsupported_entries": [],
+    "items": 12,
+    "phone_images": 12
+  },
+  {
+    "collection": "collection-seasonal",
+    "bytes": 37518248,
+    "sha_matches": true,
+    "schema": 1,
+    "id": "seasonal",
+    "unsupported_entries": [],
+    "items": 4,
+    "phone_images": 4
+  }
+]

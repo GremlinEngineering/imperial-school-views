@@ -1,0 +1,83 @@
+[
+  {
+    "path": "manifest-v3.json",
+    "status": 200,
+    "encoding": "br",
+    "wire": 23483,
+    "decoded": 97806,
+    "schema": 3,
+    "sha256": "f1a0996054a9bb0e04f990ba10dc3465e57539799685b7c8cd3b8967a402a5e2"
+  },
+  {
+    "path": "manifest-v3.json.br",
+    "status": 200,
+    "encoding": null,
+    "wire": 23483,
+    "decoded": 97806,
+    "schema": 3,
+    "sha256": "f1a0996054a9bb0e04f990ba10dc3465e57539799685b7c8cd3b8967a402a5e2"
+  },
+  {
+    "path": "weather/chip-n-dale-weather/current.json",
+    "status": 200,
+    "encoding": "gzip",
+    "wire": 1958,
+    "decoded": 8787,
+    "schema": 1,
+    "sha256": "2895456c7fab81fc53799a37a29a06d992429b53163e421a6dbfe95b89a83839"
+  },
+  {
+    "path": "weather/chip-n-dale-weather/forecast-phone.json",
+    "status": 200,
+    "encoding": "gzip",
+    "wire": 3409,
+    "decoded": 14459,
+    "schema": 1,
+    "sha256": "26f489374c4c47a6693ae3ecb8a0c4a0dc084f48d0ad3896dac2f039dab74b94"
+  },
+  {
+    "path": "weather/metal-slug-x-weather/sources/game-world/current.json",
+    "status": 200,
+    "encoding": "gzip",
+    "wire": 1995,
+    "decoded": 8011,
+    "schema": 1,
+    "sha256": "535bff247e160ee6fa89baa8140955fb78cf1b2b8505077cb9f7c69e0aadc815"
+  },
+  {
+    "path": "weather/metal-slug-x-weather/sources/game-world/forecast-phone.json",
+    "status": 200,
+    "encoding": "gzip",
+    "wire": 3052,
+    "decoded": 9880,
+    "schema": 1,
+    "sha256": "4571fa496f29a4b396dc16ee7f51d2d30e7effd059767aa22880e16bc8ed8f42"
+  },
+  {
+    "path": "android-release.json",
+    "status": 200,
+    "encoding": null,
+    "wire": 363,
+    "decoded": 363,
+    "schema": 1,
+    "sha256": "0e4954040fb676cdf9970bab80b5abf2ccf388524e98105147855ca3cf83a149"
+  },
+  {
+    "path": "weather/daily/real/current.json",
+    "status": 200,
+    "encoding": "gzip",
+    "wire": 1533,
+    "decoded": 3979,
+    "schema": 1,
+    "sha256": "1e9de531c9274a12185a00386aafcd4a5f397ef60eed95904fc080730aebbd6d"
+  },
+  {
+    "path": "weather/daily/game-world/current.json",
+    "status": 200,
+    "encoding": "gzip",
+    "wire": 1816,
+    "decoded": 4696,
+    "schema": 1,
+    "sha256": "fdbaff1451aa19d22e5838f42479bd6b259783695a07224b7e85751cbe2b4f73"
+  }
+]

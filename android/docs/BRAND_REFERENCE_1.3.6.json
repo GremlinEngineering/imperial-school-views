@@ -1,0 +1,29 @@
+{
+  "source_url": "https://games.oopssre.ru/assets/style.css?v=8140886cac1c",
+  "sha256": "8140886cac1c6bc181b7ade1d83369dac25258e8cc09b40ca1ca26bfc0c96ed0",
+  "checked": "2026-10-31",
+  "fonts": {
+    "heading": "Oswald",
+    "prose": "Literata",
+    "ui": "Arial on site; Android system sans-serif in app",
+    "technical": "PT Mono"
+  },
+  "light": {
+    "paper": "#fbf8ec",
+    "ink": "#272635",
+    "muted": "#56536b",
+    "line": "#c8c2af",
+    "accent": "#9d3766",
+    "accent_ink": "#ffffff",
+    "panel": "#f2ead9"
+  },
+  "dark": {
+    "paper": "#141126",
+    "ink": "#f3ecdb",
+    "muted": "#b9b1ce",
+    "line": "#514560",
+    "accent": "#fbbf55",
+    "accent_ink": "#27122b",
+    "panel": "#211b38"
+  }
+}

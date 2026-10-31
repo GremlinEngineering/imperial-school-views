@@ -1,0 +1,22 @@
+[
+  {
+    "collection": "chip-n-dale-weather",
+    "bytes": 561088429,
+    "sha256": "e2577cb55776f9ae4d9c620ee1e27969630f118e9ef1bb6884a95f2f356dd2a0",
+    "sha_matches": true,
+    "package_id": "chip-n-dale-weather",
+    "format": "phone",
+    "version": "package-263ec4017d81d4ae",
+    "variants": 264
+  },
+  {
+    "collection": "metal-slug-x-weather",
+    "bytes": 670566642,
+    "sha256": "9fd4507f20da4757c01ad509c945fb758c8d98f8e371bc646f11be176dd784df",
+    "sha_matches": true,
+    "package_id": "metal-slug-x-weather",
+    "format": "phone",
+    "version": "package-baaf10f3c3a0ca83",
+    "variants": 264
+  }
+]

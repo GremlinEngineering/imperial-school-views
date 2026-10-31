@@ -1,0 +1,54 @@
+[
+  {
+    "collection": "chip-n-dale-weather",
+    "expected_bytes": 561088429,
+    "http_bytes": "561088429",
+    "status": 200,
+    "content_type": "application/zip",
+    "range": "bytes"
+  },
+  {
+    "collection": "metal-slug-x-weather",
+    "expected_bytes": 670566642,
+    "http_bytes": "670566642",
+    "status": 200,
+    "content_type": "application/zip",
+    "range": "bytes"
+  },
+  {
+    "collection": "chip-n-dale-weather",
+    "source": "real",
+    "current_status": "ready",
+    "forecast_status": null,
+    "forecast_package": "package-263ec4017d81d4ae",
+    "catalogue_package": "package-263ec4017d81d4ae",
+    "intervals": 5
+  },
+  {
+    "collection": "chip-n-dale-weather",
+    "source": "game-world",
+    "current_status": "ready",
+    "forecast_status": null,
+    "forecast_package": "package-263ec4017d81d4ae",
+    "catalogue_package": "package-263ec4017d81d4ae",
+    "intervals": 6
+  },
+  {
+    "collection": "metal-slug-x-weather",
+    "source": "real",
+    "current_status": "ready",
+    "forecast_status": null,
+    "forecast_package": "package-baaf10f3c3a0ca83",
+    "catalogue_package": "package-baaf10f3c3a0ca83",
+    "intervals": 5
+  },
+  {
+    "collection": "metal-slug-x-weather",
+    "source": "game-world",
+    "current_status": "ready",
+    "forecast_status": null,
+    "forecast_package": "package-baaf10f3c3a0ca83",
+    "catalogue_package": "package-baaf10f3c3a0ca83",
+    "intervals": 6
+  }
+]

@@ -1,0 +1,1680 @@
+{
+  "schema": 3,
+  "title": "Виды и обои · Школа Империи",
+  "title_en": "Views & Wallpapers · Imperial School",
+  "homepage": "https://games.oopssre.ru/gremlin.html#views",
+  "manifest_url": "https://games.oopssre.ru/assets/arcade/views/manifest.json",
+  "timezone": "local",
+  "collections": [
+    {
+      "id": "194x-under-the-wing",
+      "title": "Под крылом — целый мир · 194x / 19XX",
+      "title_en": "Under the wing — a whole world · 194x / 19XX",
+      "description": "Двенадцать месяцев в мирах аркадной серии Capcom 194x / 19XX. Яркие рисованные пейзажи без персонажей.",
+      "version": "1.0.0",
+      "manifest": "collections/194x-under-the-wing/manifest.json",
+      "schedule": {
+        "monthly": {
+          "1": "194x-under-the-wing--month-01",
+          "2": "194x-under-the-wing--month-02",
+          "3": "194x-under-the-wing--month-03",
+          "4": "194x-under-the-wing--month-04",
+          "5": "194x-under-the-wing--month-05",
+          "6": "194x-under-the-wing--month-06",
+          "7": "194x-under-the-wing--month-07",
+          "8": "194x-under-the-wing--month-08",
+          "9": "194x-under-the-wing--month-09",
+          "10": "194x-under-the-wing--month-10",
+          "11": "194x-under-the-wing--month-11",
+          "12": "194x-under-the-wing--month-12"
+        }
+      }
+    },
+    {
+      "id": "194x-world-with-depth",
+      "title": "Мир с глубиной · 194x / 19XX",
+      "title_en": "A world with depth · 194x / 19XX",
+      "description": "Четыре новых точки наблюдения внутри общего мира серии 1942, 1943 / Kai, 1941, 19XX и 1944: игровая графика, получившая глубину и свободную камеру.",
+      "version": "1.0.0",
+      "manifest": "collections/194x-world-with-depth/manifest.json",
+      "schedule": {}
+    },
+    {
+      "id": "monthly",
+      "title": "Двенадцать месяцев",
+      "version": "2026.10.26.1",
+      "manifest": "collections/monthly/manifest.json",
+      "schedule": {
+        "monthly": {
+          "1": "monthly--month-01",
+          "2": "monthly--month-02",
+          "3": "monthly--month-03",
+          "4": "monthly--month-04",
+          "5": "monthly--month-05",
+          "6": "monthly--month-06",
+          "7": "monthly--month-07",
+          "8": "monthly--month-08",
+          "9": "monthly--month-09",
+          "10": "monthly--month-10",
+          "11": "monthly--month-11",
+          "12": "monthly--month-12"
+        }
+      }
+    },
+    {
+      "id": "seasonal",
+      "title": "Четыре сезона",
+      "version": "2026.10.26.1",
+      "manifest": "collections/seasonal/manifest.json",
+      "schedule": {
+        "seasonal": {
+          "winter": "seasonal--season-01",
+          "spring": "seasonal--season-02",
+          "summer": "seasonal--season-03",
+          "autumn": "seasonal--season-04"
+        }
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "194x-under-the-wing--month-01",
+      "kind": "month",
+      "month": 1,
+      "label": "Январь",
+      "title": "Полярный горизонт",
+      "title_en": "Polar horizon",
+      "theme_title": "19XX: The War Against Destiny",
+      "game": "19XX: The War Against Destiny",
+      "preview": "collections/194x-under-the-wing/previews/month-01.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-01-macbook-3840x2400.jpg",
+          "bytes": 1376251,
+          "sha256": "957c79bd7e2c3da2cb4666601dc60f74bd8662999e56cf462ec314d5bc902422",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-01-display-3840x2160.jpg",
+          "bytes": 1301137,
+          "sha256": "4c6e6f8f85f1564467c5b009f8bbca075bc5beea0d14ec997e37a85ca87b4f3d",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-01-phone-1440x3120.jpg",
+          "bytes": 838321,
+          "sha256": "64033681a1e0951bc01de4b68d5fb95f8d968063d96b9cc2c7d3d988881ce097",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-01",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-02",
+      "kind": "month",
+      "month": 2,
+      "label": "Февраль",
+      "title": "Европейская гавань",
+      "title_en": "European harbor",
+      "theme_title": "1941: Counter Attack",
+      "game": "1941: Counter Attack",
+      "preview": "collections/194x-under-the-wing/previews/month-02.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-02-macbook-3840x2400.jpg",
+          "bytes": 1625657,
+          "sha256": "043b473132973bfebf5bee063be1c8b7345a4e40694ba4c8cc0294ab3376b44e",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-02-display-3840x2160.jpg",
+          "bytes": 1509824,
+          "sha256": "4c16e3d32c5629ab7dc9cd9cf00d827b24a1f33090fc7a64af990c7dee8eb755",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-02-phone-1440x3120.jpg",
+          "bytes": 956108,
+          "sha256": "033a5d8ad825588febe7f23eac01d17a2bb7e33ae422dae2d2de90e7d51ccc35",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-02",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-03",
+      "kind": "month",
+      "month": 3,
+      "label": "Март",
+      "title": "Весна у ракетной базы",
+      "title_en": "Spring at the rocket base",
+      "theme_title": "1941: Counter Attack",
+      "game": "1941: Counter Attack",
+      "preview": "collections/194x-under-the-wing/previews/month-03.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-03-macbook-3840x2400.jpg",
+          "bytes": 1722048,
+          "sha256": "119c0dc68a752a4e1e13d1cf7a7e4e4a2395d6314ed84f9979fc0a986ee7a49e",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-03-display-3840x2160.jpg",
+          "bytes": 1625955,
+          "sha256": "6df7262ca103e6a0a04dd092a00f31ec84ca11e61c3b9a5600fdfda23496c297",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-03-phone-1440x3120.jpg",
+          "bytes": 922649,
+          "sha256": "f3e4b8283a647db69cc1ab6babc639dfa7ff25d767cb94ab878299eed7e001d5",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-03",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-04",
+      "kind": "month",
+      "month": 4,
+      "label": "Апрель",
+      "title": "За водопадом",
+      "title_en": "Behind the waterfall",
+      "theme_title": "19XX: The War Against Destiny",
+      "game": "19XX: The War Against Destiny",
+      "preview": "collections/194x-under-the-wing/previews/month-04.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-04-macbook-3840x2400.jpg",
+          "bytes": 1644439,
+          "sha256": "0d4cafbe37ce4c0dcb54a1d51056251247b59a829ff034aa326d195c15c55dcc",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-04-display-3840x2160.jpg",
+          "bytes": 1501013,
+          "sha256": "529d2354cf4462204a1bb93958bbd14cf3b1c36b49d3f56116519279464e515f",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-04-phone-1440x3120.jpg",
+          "bytes": 883637,
+          "sha256": "ab572a817217719c436fab6f29850d32d49e11b477ff1ef3f24033646655fb23",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-04",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-05",
+      "kind": "month",
+      "month": 5,
+      "label": "Май",
+      "title": "Зелёная долина",
+      "title_en": "Green valley",
+      "theme_title": "1944: The Loop Master",
+      "game": "1944: The Loop Master",
+      "preview": "collections/194x-under-the-wing/previews/month-05.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-05-macbook-3840x2400.jpg",
+          "bytes": 1689198,
+          "sha256": "d0224fe7a8a25c9adfffdc27d4543b086b3a6ec1c3611b323fc459c19fc2ae50",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-05-display-3840x2160.jpg",
+          "bytes": 1604099,
+          "sha256": "611048e5279e6381eedaa2c778fda14a97f318315e342ba4b074fc65a1c133b1",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-05-phone-1440x3120.jpg",
+          "bytes": 920839,
+          "sha256": "bf40da6e8017c6bdc6f8deb97471c64ab9b39b3025c694b8e74fc4e9de1e3eee",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-05",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-06",
+      "kind": "month",
+      "month": 6,
+      "label": "Июнь",
+      "title": "Остров посреди океана",
+      "title_en": "Island in the ocean",
+      "theme_title": "1942",
+      "game": "1942",
+      "preview": "collections/194x-under-the-wing/previews/month-06.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-06-macbook-3840x2400.jpg",
+          "bytes": 1431238,
+          "sha256": "22e7df2ae9a088a3f1958188e9dbecada4e19297d95b8afb06ddee84efefb751",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-06-display-3840x2160.jpg",
+          "bytes": 1353213,
+          "sha256": "396db1a9a32b0c93d09a478af5866dae2626661af542621016fd685b3ca383a6",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-06-phone-1440x3120.jpg",
+          "bytes": 813957,
+          "sha256": "517abcdd30e6e0f5df919620373e584c8a367832ea8cc78be5372fab33d04879",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-06",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-07",
+      "kind": "month",
+      "month": 7,
+      "label": "Июль",
+      "title": "Пролив флота",
+      "title_en": "Fleet strait",
+      "theme_title": "1943: The Battle of Midway",
+      "game": "1943: The Battle of Midway",
+      "preview": "collections/194x-under-the-wing/previews/month-07.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-07-macbook-3840x2400.jpg",
+          "bytes": 1521509,
+          "sha256": "ed9c51bfd39fd03539486094ca36e692e9424b3baecd1da1f61f34625e4277f4",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-07-display-3840x2160.jpg",
+          "bytes": 1454437,
+          "sha256": "587e68e28731cd8d248c767f0461dc69bd85597bccfa700400330380d0ca7d10",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-07-phone-1440x3120.jpg",
+          "bytes": 852674,
+          "sha256": "dfba0b95a67d1f46af7bafba804bc554edbaf81ace3eecee7b592aeb26586220",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-07",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-08",
+      "kind": "month",
+      "month": 8,
+      "label": "Август",
+      "title": "Красное море",
+      "title_en": "Red Sea",
+      "theme_title": "19XX: The War Against Destiny",
+      "game": "19XX: The War Against Destiny",
+      "preview": "collections/194x-under-the-wing/previews/month-08.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-08-macbook-3840x2400.jpg",
+          "bytes": 1384200,
+          "sha256": "92d860875846b9257212e65f5f1c62fc3651844ff3539f811ecf348d5eee28fd",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-08-display-3840x2160.jpg",
+          "bytes": 1297407,
+          "sha256": "47bb0eb562122a205384330ab0de5dbb6229d378c8c236b86247ce6c87db2365",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-08-phone-1440x3120.jpg",
+          "bytes": 815328,
+          "sha256": "e96e551d318dc24534368b8a822ec5b79d515310533602227d959f32bbce2420",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-08",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-09",
+      "kind": "month",
+      "month": 9,
+      "label": "Сентябрь",
+      "title": "Золотой час",
+      "title_en": "Golden hour",
+      "theme_title": "1943 Kai",
+      "game": "1943 Kai",
+      "preview": "collections/194x-under-the-wing/previews/month-09.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-09-macbook-3840x2400.jpg",
+          "bytes": 1379343,
+          "sha256": "ad03096ab211e97be308d6879242984872096fef9fd52265536e8e94b187a365",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-09-display-3840x2160.jpg",
+          "bytes": 1309631,
+          "sha256": "8c6cac0c4e63f527cdea4a936fcc0269baa1f50b0231baed5a15b5296499c7ac",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-09-phone-1440x3120.jpg",
+          "bytes": 862881,
+          "sha256": "0ad266c089381f2cc11fb796c1d0aa3d47021064b5f8474c46414eefae2d0c3f",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-09",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-10",
+      "kind": "month",
+      "month": 10,
+      "label": "Октябрь",
+      "title": "Город над рекой",
+      "title_en": "City above the river",
+      "theme_title": "1941: Counter Attack",
+      "game": "1941: Counter Attack",
+      "preview": "collections/194x-under-the-wing/previews/month-10.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-10-macbook-3840x2400.jpg",
+          "bytes": 1731631,
+          "sha256": "741f309f013757966bd217794aceddef2c566ee001bf5f968efee8cedbd929de",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-10-display-3840x2160.jpg",
+          "bytes": 1605232,
+          "sha256": "820fd1a692f62daab2c36ddc4bbd97b9c1f689fdbbd6d3b13448f2b7d325c394",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-10-phone-1440x3120.jpg",
+          "bytes": 925156,
+          "sha256": "728d16a8bd24c52352cb973f8be9d87c8cfe2f8b8b8692ed3a838af1d38ad038",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-10",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-11",
+      "kind": "month",
+      "month": 11,
+      "label": "Ноябрь",
+      "title": "Штормовая крепость",
+      "title_en": "Storm fortress",
+      "theme_title": "1944: The Loop Master",
+      "game": "1944: The Loop Master",
+      "preview": "collections/194x-under-the-wing/previews/month-11.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-11-macbook-3840x2400.jpg",
+          "bytes": 1412809,
+          "sha256": "a70c122c665a09ecfc636c7c0a1f206d701f2d24de6d72946698b11c235e5c13",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-11-display-3840x2160.jpg",
+          "bytes": 1316839,
+          "sha256": "19a35e020f26acfc4a3adcb4819fd40195e9b04be8fcd40aaa0ddb058c1419ea",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-11-phone-1440x3120.jpg",
+          "bytes": 922004,
+          "sha256": "229484c8410794fffce0d7e58a90a508f0eef1565fe45844ed8f1ebcf33228a7",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-11",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-under-the-wing--month-12",
+      "kind": "month",
+      "month": 12,
+      "label": "Декабрь",
+      "title": "Огни зимнего фьорда",
+      "title_en": "Winter fjord lights",
+      "theme_title": "19XX: The War Against Destiny",
+      "game": "19XX: The War Against Destiny",
+      "preview": "collections/194x-under-the-wing/previews/month-12.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-under-the-wing/files/month-12-macbook-3840x2400.jpg",
+          "bytes": 1415294,
+          "sha256": "2ba35d3ea02541e42c177fea34349e8c6b2ac14af942cc7cfe28956fd3b143f7",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-under-the-wing/files/month-12-display-3840x2160.jpg",
+          "bytes": 1318491,
+          "sha256": "b047351740650f8b1020e2bfe0a7fd925e2862e6d35996aebae18ec981ff1dbb",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-under-the-wing/files/month-12-phone-1440x3120.jpg",
+          "bytes": 831384,
+          "sha256": "8da386f306345001a9252b62fd58460cf519b0dbc1744dc7cee617d7e6a43580",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "month-12",
+      "collection": "194x-under-the-wing"
+    },
+    {
+      "id": "194x-world-with-depth--shore",
+      "kind": "thematic",
+      "label": "Берег",
+      "title": "Берег острова",
+      "title_en": "Island shore",
+      "theme_title": "1942 / 1943 / 1944",
+      "game": "1942 / 1943 / 1944",
+      "preview": "collections/194x-world-with-depth/previews/shore.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-world-with-depth/files/shore-macbook-3840x2400.jpg",
+          "bytes": 4391544,
+          "sha256": "6b457253210bd39029d4c49a2592bf339423a48b9a0b39260e5c920e5d513d95",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-world-with-depth/files/shore-display-3840x2160.jpg",
+          "bytes": 4153315,
+          "sha256": "567defd483575292849fba451ae70651f2b3a3be2f34e83d4e2028656260c81c",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-world-with-depth/files/shore-phone-1440x3120.jpg",
+          "bytes": 2010208,
+          "sha256": "94d90e0688aaf6c95483de4016ca6c650f2d3002d72849bc5b28665e1a8c38c4",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "shore",
+      "collection": "194x-world-with-depth"
+    },
+    {
+      "id": "194x-world-with-depth--deck",
+      "kind": "thematic",
+      "label": "Палуба",
+      "title": "Край палубы",
+      "title_en": "Edge of the flight deck",
+      "theme_title": "1942 / 1943 Kai / 19XX",
+      "game": "1942 / 1943 Kai / 19XX",
+      "preview": "collections/194x-world-with-depth/previews/deck.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-world-with-depth/files/deck-macbook-3840x2400.jpg",
+          "bytes": 3408596,
+          "sha256": "f7bb49843d41b62fd55fdd28aa0237c3e31648300098d700466dde41e0c72dc5",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-world-with-depth/files/deck-display-3840x2160.jpg",
+          "bytes": 3259480,
+          "sha256": "cbec1bf5d5076c130c0009723b8b05a9fdf20ac56d0269058aba9239d1a92771",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-world-with-depth/files/deck-phone-1440x3120.jpg",
+          "bytes": 1699540,
+          "sha256": "3c34021ee54d61dfcfd137f5547687932345b0449a3520b6276c947cda429f09",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "deck",
+      "collection": "194x-world-with-depth"
+    },
+    {
+      "id": "194x-world-with-depth--archipelago",
+      "kind": "thematic",
+      "label": "Архипелаг",
+      "title": "Над архипелагом",
+      "title_en": "Above the archipelago",
+      "theme_title": "1942 / 1943 / 19XX / 1944",
+      "game": "1942 / 1943 / 19XX / 1944",
+      "preview": "collections/194x-world-with-depth/previews/archipelago.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-world-with-depth/files/archipelago-macbook-3840x2400.jpg",
+          "bytes": 4523604,
+          "sha256": "3a64d4016a98c744b2166d52a0c77ff77afc0690c6564cd9aad1e20ce94426ff",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-world-with-depth/files/archipelago-display-3840x2160.jpg",
+          "bytes": 4322643,
+          "sha256": "daf65ceb7448707ba62898d07f7ce4a9f56a59475db61ee4238d950634a5143a",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-world-with-depth/files/archipelago-phone-1440x3120.jpg",
+          "bytes": 2188845,
+          "sha256": "1494dc9f771db51ee86f029a30c36b8e45b35c2ef0d148457575023e9f468e99",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "archipelago",
+      "collection": "194x-world-with-depth"
+    },
+    {
+      "id": "194x-world-with-depth--inland",
+      "kind": "thematic",
+      "label": "Остров",
+      "title": "Из глубины острова",
+      "title_en": "From inside the island",
+      "theme_title": "1941 / 19XX / 1944",
+      "game": "1941 / 19XX / 1944",
+      "preview": "collections/194x-world-with-depth/previews/inland.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/194x-world-with-depth/files/inland-macbook-3840x2400.jpg",
+          "bytes": 4554694,
+          "sha256": "995b4c34f127674ee000c68fddc1c8410ef6b82cf7edf97c5de9174ac1401a7d",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/194x-world-with-depth/files/inland-display-3840x2160.jpg",
+          "bytes": 4254197,
+          "sha256": "498a452da5414f9536f28ddd4a3292b9942bd3ba444c594e0f3c5dd797462638",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "6:13",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/194x-world-with-depth/files/inland-phone-1440x3120.jpg",
+          "bytes": 2243187,
+          "sha256": "496c9a415165cbaf18a96e50d017ac8194bc95df82cbb15170d567eb9edb22bc",
+          "format": "jpeg"
+        }
+      ],
+      "local_id": "inland",
+      "collection": "194x-world-with-depth"
+    },
+    {
+      "id": "monthly--month-01",
+      "kind": "month",
+      "title": "Деревня под снегом",
+      "title_en": "Village under snow",
+      "label": "Январь",
+      "theme_id": "dragon-quest-ii",
+      "theme_title": "Dragon Quest I & II",
+      "motif": "snow village",
+      "preview": "collections/monthly/previews/month-01.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-01-macbook-3840x2400.jpg",
+          "bytes": 3392046,
+          "sha256": "fefae0434ba0d456ece8f8b2ab8d16428d37a3fb848e51a75835e5b72a4c336b",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-01-display-3840x2160.jpg",
+          "bytes": 3135092,
+          "sha256": "9be726e058e5e9f866c2eb932347d082edb29f60c907d919a63e7700afca77dd",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-01-phone-1440x3120.jpg",
+          "bytes": 2562004,
+          "sha256": "2ffd3e28566a413dc8974f91ef75a6a1d777c561977ac5e7fb7745ec234b54b9",
+          "format": "jpeg",
+          "native_render": {
+            "width": 852,
+            "height": 1846
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 1,
+      "local_id": "month-01",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-02",
+      "kind": "month",
+      "title": "Джунгли Metal Slug",
+      "title_en": "Metal Slug jungle",
+      "label": "Февраль",
+      "theme_id": "metal-slug",
+      "theme_title": "Metal Slug 2",
+      "motif": "jungle",
+      "preview": "collections/monthly/previews/month-02.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-02-macbook-3840x2400.jpg",
+          "bytes": 3919269,
+          "sha256": "752b7d255b02b2783a94d5c1c4d98316ea67677da0000fffdd602224107f5d42",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-02-display-3840x2160.jpg",
+          "bytes": 3519146,
+          "sha256": "e65715443161cb7b9f67f7eba2af4f192220c923ed7519bf20310746a0493742",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-02-phone-1440x3120.jpg",
+          "bytes": 2953513,
+          "sha256": "1726e6a6846b59fde8bc2d5c453e15b1ed09d1b9f4f6f57333936244fac8a5b7",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 2,
+      "local_id": "month-02",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-03",
+      "kind": "month",
+      "title": "Сакура у моста",
+      "title_en": "Cherry blossoms by the bridge",
+      "label": "Март",
+      "theme_id": "konami",
+      "theme_title": "Konami",
+      "motif": "spring garden",
+      "preview": "collections/monthly/previews/month-03.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-03-macbook-3840x2400.jpg",
+          "bytes": 3997965,
+          "sha256": "fa14862bb1dad998747e742a44292a092426602e445b05b544dab09d2c43c3a2",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-03-display-3840x2160.jpg",
+          "bytes": 3602580,
+          "sha256": "dd3bbd9e1e1dfda018a6d15df27b3b3bc6574558a33c58fcea6422cbf8a25170",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-03-phone-1440x3120.jpg",
+          "bytes": 2958832,
+          "sha256": "60b786961c4b998dbfbc521c1094ebe5171b8bc0d26efed7a7854bc1b25f4605",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 3,
+      "local_id": "month-03",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-04",
+      "kind": "month",
+      "title": "Мастерская у моря",
+      "title_en": "Seaside workshop",
+      "label": "Апрель",
+      "theme_id": "little-mermaid",
+      "theme_title": "Русалочка",
+      "motif": "coast",
+      "preview": "collections/monthly/previews/month-04.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-04-macbook-3840x2400.jpg",
+          "bytes": 3400961,
+          "sha256": "43f1a5816653d50e5d8a5a409f560216ba3b0c7ade97cd5eeded3f85bf1b5a8c",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-04-display-3840x2160.jpg",
+          "bytes": 3039856,
+          "sha256": "39f2c8d8b59d6af1596b6647765c6757a75c4caccfe74ce263be0125bf6dd3a1",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-04-phone-1440x3120.jpg",
+          "bytes": 2724218,
+          "sha256": "2b701f0928093d05c2b68a2793306f7020aafcbd98339d7a599da958ef83a865",
+          "format": "jpeg",
+          "native_render": {
+            "width": 852,
+            "height": 1846
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 4,
+      "local_id": "month-04",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-05",
+      "kind": "month",
+      "title": "Лунная база",
+      "title_en": "Moon base",
+      "label": "Май",
+      "theme_id": "star-wars",
+      "theme_title": "Космос · Star Wars",
+      "motif": "moon",
+      "preview": "collections/monthly/previews/month-05.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-05-macbook-3840x2400.jpg",
+          "bytes": 2953948,
+          "sha256": "f083160f7d9c1e10855fdb38626affd49843407955f04930b05d3f6d33aa3331",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-05-display-3840x2160.jpg",
+          "bytes": 2612678,
+          "sha256": "71f2374ad8b7e971bc271a07052cd89054fb784fbcfca80e24a69092bcc2036e",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-05-phone-1440x3120.jpg",
+          "bytes": 2095181,
+          "sha256": "daad93c9ea0be2496a4ae19f3c1c6ec174a7bac7a7515e15d26e87ea340a0928",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 5,
+      "local_id": "month-05",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-06",
+      "kind": "month",
+      "title": "Петербург. Белые ночи",
+      "title_en": "Saint Petersburg. White nights",
+      "label": "Июнь",
+      "theme_id": "namco",
+      "theme_title": "Петербург · Namco",
+      "motif": "canal city",
+      "preview": "collections/monthly/previews/month-06.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-06-macbook-3840x2400.jpg",
+          "bytes": 3351420,
+          "sha256": "6ababe9e97e2772715db60a72e034431bd1f07d9862abebc21747f6b766bfa44",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-06-display-3840x2160.jpg",
+          "bytes": 3080342,
+          "sha256": "6254bf667dde30153a288106a9945c4b42be065833ef9b6847905fcb50f45c6a",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-06-phone-1440x3120.jpg",
+          "bytes": 2599389,
+          "sha256": "bb8ed9e7d7cc44c4ef8a33f3d0cc0fff00679ca4abbe1b87eb9e7d60f4641c8b",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 6,
+      "local_id": "month-06",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-07",
+      "kind": "month",
+      "title": "1981. Первый уровень",
+      "title_en": "1981. First level",
+      "label": "Июль",
+      "theme_id": "gremlin-birthday",
+      "theme_title": "1981. Первый уровень",
+      "motif": "fantasy canyon",
+      "preview": "collections/monthly/previews/month-07.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-07-macbook-3840x2400.jpg",
+          "bytes": 3293180,
+          "sha256": "f0058760995257aa34c13032508d99db6614faf1e1396cdfd4d98a0d80478853",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-07-display-3840x2160.jpg",
+          "bytes": 2945548,
+          "sha256": "42c1c2213526335a9298be95831f53752fd4e7adaa8e43bc8709eaf428fdb1bd",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-07-phone-1440x3120.jpg",
+          "bytes": 2632641,
+          "sha256": "3d0134577b27a8ec1082f75b551f4b2805f28e6d55e3d2ab6ed15dfff08b8738",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 7,
+      "local_id": "month-07",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-08",
+      "kind": "month",
+      "title": "Шанхай. Набережная",
+      "title_en": "Shanghai. The waterfront",
+      "label": "Август",
+      "theme_id": "shanghai",
+      "theme_title": "Шанхай · Technōs",
+      "motif": "historic harbor",
+      "preview": "collections/monthly/previews/month-08.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-08-macbook-3840x2400.jpg",
+          "bytes": 2848158,
+          "sha256": "b83106b871b5e769c23194707b8fd0a2b85ee6b7315cf69adb8e0859337aca61",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-08-display-3840x2160.jpg",
+          "bytes": 2544131,
+          "sha256": "8762c4c08325fdccc9c0940a76578c97a296dafbf9ebf03a0dd8c9e1070e8d4a",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-08-phone-1440x3120.jpg",
+          "bytes": 2240479,
+          "sha256": "fa41c28942e7e4622717b2a15cdd40a37ee214c97b98c851e6eea40b03bd445c",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 8,
+      "local_id": "month-08",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-09",
+      "kind": "month",
+      "title": "Москва. Башни у реки",
+      "title_en": "Moscow. Towers by the river",
+      "label": "Сентябрь",
+      "theme_id": "tetris",
+      "theme_title": "Москва · Тетрис",
+      "motif": "modern skyline",
+      "preview": "collections/monthly/previews/month-09.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-09-macbook-3840x2400.jpg",
+          "bytes": 3269628,
+          "sha256": "3c5d3cdb73602a7f0a04a5de9ef74130ac7d58ee50f3b6478adcb7a2c9e928cb",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-09-display-3840x2160.jpg",
+          "bytes": 2951378,
+          "sha256": "0f14f5e41c8902ae445fe96a0c0ce2a22e3f9453dea7fdc3fa417f0cecd838dd",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-09-phone-1440x3120.jpg",
+          "bytes": 2756570,
+          "sha256": "b6fd45b7e46d3aa63a5d2f46314f31d2fabc8109806651a8ea557413d58c5af0",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 9,
+      "local_id": "month-09",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-10",
+      "kind": "month",
+      "title": "Лесная речка",
+      "title_en": "Forest stream",
+      "label": "Октябрь",
+      "theme_id": "mega-drive",
+      "theme_title": "Mega Drive",
+      "motif": "autumn forest",
+      "preview": "collections/monthly/previews/month-10.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-10-macbook-3840x2400.jpg",
+          "bytes": 4035497,
+          "sha256": "ac337f4ca649910c9f3c42830bc16802e69a2f649e730e7e1308f017e48c2fd9",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-10-display-3840x2160.jpg",
+          "bytes": 3651954,
+          "sha256": "be9560ace35f322bb4f7ea8d1a143d7eedfc1e997220464efcdd5e1e3e251194",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-10-phone-1440x3120.jpg",
+          "bytes": 3014671,
+          "sha256": "428f6cf81049847ef6edcd60ab8efd9a932ee1bc62a6147022950e2603c6f6b6",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 10,
+      "local_id": "month-10",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-11",
+      "kind": "month",
+      "title": "Связь установлена",
+      "title_en": "Connection established",
+      "label": "Ноябрь",
+      "theme_id": "access-granted",
+      "theme_title": "Доступ разрешён",
+      "motif": "rooftop city",
+      "preview": "collections/monthly/previews/month-11.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-11-macbook-3840x2400.jpg",
+          "bytes": 2817431,
+          "sha256": "ac325886379a27f57130d78106fc16c52b978bf31f5ed4658ce5880303992b1f",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-11-display-3840x2160.jpg",
+          "bytes": 2515042,
+          "sha256": "0acbd04409daa9fc2732e5b3161115b57db0f89779b1f42e5068f4b3a4fd18da",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-11-phone-1440x3120.jpg",
+          "bytes": 2246900,
+          "sha256": "fc81c33557c618c6016dc7cf19ab831210407ff476cb9419f9fec855698f0b1a",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 11,
+      "local_id": "month-11",
+      "collection": "monthly"
+    },
+    {
+      "id": "monthly--month-12",
+      "kind": "month",
+      "title": "Свет в мастерской",
+      "title_en": "Light in the workshop",
+      "label": "Декабрь",
+      "theme_id": "new-year",
+      "theme_title": "Новогодние праздники",
+      "motif": "winter workshop",
+      "preview": "collections/monthly/previews/month-12.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/monthly/files/month-12-macbook-3840x2400.jpg",
+          "bytes": 3477328,
+          "sha256": "dd2f1c44b407b97fa57346cd8c4eb0c3539b713208803a31d2f6bf32c2392990",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/monthly/files/month-12-display-3840x2160.jpg",
+          "bytes": 3172824,
+          "sha256": "68947a624d9f286ba8f553e27b0e5c814ff29be31833d88cd24aee3afe2c8d18",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/monthly/files/month-12-phone-1440x3120.jpg",
+          "bytes": 2693520,
+          "sha256": "8515bed337c92ebf54da259367859d67f702ab8e93956fd83dc1fcc12d127ce5",
+          "format": "jpeg",
+          "native_render": {
+            "width": 852,
+            "height": 1846
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "month": 12,
+      "local_id": "month-12",
+      "collection": "monthly"
+    },
+    {
+      "id": "seasonal--season-01",
+      "kind": "season",
+      "title": "Река среди елей",
+      "title_en": "River among the firs",
+      "label": "Зима",
+      "theme_id": "winter",
+      "theme_title": "Зима",
+      "motif": "winter wilderness",
+      "preview": "collections/seasonal/previews/season-01.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/seasonal/files/season-01-macbook-3840x2400.jpg",
+          "bytes": 3204384,
+          "sha256": "5a77da7d29d88b92e568260e5f1a46b575bd9dc600f32244968d6e2a8509e71d",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/seasonal/files/season-01-display-3840x2160.jpg",
+          "bytes": 2910524,
+          "sha256": "0383f6bbf174991581ea6a7eb90b4cd237c03057ee1d169183f131c8185e610b",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/seasonal/files/season-01-phone-1440x3120.jpg",
+          "bytes": 2495774,
+          "sha256": "734fa51de944adafab0c3e80b1755f9495a321e95f6d307a1a7bc620ff56decd",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "winter",
+      "local_id": "season-01",
+      "collection": "seasonal"
+    },
+    {
+      "id": "seasonal--season-02",
+      "kind": "season",
+      "title": "Сад Аптекаря",
+      "title_en": "The Apothecary's garden",
+      "label": "Весна",
+      "theme_id": "apothecary",
+      "theme_title": "Мао Мао · Аптекарь",
+      "motif": "imperial garden",
+      "preview": "collections/seasonal/previews/season-02.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/seasonal/files/season-02-macbook-3840x2400.jpg",
+          "bytes": 3670058,
+          "sha256": "62ff231cb87a0120dd2a37670c5381d05672b280df33a5f61c2ef20e287f256f",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/seasonal/files/season-02-display-3840x2160.jpg",
+          "bytes": 3333245,
+          "sha256": "19d62b18afb41b44ddb8a144aadfeaf35fd723d2b3e3fccb02992fd976890ae2",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/seasonal/files/season-02-phone-1440x3120.jpg",
+          "bytes": 2703003,
+          "sha256": "f7ac5073ee91fea522e6ac1c4a111c0229425bfbd3736487c12717c759790644",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "spring",
+      "local_id": "season-02",
+      "collection": "seasonal"
+    },
+    {
+      "id": "seasonal--season-03",
+      "kind": "season",
+      "title": "Казань. Вид на Кремль",
+      "title_en": "Kazan. View of the Kremlin",
+      "label": "Лето",
+      "theme_id": "kazan",
+      "theme_title": "Казан в Казани",
+      "motif": "river panorama",
+      "preview": "collections/seasonal/previews/season-03.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/seasonal/files/season-03-macbook-3840x2400.jpg",
+          "bytes": 3479005,
+          "sha256": "05b2ad0deb770ebb9bf9a5718544b5c71e7535ea9428fc87fe0d2972f69fc545",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/seasonal/files/season-03-display-3840x2160.jpg",
+          "bytes": 3099722,
+          "sha256": "60c98cf5f607d7fd50a837d855ac2c4936d18095dbb119157526ea2af56747a0",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/seasonal/files/season-03-phone-1440x3120.jpg",
+          "bytes": 2896394,
+          "sha256": "a250cd70df74edc333321b2589e6e2736cd446b7e91a9da1740d90218e3971f7",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "summer",
+      "local_id": "season-03",
+      "collection": "seasonal"
+    },
+    {
+      "id": "seasonal--season-04",
+      "kind": "season",
+      "title": "Крепость Mortal Kombat",
+      "title_en": "Mortal Kombat fortress",
+      "label": "Осень",
+      "theme_id": "mortal-kombat",
+      "theme_title": "Mortal Kombat",
+      "motif": "mountain citadel",
+      "preview": "collections/seasonal/previews/season-04.jpg",
+      "files": [
+        {
+          "aspect": "16:10",
+          "width": 3840,
+          "height": 2400,
+          "url": "collections/seasonal/files/season-04-macbook-3840x2400.jpg",
+          "bytes": 2969868,
+          "sha256": "a9eb7750890301052dfb9f669c8660b690b54dbe101ee4b0ce582983c319f7c7",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "16:9",
+          "width": 3840,
+          "height": 2160,
+          "url": "collections/seasonal/files/season-04-display-3840x2160.jpg",
+          "bytes": 2689908,
+          "sha256": "95b8f8ea42741838fa89fbbee8891d07852abfc290edbcd33fccb8f147d5b182",
+          "format": "jpeg"
+        },
+        {
+          "aspect": "9:19.5",
+          "width": 1440,
+          "height": 3120,
+          "url": "collections/seasonal/files/season-04-phone-1440x3120.jpg",
+          "bytes": 2441139,
+          "sha256": "13724e45cefd19814dedc5cb46f7b564947ca11cb2bccd63877cf8f1a4be5446",
+          "format": "jpeg",
+          "native_render": {
+            "width": 853,
+            "height": 1844
+          },
+          "export_method": "Independent portrait repaint from the desktop scene; Lanczos enlargement with a sub-pixel aspect-ratio adjustment"
+        }
+      ],
+      "ai_disclosure": "ai-assisted",
+      "native_render": {
+        "width": 1586,
+        "height": 992
+      },
+      "export_method": "Lanczos resize; widescreen crop from the top with re-typeset bilingual signature",
+      "season": "autumn",
+      "local_id": "season-04",
+      "collection": "seasonal"
+    }
+  ],
+  "downloads": [
+    {
+      "id": "collection-194x-under-the-wing",
+      "title": "Под крылом — целый мир · 194x / 19XX",
+      "url": "downloads/imperial-school-194x-under-the-wing.zip",
+      "bytes": 49550370,
+      "sha256": "fea3842531de923999b14047257db11e773f11fb93fe118bf3265672365b9d99"
+    },
+    {
+      "id": "collection-194x-world-with-depth",
+      "title": "Мир с глубиной · 194x / 19XX",
+      "url": "downloads/imperial-school-194x-world-with-depth.zip",
+      "bytes": 43688276,
+      "sha256": "4a5056e807d513525568c641ab912f9bfa5ea3abdb5a8578584a66ba55cdd868"
+    },
+    {
+      "id": "collection-monthly",
+      "title": "Двенадцать месяцев",
+      "url": "downloads/imperial-school-monthly.zip",
+      "bytes": 113902178,
+      "sha256": "b535ed1b9f8a14d968756d4e50d4143a57f800aac181479291e07c446425148e"
+    },
+    {
+      "id": "collection-seasonal",
+      "title": "Четыре сезона",
+      "url": "downloads/imperial-school-seasonal.zip",
+      "bytes": 37518248,
+      "sha256": "1c63f8bbb1b41f5197080c6440f4d35ba76acaf51201bd2d4ac399113af2ba3c"
+    },
+    {
+      "id": "app-b7f66f145856ddd1",
+      "title": "Для Mac",
+      "description": "Приложение получает обои с сайта или из ZIP выбранной коллекции.",
+      "url": "downloads/imperial-school-views-macos-1.4.8.dmg",
+      "bytes": 2442250,
+      "sha256": "be2242bc5ba92a2d5a5aa5f1d51e886e0cbbb63e182f42efd38683f9c6ce84e5",
+      "format": "dmg"
+    }
+  ],
+  "wallpaper_of_day": {
+    "schema": 1,
+    "item_id": "seasonal--season-02",
+    "collection": "seasonal",
+    "title": "Сад Аптекаря",
+    "preview": "collections/seasonal/previews/season-02.jpg",
+    "updated_at": "2026-10-27T09:24:50.951983+00:00",
+    "files": [
+      {
+        "aspect": "16:10",
+        "width": 3840,
+        "height": 2400,
+        "bytes": 3670058,
+        "sha256": "62ff231cb87a0120dd2a37670c5381d05672b280df33a5f61c2ef20e287f256f",
+        "url": "daily/macbook.jpg",
+        "source_url": "collections/seasonal/files/season-02-macbook-3840x2400.jpg"
+      },
+      {
+        "aspect": "16:9",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 3333245,
+        "sha256": "19d62b18afb41b44ddb8a144aadfeaf35fd723d2b3e3fccb02992fd976890ae2",
+        "url": "daily/monitor.jpg",
+        "source_url": "collections/seasonal/files/season-02-display-3840x2160.jpg"
+      }
+    ]
+  }
+}
