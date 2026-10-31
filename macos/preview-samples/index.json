@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "samples": [
+    {
+      "collection_id": "metal-slug-x-weather",
+      "season": "spring",
+      "state_id": "spring-day-clear",
+      "file": "spring.jpg",
+      "origin": {
+        "bytes": 100526,
+        "format": "jpeg",
+        "height": 400,
+        "sha256": "7da92b2cf3f023fe84e5357cd2795fcd313bfb8327658000882b7a191b5bd00f",
+        "url": "collections/metal-slug-x-weather/previews/474745f8a89e000704ea64718e26e51418df039409f2019fcf5d776706823407.jpg",
+        "width": 640
+      }
+    },
+    {
+      "collection_id": "metal-slug-x-weather",
+      "season": "autumn",
+      "state_id": "autumn-day-clear",
+      "file": "autumn.jpg",
+      "origin": {
+        "bytes": 96042,
+        "format": "jpeg",
+        "height": 400,
+        "sha256": "742e5360d6cf513ee0c9c111ec36ba5111b426853a89b05475321f8c5aa1c019",
+        "url": "collections/metal-slug-x-weather/previews/ec301c92ba696235a77bb1da70acaec8dc652f06079f945bf21de9fb12da22d4.jpg",
+        "width": 640
+      }
+    },
+    {
+      "collection_id": "metal-slug-x-weather",
+      "season": "winter",
+      "state_id": "winter-day-clear",
+      "file": "winter.jpg",
+      "origin": {
+        "bytes": 96625,
+        "format": "jpeg",
+        "height": 400,
+        "sha256": "688f278395002792ae357509ff1fa10b54ba1eeceeb752815b5079be0580d5cd",
+        "url": "collections/metal-slug-x-weather/previews/8670aace37c686e422ea53467a6e3b6c0139bf6418331ac4c8e2565f66f04ef8.jpg",
+        "width": 640
+      }
+    },
+    {
+      "collection_id": "metal-slug-x-weather",
+      "season": "summer",
+      "state_id": "summer-day-clear",
+      "file": "summer.png",
+      "origin": {
+        "format": "png",
+        "width": 1586,
+        "height": 992,
+        "bytes": 3132038,
+        "sha256": "96b9f47ba3286f3a79a887b2c2a8d52bf1bbd8ea85f9d44ab15d253a9deac1d4",
+        "source_file": "summer-mac/sources/summer-day-clear.png",
+        "source_archive": "MetalSlug_Summer_Mac_Production.zip",
+        "source_library_id": "libfile_9ce7df55c8f08191a719e8d59737eb4f"
+      }
+    }
+  ],
+  "no_data": {
+    "file": "no-data.png",
+    "origin": {
+      "bytes": 4071949,
+      "sha256": "118111b27855a60d39611410030a884c59bf6485be9cd107ba7b1e6d61c69743",
+      "format": "png",
+      "width": 1586,
+      "height": 992,
+      "source_library_id": "libfile_6f229f4dcf688191a93468332752def2",
+      "source_name": "Пылающая гавань под извержением.png"
+    }
+  }
+}

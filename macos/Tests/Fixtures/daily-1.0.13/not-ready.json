@@ -1,0 +1,17 @@
+{
+  "collection_id": null,
+  "delivery": {
+    "direct_image": {
+      "enabled": true
+    }
+  },
+  "document_type": "weather-of-day",
+  "files": {},
+  "preferred_format": null,
+  "reason": "no_ready_collection",
+  "schema": 1,
+  "selection_date": "2026-10-30",
+  "source_id": "real",
+  "status": "not_ready",
+  "type": "weather"
+}

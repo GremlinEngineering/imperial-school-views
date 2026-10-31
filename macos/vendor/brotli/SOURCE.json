@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/google/brotli",
+  "tag": "v1.2.1",
+  "tarball_sha256": "98d35d11a78dc453aebb7d10c3748f3f73ff78c8267c0dc697b8631f67bf7e8f",
+  "parts": [
+    "c/common",
+    "c/dec",
+    "c/include",
+    "LICENSE"
+  ],
+  "use": "decoder only"
+}

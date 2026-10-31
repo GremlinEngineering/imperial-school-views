@@ -1,0 +1,50 @@
+{
+  "schema": 3,
+  "collections": [
+    {
+      "id": "test-theme",
+      "type": "dynamic",
+      "title": "Test",
+      "formats": {
+        "landscape": {
+          "height": 6,
+          "title": "landscape",
+          "width": 8
+        },
+        "portrait": {
+          "height": 9,
+          "title": "portrait",
+          "width": 5
+        }
+      },
+      "current_url": "dynamic/test-theme/current.json",
+      "sources": [
+        {
+          "current_url": "dynamic/test-theme/current.json",
+          "id": "real",
+          "title": "Погода Столицы Империи"
+        }
+      ],
+      "downloads": [
+        {
+          "bytes": 1076,
+          "device": "landscape",
+          "sha256": "5c5fee1ccfa49dfde8503e4fa369bf6f914d4a522af53b0428ce7a6e0e327430",
+          "title": "Test · landscape",
+          "type": "dynamic-theme",
+          "url": "downloads/theme-test-theme-landscape.zip"
+        },
+        {
+          "bytes": 1068,
+          "device": "portrait",
+          "sha256": "0f25fc1eb4d9f21f55d8ee2cbbdf44f6b87f548f59ef3cdab03c16802b6775a4",
+          "title": "Test · portrait",
+          "type": "dynamic-theme",
+          "url": "downloads/theme-test-theme-portrait.zip"
+        }
+      ]
+    }
+  ],
+  "items": [],
+  "downloads": []
+}

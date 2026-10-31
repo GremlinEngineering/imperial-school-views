@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>ru.oopssre.imperial-school.views.saver</string>
+	<key>CFBundleName</key>
+	<string>Imperial School Views</string>
+	<key>CFBundleDisplayName</key>
+	<string>Виды и обои · Школа Империи</string>
+	<key>CFBundleExecutable</key>
+	<string>ImperialSchoolSaver</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleVersion</key>
+	<string>207</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0.7</string>
+	<key>CFBundleIconFile</key>
+	<string>Views.icns</string>
+	<key>NSPrincipalClass</key>
+	<string>ImperialSchoolSaverView</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>12.0</string>
+</dict>
+</plist>

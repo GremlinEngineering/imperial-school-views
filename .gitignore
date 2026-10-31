@@ -29,3 +29,8 @@
 # Kotlin compiler session state
 **/.kotlin/
 
+# Swift and Xcode local build state
+**/.build/
+**/.swiftpm/
+**/xcuserdata/
+**/DerivedData/

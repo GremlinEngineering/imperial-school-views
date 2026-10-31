@@ -1,0 +1,9 @@
+Astral 3.2 — Copyright 2009–2021 Simon Kennedy.
+Apache License 2.0. Selected solar, Julian-date and lunar-phase equations were ported to Swift for Imperial School Views in 2026, preserving the preceding client implementation.
+Original project: https://github.com/sffjunkie/astral/tree/3.2
+Modified file: Sources/Core/Astronomy.swift.
+Open-Meteo weather data and GeoNames location data: CC BY 4.0. Attribution is displayed in the weather UI.
+
+Google Brotli v1.2.1 decoder: Copyright 2009 Google Inc., MIT license. See brotli-LICENSE.txt.
+
+ZIPFoundation 0.9.20: Copyright Thomas Zoechling, MIT license. See ZIPFoundation-LICENSE.txt.

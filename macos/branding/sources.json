@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "source_page": "https://games.oopssre.ru/gremlin.html#persona",
+  "checked": "2026-10-27",
+  "assets": [
+    {
+      "file": "branding/gamepad-light.png",
+      "source": "https://games.oopssre.ru/assets/arcade/gamepad-light.webp",
+      "source_sha256": "f6edc46d481b937a1a7130b0538491451c9a012816e07dddbcec055c22899b5a",
+      "sha256": "0d6f35afe9bc857736a6bf3eaea754c95713a23e52e0b0be0105daeabe6d90b7",
+      "conversion": "WebP → PNG, RGBA pixels unchanged"
+    },
+    {
+      "file": "branding/gamepad-dark.png",
+      "source": "https://games.oopssre.ru/assets/arcade/gamepad-dark.webp",
+      "source_sha256": "661cce70aff4e3749c4540eaea8b02416176bf7f1797bdd863b0c388c94d035e",
+      "sha256": "73b39888caa5343a179c89e7abdef44339feed3fc5c47428a02f6316adeca3f6",
+      "conversion": "WebP → PNG, RGBA pixels unchanged"
+    },
+    {
+      "file": "branding/app-icon.png",
+      "source": "https://games.oopssre.ru/assets/arcade/icons/apple-touch-icon.png",
+      "sha256": "4a9092baee9418b2a87989a554aab339ad5cbb357efe7c7ee4c1d3e5b16c98a5",
+      "conversion": "none"
+    }
+  ]
+}
