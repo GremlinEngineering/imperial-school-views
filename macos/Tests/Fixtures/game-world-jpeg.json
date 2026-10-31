@@ -1,0 +1,16 @@
+{
+  "source": "live API 1.7, game-world, macbook",
+  "file": {
+    "aspect": "16:10",
+    "bytes": 4378008,
+    "cache_key": "9ad31662be5a890fc2150a85b58289777166355f7db4f8978c3df9d802a31550",
+    "format": "jpeg",
+    "height": 2400,
+    "rendition": "macbook",
+    "sha256": "4409026928c72c4af5442994975aa06bf92401d2c22f33ff255968a6956d192a",
+    "url": "collections/metal-slug-x-weather/files/summer-night-overcast-macbook.jpg",
+    "width": 3840
+  },
+  "state_id": "summer-night-overcast",
+  "moon_phase": "none"
+}

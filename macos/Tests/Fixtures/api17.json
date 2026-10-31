@@ -1,0 +1,211 @@
+{
+  "provenance": "Synthetic fixture from supplied CLIENT_API_1.7.0.md; not a live server snapshot",
+  "catalog": {
+    "schema": 3,
+    "collections": [
+      {
+        "id": "metal-slug-x-weather",
+        "title": "Metal Slug X · Погода",
+        "type": "weather",
+        "version": "collection-global-v7",
+        "formats": {
+          "macbook": {
+            "width": 3840,
+            "height": 2400
+          },
+          "phone": {
+            "width": 1440,
+            "height": 3120
+          }
+        },
+        "package_versions": {
+          "macbook": "device-mac-v2",
+          "phone": "device-phone-v3"
+        },
+        "sources": [
+          {
+            "id": "real",
+            "title": "real",
+            "current_url": "weather/metal-slug-x-weather/current.json",
+            "forecasts": {
+              "macbook": "weather/metal-slug-x-weather/forecast-macbook.json",
+              "phone": "weather/metal-slug-x-weather/forecast-phone.json"
+            }
+          },
+          {
+            "id": "game-world",
+            "title": "game-world",
+            "current_url": "weather/metal-slug-x-weather/sources/game-world/current.json",
+            "forecasts": {
+              "macbook": "weather/metal-slug-x-weather/sources/game-world/forecast-macbook.json",
+              "phone": "weather/metal-slug-x-weather/sources/game-world/forecast-phone.json"
+            }
+          }
+        ]
+      }
+    ],
+    "items": [],
+    "downloads": [
+      {
+        "collection": "metal-slug-x-weather",
+        "format": "zip",
+        "rendition": "macbook",
+        "url": "downloads/weather-metal-slug-x-weather-macbook.zip",
+        "version": "device-mac-v2",
+        "bytes": 1000,
+        "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      {
+        "collection": "metal-slug-x-weather",
+        "format": "zip",
+        "rendition": "phone",
+        "url": "downloads/weather-metal-slug-x-weather-phone.zip",
+        "version": "device-phone-v3",
+        "bytes": 1000,
+        "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      }
+    ]
+  },
+  "current": {
+    "schema": 1,
+    "type": "weather",
+    "collection_id": "metal-slug-x-weather",
+    "source_id": "real",
+    "world_id": null,
+    "location_revision": "r1",
+    "timezone": "Europe/Moscow",
+    "status": "ready",
+    "formats": {
+      "macbook": {
+        "width": 3840,
+        "height": 2400
+      },
+      "phone": {
+        "width": 1440,
+        "height": 3120
+      }
+    },
+    "package_versions": {
+      "macbook": "device-mac-v2",
+      "phone": "device-phone-v3"
+    },
+    "refresh_after": "2026-10-24T13:00:00Z",
+    "source": {
+      "setting": "Гавань",
+      "name": "Мир игры"
+    }
+  },
+  "forecast": {
+    "schema": 1,
+    "type": "weather",
+    "collection_id": "metal-slug-x-weather",
+    "source_id": "real",
+    "world_id": null,
+    "location_revision": "r1",
+    "timezone": "Europe/Moscow",
+    "status": "ready",
+    "formats": {
+      "macbook": {
+        "width": 3840,
+        "height": 2400
+      },
+      "phone": {
+        "width": 1440,
+        "height": 3120
+      }
+    },
+    "package_versions": {
+      "macbook": "device-mac-v2",
+      "phone": "device-phone-v3"
+    },
+    "refresh_after": "2026-10-24T13:00:00Z",
+    "source": {
+      "setting": "Гавань",
+      "name": "Мир игры"
+    },
+    "document_type": "weather-forecast",
+    "contract_version": "collection-global-v7",
+    "package_version": "device-mac-v2",
+    "format": "macbook",
+    "generated_at": "2026-10-24T11:59:00Z",
+    "valid_until": "2026-10-25T12:00:00Z",
+    "intervals": [
+      {
+        "valid_from": "2026-10-24T11:59:00Z",
+        "valid_until": "2026-10-24T12:00:01Z",
+        "status": "ready",
+        "state_id": "summer-day-clear",
+        "moon_phase": "none",
+        "world_date": "2031-06-01",
+        "season": "summer",
+        "time_of_day": "day",
+        "weather": "clear",
+        "file": {
+          "url": "collections/metal-slug-x-weather/files/summer-day-clear-macbook.jpg",
+          "format": "jpeg",
+          "rendition": "macbook",
+          "width": 3840,
+          "height": 2400,
+          "bytes": 100,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "valid_from": "2026-10-24T12:00:01Z",
+        "valid_until": "2026-10-25T12:00:00Z",
+        "status": "ready",
+        "state_id": "summer-night-clear",
+        "moon_phase": "full_moon",
+        "world_date": "2031-06-01",
+        "season": "summer",
+        "time_of_day": "night",
+        "weather": "clear",
+        "file": {
+          "url": "collections/metal-slug-x-weather/files/summer-night-clear-full-moon-macbook.jpg",
+          "format": "jpeg",
+          "rendition": "macbook",
+          "width": 3840,
+          "height": 2400,
+          "bytes": 100,
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      }
+    ]
+  },
+  "packages": [
+    {
+      "schema": 3,
+      "document_type": "weather-wallpaper-package",
+      "type": "weather",
+      "id": "metal-slug-x-weather",
+      "title": "Metal Slug X · Погода",
+      "format": "macbook",
+      "version": "device-mac-v2",
+      "variants": [
+        {
+          "url": "files/summer-day-clear-macbook.jpg",
+          "format": "jpeg",
+          "rendition": "macbook",
+          "width": 3840,
+          "height": 2400,
+          "bytes": 100,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "state_id": "summer-day-clear",
+          "moon_phase": "none"
+        },
+        {
+          "url": "files/summer-night-clear-full-moon-macbook.jpg",
+          "format": "jpeg",
+          "rendition": "macbook",
+          "width": 3840,
+          "height": 2400,
+          "bytes": 100,
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "state_id": "summer-night-clear",
+          "moon_phase": "full_moon"
+        }
+      ]
+    }
+  ],
+  "now": 1792843200000
+}

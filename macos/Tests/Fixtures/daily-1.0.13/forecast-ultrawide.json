@@ -1,0 +1,194 @@
+{
+  "astronomy": {
+    "days": {
+      "2026-10-30": {
+        "dawn": "2026-10-30T05:00:00+03:00",
+        "dusk": "2026-10-30T19:00:00+03:00",
+        "moon_phase": "new_moon",
+        "sunrise": "2026-10-30T06:00:00+03:00",
+        "sunset": "2026-10-30T18:00:00+03:00"
+      },
+      "2026-10-31": {
+        "dawn": "2026-10-31T05:00:00+03:00",
+        "dusk": "2026-10-31T19:00:00+03:00",
+        "moon_phase": "new_moon",
+        "sunrise": "2026-10-31T06:00:00+03:00",
+        "sunset": "2026-10-31T18:00:00+03:00"
+      }
+    },
+    "engine": "astral/3.2",
+    "moon_policy": "eight-centred-sectors-local-date/1",
+    "solar_depression": 6.0
+  },
+  "collection_id": "sample-weather",
+  "contract_version": "discovery-04dca66e666c3838",
+  "document_type": "weather-forecast",
+  "format": "ultrawide",
+  "generated_at": "2026-10-30T11:00:00+03:00",
+  "intervals": [
+    {
+      "file": {
+        "aspect": "43:18",
+        "bytes": 136080,
+        "cache_key": "7ed51421555fc7c706792936e427aa8dc7d04a7e010c11e9b0ce27d7e22baf8f",
+        "format": "jpeg",
+        "height": 1440,
+        "rendition": "ultrawide",
+        "sha256": "8e5cb71570e92ddbfae66e552fd9c64ee2c9a7ba918333742ddab6f8c13ef7f5",
+        "url": "collections/sample-weather/files/autumn-day-clear-ultrawide.jpg",
+        "width": 3440
+      },
+      "image_url": "collections/sample-weather/files/autumn-day-clear-ultrawide.jpg",
+      "moon_phase": "none",
+      "player_preview": {
+        "bytes": 9708,
+        "cache_key": "7140b3e0baec1f0f948486328206050756a194b09bf2a7d6f162fcc4a4e80ca1",
+        "format": "jpeg",
+        "height": 804,
+        "sha256": "c6a4a9749234bc5113fb679a451ea1656384f63523cf4d01726f7748b88a4f0b",
+        "url": "collections/sample-weather/previews/autumn-day-clear-ultrawide-player.jpg",
+        "width": 1920
+      },
+      "preview": {
+        "bytes": 1548,
+        "cache_key": "da5295b50a64789661a1de0d8274178afabc39db9a01039d12093f425a3672c7",
+        "format": "jpeg",
+        "height": 268,
+        "sha256": "a5d004c01772ea6336ae498bfe916593157e8843270e845732ad42523465ae84",
+        "url": "collections/sample-weather/previews/autumn-day-clear-ultrawide-thumbnail.jpg",
+        "width": 640
+      },
+      "season": "autumn",
+      "state_id": "autumn-day-clear",
+      "status": "ready",
+      "time_of_day": "day",
+      "valid_from": "2026-10-30T11:00:00+03:00",
+      "valid_until": "2026-10-30T18:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "image_url": null,
+      "moon_phase": "none",
+      "reason": "artwork_planned",
+      "season": "autumn",
+      "state_id": "autumn-dusk-clear",
+      "status": "not_ready",
+      "time_of_day": "dusk",
+      "valid_from": "2026-10-30T18:00:00+03:00",
+      "valid_until": "2026-10-30T19:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "image_url": null,
+      "moon_phase": "new_moon",
+      "reason": "artwork_planned",
+      "season": "autumn",
+      "state_id": "autumn-night-clear",
+      "status": "not_ready",
+      "time_of_day": "night",
+      "valid_from": "2026-10-30T19:00:00+03:00",
+      "valid_until": "2026-10-31T05:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "image_url": null,
+      "moon_phase": "none",
+      "reason": "artwork_planned",
+      "season": "autumn",
+      "state_id": "autumn-dawn-clear",
+      "status": "not_ready",
+      "time_of_day": "dawn",
+      "valid_from": "2026-10-31T05:00:00+03:00",
+      "valid_until": "2026-10-31T06:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "file": {
+        "aspect": "43:18",
+        "bytes": 136080,
+        "cache_key": "7ed51421555fc7c706792936e427aa8dc7d04a7e010c11e9b0ce27d7e22baf8f",
+        "format": "jpeg",
+        "height": 1440,
+        "rendition": "ultrawide",
+        "sha256": "8e5cb71570e92ddbfae66e552fd9c64ee2c9a7ba918333742ddab6f8c13ef7f5",
+        "url": "collections/sample-weather/files/autumn-day-clear-ultrawide.jpg",
+        "width": 3440
+      },
+      "image_url": "collections/sample-weather/files/autumn-day-clear-ultrawide.jpg",
+      "moon_phase": "none",
+      "player_preview": {
+        "bytes": 9708,
+        "cache_key": "7140b3e0baec1f0f948486328206050756a194b09bf2a7d6f162fcc4a4e80ca1",
+        "format": "jpeg",
+        "height": 804,
+        "sha256": "c6a4a9749234bc5113fb679a451ea1656384f63523cf4d01726f7748b88a4f0b",
+        "url": "collections/sample-weather/previews/autumn-day-clear-ultrawide-player.jpg",
+        "width": 1920
+      },
+      "preview": {
+        "bytes": 1548,
+        "cache_key": "da5295b50a64789661a1de0d8274178afabc39db9a01039d12093f425a3672c7",
+        "format": "jpeg",
+        "height": 268,
+        "sha256": "a5d004c01772ea6336ae498bfe916593157e8843270e845732ad42523465ae84",
+        "url": "collections/sample-weather/previews/autumn-day-clear-ultrawide-thumbnail.jpg",
+        "width": 640
+      },
+      "season": "autumn",
+      "state_id": "autumn-day-clear",
+      "status": "ready",
+      "time_of_day": "day",
+      "valid_from": "2026-10-31T06:00:00+03:00",
+      "valid_until": "2026-10-31T11:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    }
+  ],
+  "location": {
+    "latitude": 55.7558,
+    "longitude": 37.6173,
+    "name": "Москва",
+    "timezone": "Europe/Moscow"
+  },
+  "location_revision": "b243841ff97d424de131be7ebae6107df22384656e78e4682daa1336eda73f89",
+  "package_version": "package-549cb87b04422be9",
+  "refresh_after": "2026-10-30T09:00:00+00:00",
+  "schema": 1,
+  "season_months": {
+    "autumn": [
+      9,
+      10,
+      11
+    ],
+    "spring": [
+      3,
+      4,
+      5
+    ],
+    "summer": [
+      6,
+      7,
+      8
+    ],
+    "winter": [
+      12,
+      1,
+      2
+    ]
+  },
+  "source": {
+    "id": "real",
+    "model_data": true,
+    "name": "Open-Meteo",
+    "url": "https://open-meteo.com/"
+  },
+  "source_id": "real",
+  "timezone": "Europe/Moscow",
+  "valid_until": "2026-10-31T11:00:00+03:00",
+  "weather_fetched_at": "2026-10-30T08:00:00+00:00",
+  "world_id": null
+}
