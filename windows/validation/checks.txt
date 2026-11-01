@@ -1,0 +1,60 @@
+OK DISPLAY_DEVICEW layout matches the Windows SDK Unicode ABI
+OK Native failures preserve operation and HRESULT without inventing a denial
+OK Actual website catalogue: every scene has both desktop formats
+OK All months and seasonal boundaries stay in the selected collection
+OK Wide screens and explicit formats
+OK Twenty independent packages discover without a registry
+OK Invalid paths and cross-collection schedules are rejected
+OK Update identity, numeric versions and renamed setup
+OK ZIP imports retain desktop files and keep other packages
+OK Corrupt ZIP and path traversal leave the installed collection intact
+OK Existing Windows settings and monitor selection survive the new weather defaults
+OK Server can replace the wallpaper of the day without a date change
+OK Published API 1.7 desktop forecasts, sources and interval boundaries
+OK Desktop-only selection rejects phone and tolerates removed format
+OK API 1.7 refuses old catalogue schemas
+OK Published ZIP manifest matches all ready forecasts and phases
+OK Same world with another location revision refuses old forecast
+OK Another world refuses old forecast
+OK Season and complete world year come from server interval
+OK Expired refresh time does not expire a compatible forecast
+OK Forecast end is exclusive and cannot be extended offline
+OK Overlapping intervals refuse arbitrary frame selection
+OK Unknown status preserves the previous wallpaper
+OK Per-device package version is independent from contract version
+OK Old hashed JPEG and wrong device dimensions are refused
+OK ZIP revision and format cannot be substituted
+OK Short unavailable forecast needs no normal interval fields
+OK JSON refresh retry waits a minute while cached intervals remain usable
+OK Network loss keeps verified forecast until its original expiry
+OK New current revision invalidates old forecast even when next request fails
+OK An older cache file cannot revive an already observed world revision
+OK Malformed cached forecast is replaced rather than retried forever
+OK Cancelled JSON response cannot overwrite saved selection data
+OK JPEG transfer checks hash before decoder and reuses verified cache
+OK Damaged cached JPEG is downloaded again
+OK Wrong downloaded JPEG never replaces verified cached bytes
+OK Weather ZIP installs only fully verified files and commits receipt last
+OK ZIP path traversal, unknown files and Windows case duplicates are rejected
+OK Wrong ZIP version leaves previous installed receipt intact
+OK Damaged ZIP frame does not commit a package receipt
+OK Cache cleanup protects package files and separately pinned forecast JPEG
+OK Invalid ZIP metadata fails before any archive HTTP request
+OK Failed ZIP is not downloaded repeatedly; explicit retry can complete it
+OK Cancelled ZIP does not commit a receipt or block future attempts
+OK App and screensaver share one weather ZIP transfer
+OK Ordinary archive cannot install another collection
+OK Astronomy matches Mac and server golden data across timezones and polar days
+OK Sunrise and sunset are exact half-open time transitions
+OK New screens stay unmanaged; switching profiles preserves other displays and stable identities
+OK Legacy monitor-only setup does not take over other monitors
+OK City round-trip keeps coordinates and timezone without serializing runtime timezone data
+OK Open-Meteo uses exact state and moon, rejects unknown codes and expired weather
+OK Server weather keeps the Imperial caption instead of exposing source city
+OK Daily weather validates expiry, identity and desktop format
+OK Dynamic manifest and state validate identity, hash, device, expiry and ready status
+OK Brotli sidecar JSON decodes with a decompressed limit
+OK Brotli expansion cannot exceed configured JSON limit
+OK City forecast reuses hourly cache
+OK Changing location invalidates city forecast cache
+59 contract checks passed. Native Windows UI, COM and installer execution are separate checks.

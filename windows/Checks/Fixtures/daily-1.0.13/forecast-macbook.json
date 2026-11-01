@@ -1,0 +1,194 @@
+{
+  "astronomy": {
+    "days": {
+      "2026-10-30": {
+        "dawn": "2026-10-30T05:00:00+03:00",
+        "dusk": "2026-10-30T19:00:00+03:00",
+        "moon_phase": "new_moon",
+        "sunrise": "2026-10-30T06:00:00+03:00",
+        "sunset": "2026-10-30T18:00:00+03:00"
+      },
+      "2026-10-31": {
+        "dawn": "2026-10-31T05:00:00+03:00",
+        "dusk": "2026-10-31T19:00:00+03:00",
+        "moon_phase": "new_moon",
+        "sunrise": "2026-10-31T06:00:00+03:00",
+        "sunset": "2026-10-31T18:00:00+03:00"
+      }
+    },
+    "engine": "astral/3.2",
+    "moon_policy": "eight-centred-sectors-local-date/1",
+    "solar_depression": 6.0
+  },
+  "collection_id": "sample-weather",
+  "contract_version": "discovery-04dca66e666c3838",
+  "document_type": "weather-forecast",
+  "format": "macbook",
+  "generated_at": "2026-10-30T11:00:00+03:00",
+  "intervals": [
+    {
+      "file": {
+        "aspect": "8:5",
+        "bytes": 752,
+        "cache_key": "acd63d9bd73f9c2cbac304d29e2997ce8e60534d7d120ea929dca0115b2ea77a",
+        "format": "jpeg",
+        "height": 50,
+        "rendition": "macbook",
+        "sha256": "38277550c3cb42c1f62aa49f81eb9aa9bcd29838a992da935b7f154bacc51e2d",
+        "url": "collections/sample-weather/files/autumn-day-clear-macbook.jpg",
+        "width": 80
+      },
+      "image_url": "collections/sample-weather/files/autumn-day-clear-macbook.jpg",
+      "moon_phase": "none",
+      "player_preview": {
+        "bytes": 550,
+        "cache_key": "96b3ecf287ce316ae8237027e8b0a5c10da8faf72311659da491f209395cb11d",
+        "format": "jpeg",
+        "height": 50,
+        "sha256": "2b93c207536251c1f7254c676d6335153b9c078e8b25264484aca30de532647f",
+        "url": "collections/sample-weather/previews/autumn-day-clear-macbook-player.jpg",
+        "width": 80
+      },
+      "preview": {
+        "bytes": 550,
+        "cache_key": "96b3ecf287ce316ae8237027e8b0a5c10da8faf72311659da491f209395cb11d",
+        "format": "jpeg",
+        "height": 50,
+        "sha256": "2b93c207536251c1f7254c676d6335153b9c078e8b25264484aca30de532647f",
+        "url": "collections/sample-weather/previews/autumn-day-clear-macbook-thumbnail.jpg",
+        "width": 80
+      },
+      "season": "autumn",
+      "state_id": "autumn-day-clear",
+      "status": "ready",
+      "time_of_day": "day",
+      "valid_from": "2026-10-30T11:00:00+03:00",
+      "valid_until": "2026-10-30T18:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "image_url": null,
+      "moon_phase": "none",
+      "reason": "artwork_planned",
+      "season": "autumn",
+      "state_id": "autumn-dusk-clear",
+      "status": "not_ready",
+      "time_of_day": "dusk",
+      "valid_from": "2026-10-30T18:00:00+03:00",
+      "valid_until": "2026-10-30T19:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "image_url": null,
+      "moon_phase": "new_moon",
+      "reason": "artwork_planned",
+      "season": "autumn",
+      "state_id": "autumn-night-clear",
+      "status": "not_ready",
+      "time_of_day": "night",
+      "valid_from": "2026-10-30T19:00:00+03:00",
+      "valid_until": "2026-10-31T05:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "image_url": null,
+      "moon_phase": "none",
+      "reason": "artwork_planned",
+      "season": "autumn",
+      "state_id": "autumn-dawn-clear",
+      "status": "not_ready",
+      "time_of_day": "dawn",
+      "valid_from": "2026-10-31T05:00:00+03:00",
+      "valid_until": "2026-10-31T06:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    },
+    {
+      "file": {
+        "aspect": "8:5",
+        "bytes": 752,
+        "cache_key": "acd63d9bd73f9c2cbac304d29e2997ce8e60534d7d120ea929dca0115b2ea77a",
+        "format": "jpeg",
+        "height": 50,
+        "rendition": "macbook",
+        "sha256": "38277550c3cb42c1f62aa49f81eb9aa9bcd29838a992da935b7f154bacc51e2d",
+        "url": "collections/sample-weather/files/autumn-day-clear-macbook.jpg",
+        "width": 80
+      },
+      "image_url": "collections/sample-weather/files/autumn-day-clear-macbook.jpg",
+      "moon_phase": "none",
+      "player_preview": {
+        "bytes": 550,
+        "cache_key": "96b3ecf287ce316ae8237027e8b0a5c10da8faf72311659da491f209395cb11d",
+        "format": "jpeg",
+        "height": 50,
+        "sha256": "2b93c207536251c1f7254c676d6335153b9c078e8b25264484aca30de532647f",
+        "url": "collections/sample-weather/previews/autumn-day-clear-macbook-player.jpg",
+        "width": 80
+      },
+      "preview": {
+        "bytes": 550,
+        "cache_key": "96b3ecf287ce316ae8237027e8b0a5c10da8faf72311659da491f209395cb11d",
+        "format": "jpeg",
+        "height": 50,
+        "sha256": "2b93c207536251c1f7254c676d6335153b9c078e8b25264484aca30de532647f",
+        "url": "collections/sample-weather/previews/autumn-day-clear-macbook-thumbnail.jpg",
+        "width": 80
+      },
+      "season": "autumn",
+      "state_id": "autumn-day-clear",
+      "status": "ready",
+      "time_of_day": "day",
+      "valid_from": "2026-10-31T06:00:00+03:00",
+      "valid_until": "2026-10-31T11:00:00+03:00",
+      "weather": "clear",
+      "weather_code": 0
+    }
+  ],
+  "location": {
+    "latitude": 55.7558,
+    "longitude": 37.6173,
+    "name": "Москва",
+    "timezone": "Europe/Moscow"
+  },
+  "location_revision": "b243841ff97d424de131be7ebae6107df22384656e78e4682daa1336eda73f89",
+  "package_version": "package-871c5c7ef8cd27b0",
+  "refresh_after": "2026-10-30T09:00:00+00:00",
+  "schema": 1,
+  "season_months": {
+    "autumn": [
+      9,
+      10,
+      11
+    ],
+    "spring": [
+      3,
+      4,
+      5
+    ],
+    "summer": [
+      6,
+      7,
+      8
+    ],
+    "winter": [
+      12,
+      1,
+      2
+    ]
+  },
+  "source": {
+    "id": "real",
+    "model_data": true,
+    "name": "Open-Meteo",
+    "url": "https://open-meteo.com/"
+  },
+  "source_id": "real",
+  "timezone": "Europe/Moscow",
+  "valid_until": "2026-10-31T11:00:00+03:00",
+  "weather_fetched_at": "2026-10-30T08:00:00+00:00",
+  "world_id": null
+}

@@ -1,0 +1,6 @@
+  Determining projects to restore...
+  Restored Core/Core.csproj (in 197 ms).
+  1 of 2 projects are up-to-date for restore.
+  Core -> Core/bin/Release/net10.0/Core.dll
+  Desktop -> Desktop/bin/Release/net10.0-windows/win-x64/ImperialSchoolViews.dll
+  Desktop -> dist/application/

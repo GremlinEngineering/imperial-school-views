@@ -1,0 +1,1 @@
+Synthetic 8x6 / 5x9 drawings, actual server 1.0.28 prepare/build_device/publish_ready, contract 0.2. No network, user data, production artwork or live service.

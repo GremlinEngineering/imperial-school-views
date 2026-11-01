@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework><OutputType>Exe</OutputType><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><TreatWarningsAsErrors>true</TreatWarningsAsErrors></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../Core/Core.csproj" /><None Remove="Fixtures/**/*" /><None Include="Fixtures/**/*" CopyToOutputDirectory="PreserveNewest" TargetPath="Fixtures/%(RecursiveDir)%(Filename)%(Extension)" /></ItemGroup>
+</Project>
