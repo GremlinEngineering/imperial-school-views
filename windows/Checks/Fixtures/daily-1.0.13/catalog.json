@@ -1,0 +1,44 @@
+{
+  "schema": 3,
+  "collections": [
+    {
+      "id": "sample-weather",
+      "title": "Тестовая погода",
+      "formats": {
+        "macbook": {
+          "width": 80,
+          "height": 50,
+          "aspect": "8:5"
+        },
+        "ultrawide": {
+          "width": 3440,
+          "height": 1440,
+          "aspect": "43:18"
+        }
+      },
+      "type": "weather",
+      "sources": [
+        {
+          "id": "real",
+          "title": "real",
+          "current_url": "weather/sample-weather/current.json",
+          "forecasts": {
+            "macbook": "weather/sample-weather/forecast-macbook.json",
+            "ultrawide": "weather/sample-weather/forecast-ultrawide.json"
+          }
+        },
+        {
+          "id": "game-world",
+          "title": "game-world",
+          "current_url": "weather/sample-weather/sources/game-world/current.json",
+          "forecasts": {
+            "macbook": "weather/sample-weather/sources/game-world/forecast-macbook.json",
+            "ultrawide": "weather/sample-weather/sources/game-world/forecast-ultrawide.json"
+          }
+        }
+      ]
+    }
+  ],
+  "items": [],
+  "downloads": []
+}

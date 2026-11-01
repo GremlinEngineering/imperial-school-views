@@ -1,0 +1,12 @@
+{
+  "server_package": "Gremlin_Build_Incremental_1.0.13.zip",
+  "package_sha256": "9029e69a907ee04ebebc8c063384655409b2c36cfe4f9bea0abd41f90cb2695e",
+  "publisher_sha256": "e076d7b5f4b6ad0150869cb43c81596f3efc31bb822233f86565a3bf20d38afe",
+  "now_ms": 1793347200000,
+  "test_doubles": [
+    "weather provider",
+    "fixed solar/lunar events",
+    "disabled world selection (unchanged dependency absent from incremental archive)"
+  ],
+  "generation": "Original prepare -> refresh -> weather_of_day; synthetic weather provider and images. game-world uses original publisher with synthetic current metadata. No deployed server request."
+}

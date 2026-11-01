@@ -1,0 +1,3 @@
+Astronomy.cs: equations adapted from Astral 3.2, Simon Kennedy, Apache-2.0; ported from the Imperial School Views macOS client.
+Weather and geocoding: Open-Meteo (https://open-meteo.com/), location search data GeoNames (https://www.geonames.org/).
+Wallpaper artwork is governed separately from client source code.
