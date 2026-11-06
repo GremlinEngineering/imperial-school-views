@@ -1,7 +1,7 @@
 {
-  "version": "0.6.0",
-  "build": 11,
-  "description": "Binary resources omitted from the source-only GitHub publication. Restore unchanged files from ImperialSchoolViewsTV_0.6.0_source.zip before building or running tests. No file contents are embedded here.",
+  "version": "0.7.0",
+  "build": 12,
+  "description": "Binary resources omitted from GitHub. Restore these paths from ImperialSchoolViewsTV_0.7.0_source.zip before building or testing. No binary contents are embedded.",
   "files": [
     {
       "path": "app/src/main/assets/music/01_blue_danube_fm.mp3",
@@ -117,6 +117,51 @@
       "path": "artwork/accepted-tv-gamepad-icon.png",
       "bytes": 1180183,
       "sha256": "865d63e462637cd233c82f2d0ccfc9d280c1da51ece5bd14212270ce3ea07323"
+    },
+    {
+      "path": "docs/qa/0.7.0/credits_070.png",
+      "bytes": 549991,
+      "sha256": "4debd5af70edb66b5996e04c4f8301ed6a8aa4d56ea069f89a642027f41f8ab4"
+    },
+    {
+      "path": "docs/qa/0.7.0/gallery_art_070.png",
+      "bytes": 352970,
+      "sha256": "e28b2679d1d06752d9d4d769af597348fb06b9daf6da01e00c08cebac1565ccb"
+    },
+    {
+      "path": "docs/qa/0.7.0/gallery_orbit_070.png",
+      "bytes": 354089,
+      "sha256": "23112f6140e50f640695f9d53a33772c18f7b18090919210f424ac28085cd7fa"
+    },
+    {
+      "path": "docs/qa/0.7.0/github_qr_070.png",
+      "bytes": 546256,
+      "sha256": "b835aef649b8ec9bfb63b3bb91f3b2083ea5e2f050c9dca2a77b6bab763dbe7f"
+    },
+    {
+      "path": "docs/qa/0.7.0/menu_070.png",
+      "bytes": 541841,
+      "sha256": "256f399698a10f4902c49fed9bc460aa01316e2617edc9e1d3e8ba647ad6827c"
+    },
+    {
+      "path": "docs/qa/0.7.0/music_070.png",
+      "bytes": 562572,
+      "sha256": "3d02e59b2817088dfaa15c5d493188ce7b77b2969666ff3073c3b541789678aa"
+    },
+    {
+      "path": "docs/qa/0.7.0/scene_art_070.png",
+      "bytes": 960164,
+      "sha256": "fe13637d4b1e731799f47a01f6dc8f50e4f0b68840d10155066149e1982221f0"
+    },
+    {
+      "path": "docs/qa/0.7.0/settings_070.png",
+      "bytes": 542702,
+      "sha256": "9673e0df8712a960fcddfb0b28449f876aabce00c8a4e59c76899057166d085d"
+    },
+    {
+      "path": "docs/qa/0.7.0/storage_070.png",
+      "bytes": 555621,
+      "sha256": "dd9913c322e87b6d36fe024cf41aa764130ee0d95ecd836b4c9676b57f216afb"
     },
     {
       "path": "docs/qa/about.png",
@@ -317,6 +362,11 @@
       "path": "tests/android/assets/png-regression.png",
       "bytes": 84,
       "sha256": "49784d26f9f08e4844a1ac526a168441063aae950e1a61e0cdd6617bf377e489"
+    },
+    {
+      "path": "tests/android/assets/qa-194x.jpg",
+      "bytes": 1301137,
+      "sha256": "4c6e6f8f85f1564467c5b009f8bbca075bc5beea0d14ec997e37a85ca87b4f3d"
     },
     {
       "path": "tests/android/assets/video/A.mp4",

@@ -62,6 +62,17 @@ final class VideoSurface extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceChanged(SurfaceHolder h,int format,int w,int z){actualWidth=w;actualHeight=z;listener.changed();begin();}
     public void surfaceDestroyed(SurfaceHolder h){actualWidth=actualHeight=0;generation++;playing=false;running=false;if(job!=null)job.cancel(true);job=null;Clip queued=launch.getAndSet(null);if(queued!=null)queued.close();}
     private static boolean hardware(MediaCodecInfo info){if(Build.VERSION.SDK_INT>=29)return info.isHardwareAccelerated();String n=info.getName().toLowerCase(java.util.Locale.ROOT);return !n.startsWith("omx.google.")&&!n.startsWith("c2.android.")&&!n.startsWith("omx.ffmpeg.");}
+    static boolean supports(VideoInfo video){
+        for(MediaCodecInfo info:new MediaCodecList(MediaCodecList.REGULAR_CODECS).getCodecInfos()){
+            if(info.isEncoder()||!hardware(info))continue;
+            for(String type:info.getSupportedTypes())if(type.equalsIgnoreCase("video/hevc")){
+                try{MediaCodecInfo.VideoCapabilities caps=info.getCapabilitiesForType(type).getVideoCapabilities();
+                    if(caps!=null&&caps.areSizeAndRateSupported(3840,2160,video.fps))return true;
+                }catch(RuntimeException ignored){}
+            }
+        }
+        return false;
+    }
     private MediaCodec decoder(Clip clip,Surface target)throws IOException {
         Exception last=null;for(MediaCodecInfo info:new MediaCodecList(MediaCodecList.REGULAR_CODECS).getCodecInfos()){
             if(info.isEncoder()||!hardware(info))continue;boolean supported=false;for(String t:info.getSupportedTypes())if(t.equalsIgnoreCase("video/hevc"))supported=true;if(!supported)continue;

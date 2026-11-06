@@ -1,0 +1,21 @@
+INSTRUMENTATION_STATUS: screenshot_menu_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/menu_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_music_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/music_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_gallery_orbit_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/gallery_orbit_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_gallery_art_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/gallery_art_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_scene_art_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/scene_art_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_settings_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/settings_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_github_qr_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/github_qr_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_credits_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/credits_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: screenshot_storage_070=/storage/emulated/0/Android/data/ru.oopssre.imperialschool.viewstv/files/qa-070/storage_070.png
+INSTRUMENTATION_STATUS_CODE: 0
+PASS 52 Android UI, D-pad, preview and storage checks; emulator uses seeded image fixtures, not hardware HEVC.
+
+APK_SHA256=5c90a3cb9387e8d265e70a47cca89673f21af1d508a7b14b1a66c5e3dedb4deb

@@ -56,3 +56,15 @@ Physical display reference: https://developer.android.com/reference/android/view
 
 
 0.4.1: `Protocol.publishedTheme(..., allowAlternate)` и выбор кеша разрешают подстановку только в Авто. При ручном выборе запрашивается точный TV-профиль. `SceneController` пропускает декодирование только при совпадении SHA и размера целевого буфера. Поэтому переход 1080p → 4К при неизменном JPEG восстанавливает исходный размер. Диагностика показывает `SurfaceHolder.surfaceChanged` как фактический размер буфера, размеры живого Bitmap и профиль реально показанного Frame. Размер Surface не доказывает физическое разрешение панели/HDMI.
+
+
+## 0.7.0: menu, previews and retention
+
+TvScene uses the shared SceneCopy parent map for a finite Back path. Long OK opens a three-action menu; settings contain display, system screensaver, storage and About. Service screens and app updates remain below About. ThemeGallery owns only a focus preview: focus does not write the selected theme; OK applies it and closes the overlay. Preview work uses a scene-owned single worker and a debounce, cancellation token and decode pins. Storage cleanup drains that queue alongside image/video/decoder workers.
+
+The total 64 MiB cap is removed. CacheStore retains latest per-collection/profile snapshot references and live-media pins. Before writing, orphan media is pruned. Real storage pressure evicts unused media in access order, protecting displayed/decoding images and prepared/playing video. Individual file limits, signatures, expected geometry and SHA-256 checks are unchanged. Preview results share this cache and never download collection ZIPs or future frames.
+
+The output selector verifies the standard published VideoInfo and declared hardware HEVC size/rate capabilities before enabling video. It does not silently fall back to image output or software 1080p. Actual decoder startup remains the playback layer's responsibility. Static QR modules encode the public website and repository URLs without an online QR service or runtime dependency.
+
+
+Cached image decode has an independent worker so an interrupted network request cannot block a cached scene or focused preview. Both cache and network results use the current scene generation. A network publication marks its generation on the UI thread; a later cache callback for that generation is discarded. Gallery preview uses the same cache-decode worker, with its own cancellation/generation guard. Storage cleanup drains this queue as well. Android UI checks verify the selected cached collection reaches the renderer, remains cached, and survives Home/return navigation.

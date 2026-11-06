@@ -28,7 +28,7 @@ public final class Protocol {
         public String prefix(){return "dynamic/"+id+"/devices/"+device+"/";}
     }
     public static Theme defaultTheme() throws JSONException {
-        JSONObject c=new JSONObject().put("id",DEFAULT_ID).put("type","dynamic").put("title","Орбитальная станция ТВ").put("current_url","dynamic/"+DEFAULT_ID+"/current.json").put("formats",new JSONObject().put(DEFAULT_DEVICE,new JSONObject().put("width",3840).put("height",2160)));return theme(c);
+        JSONObject c=new JSONObject().put("id",DEFAULT_ID).put("type","dynamic").put("title","Орбитальный порт").put("current_url","dynamic/"+DEFAULT_ID+"/current.json").put("formats",new JSONObject().put(DEFAULT_DEVICE,new JSONObject().put("width",3840).put("height",2160)));return theme(c);
     }
     public static Theme theme(JSONObject c) throws JSONException {
         String id=c.getString("id"),title=c.getString("title"),current=c.getString("current_url");

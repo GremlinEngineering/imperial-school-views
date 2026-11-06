@@ -1,0 +1,4 @@
+PASSED 73 core checks: default, protocol, release, long OK, publication race, cache bounds and atomic replacement
+PASSED 34 video checks: generic profile, metadata, random polling, two-hour freshness, fresh-JSON retry, cache integrity and pins
+PASSED 44 PNG / catalogue / output / cache-clear regression checks
+PASSED 64 navigation / copy / retention checks

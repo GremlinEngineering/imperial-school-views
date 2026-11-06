@@ -22,11 +22,16 @@ final class Repository {
     boolean fill(){return prefs.getBoolean("fill",false);}void fill(boolean b){prefs.edit().putBoolean("fill",b).apply();}
     void refreshCatalogue(String pinned)throws Exception {File file=new File(cache.root,"catalogue.json");if(file.isFile()&&System.currentTimeMillis()-file.lastModified()<900000)return;JSONObject json=net.json("manifest-v3.json",false,pinned);Protocol.catalogue(json);byte[] bytes=json.toString().getBytes(StandardCharsets.UTF_8);cache.reserve(bytes.length,pinned);CacheStore.atomic(file,bytes);}
     String weatherSource(){return prefs.getString("weather_source","real");}
-    String simpleMode(){return prefs.getString("simple_mode_"+selected().id,"auto");}
+    String simpleMode(){return simpleMode(selected());}
+    String simpleMode(Protocol.Theme theme){return prefs.getString("simple_mode_"+theme.id,"auto");}
     Protocol.Frame cached(Protocol.Theme theme){Protocol.Frame f=cache.cached(theme);if(f==null&&Protocol.tvScene(theme)&&resolution().equals(TvDisplay.AUTO))f=cache.cached(Protocol.alternateTV(theme));return f!=null&&(!theme.kind.equals("weather")||f.sourceId.equals(weatherSource()))?f:null;}
-    Protocol.Frame finish(Protocol.Frame frame,String pinned)throws Exception {File file=net.image(frame,pinned);BitmapFactory.Options o=new BitmapFactory.Options();o.inJustDecodeBounds=true;BitmapFactory.decodeFile(file.getPath(),o);Protocol.require(o.outWidth==frame.width&&o.outHeight==frame.height,"Размер изображения не совпал с описанием");cache.save(frame);return frame;}
+    Protocol.Frame finish(Protocol.Frame frame,String pinned)throws Exception {
+        cache.pinImage(frame.sha);
+        try{File file=net.image(frame,pinned);BitmapFactory.Options o=new BitmapFactory.Options();o.inJustDecodeBounds=true;BitmapFactory.decodeFile(file.getPath(),o);Protocol.require(o.outWidth==frame.width&&o.outHeight==frame.height,"Размер изображения не совпал с описанием");cache.save(frame);return frame;}
+        finally{cache.unpinImage(frame.sha);}
+    }
     Protocol.Frame refresh(Protocol.Theme theme,String pinned)throws Exception {
-        if(!theme.kind.equals("dynamic")&&!theme.kind.equals("weather")){refreshCatalogue(pinned);JSONObject catalogue=new JSONObject(new String(CacheStore.read(new File(cache.root,"catalogue.json"),5*1024*1024),StandardCharsets.UTF_8));return finish(Sources.ordinary(catalogue,theme,simpleMode(),System.currentTimeMillis()),pinned);}
+        if(!theme.kind.equals("dynamic")&&!theme.kind.equals("weather")){refreshCatalogue(pinned);JSONObject catalogue=new JSONObject(new String(CacheStore.read(new File(cache.root,"catalogue.json"),5*1024*1024),StandardCharsets.UTF_8));return finish(Sources.ordinary(catalogue,theme,simpleMode(theme),System.currentTimeMillis()),pinned);}
         if(theme.kind.equals("weather")){JSONObject source=Sources.source(theme,weatherSource());Exception error=null;for(int attempt=0;attempt<2;attempt++){try{JSONObject current=net.json(source.getString("current_url"),attempt>0,pinned),forecast=net.json(source.getJSONObject("forecasts").getString(theme.device),attempt>0,pinned);return finish(Sources.weather(current,forecast,theme,weatherSource(),System.currentTimeMillis()),pinned);}catch(Exception e){error=e;}}throw error;}
 
         Exception last=null;
@@ -36,7 +41,8 @@ final class Repository {
         }catch(Exception e){last=e;if(e instanceof HttpTransport.HttpFailure)throw e;}}
         throw last;
     }
-    Bitmap decode(Protocol.Frame frame,int targetWidth,int targetHeight)throws IOException {File file=cache.image(frame);if(!cache.valid(frame))throw new IOException("Кеш кадра повреждён");BitmapFactory.Options o=new BitmapFactory.Options();o.inPreferredConfig=Bitmap.Config.ARGB_8888;int sample=1;while((long)(frame.width/sample)*(frame.height/sample)>12000000)sample*=2;while(frame.width/(sample*2)>=targetWidth&&frame.height/(sample*2)>=targetHeight)sample*=2;
+    Bitmap decode(Protocol.Frame frame,int targetWidth,int targetHeight)throws IOException {cache.pinImage(frame.sha);try{return decodePinned(frame,targetWidth,targetHeight);}finally{cache.unpinImage(frame.sha);}}
+    Bitmap decodePinned(Protocol.Frame frame,int targetWidth,int targetHeight)throws IOException {File file=cache.image(frame);if(!cache.valid(frame))throw new IOException("Кеш кадра повреждён");BitmapFactory.Options o=new BitmapFactory.Options();o.inPreferredConfig=Bitmap.Config.ARGB_8888;int sample=1;while((long)(frame.width/sample)*(frame.height/sample)>12000000)sample*=2;while(frame.width/(sample*2)>=targetWidth&&frame.height/(sample*2)>=targetHeight)sample*=2;
         for(int attempt=0;attempt<4;attempt++){o.inSampleSize=sample;try{Bitmap b=BitmapFactory.decodeFile(file.getPath(),o);if(b==null)throw new IOException("Изображение не открывается");return b;}catch(OutOfMemoryError e){if(!resolution().equals(TvDisplay.AUTO))throw new IOException("Не хватило памяти для выбранного разрешения · "+TvDisplay.label(resolution()),e);sample*=2;}}
         throw new IOException("Телевизору не хватило памяти на кадр");
     }
