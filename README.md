@@ -18,11 +18,9 @@ Dynamic scenes are received as finished server-rendered images. The TV client 0.
 
 ## Repository status
 
-The Android 1.3.9 source is in [`android/`](android/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
+The Android 1.3.9 source is in [`android/`](android/), Android TV / Yandex TV 0.6.0 (build 11) in [`android-tv/`](android-tv/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
 
-Android TV / Yandex TV **0.6.0 (build 11)** source is in [`android-tv/`](android-tv/). It supports ordinary, weather and dynamic collections, system screensaver mode, remote-control navigation, separate application/screensaver audio, and cache usage and cleanup. See the [TV build and resource instructions](android-tv/README.en.md).
-
-Build instructions and platform features are in [`android/README.md`](android/README.md), [`macos/README.md`](macos/README.md), and [`windows/README.en.md`](windows/README.en.md). The application features described above are not a claim that all platforms have identical capabilities.
+Build instructions and platform features are in [`android/README.md`](android/README.md), [`android-tv/README.en.md`](android-tv/README.en.md), [`macos/README.md`](macos/README.md), and [`windows/README.en.md`](windows/README.en.md). The application features described above are not a claim that all platforms have identical capabilities.
 
 ## Downloads and resources
 
@@ -32,8 +30,6 @@ Build instructions and platform features are in [`android/README.md`](android/RE
 
 Official application installers and large wallpaper collections are distributed on the [website](https://games.oopssre.ru/).
 
-The TV directory is a source-only publication: APKs, archives, JARs, fonts, images, audio and video are excluded. [`android-tv/BINARY_RESOURCES.json`](android-tv/BINARY_RESOURCES.json) lists the omitted resource paths and checksums; restore them from the complete 0.6.0 source package before building or running tests. The release report records 151 host checks; physical Yandex TV testing remains outstanding.
-
 ## Signing and licensing
 
 Publisher signing keys, passwords and personal signing backups must stay outside this repository. Contributors will use their own signing configuration.
@@ -41,5 +37,3 @@ Publisher signing keys, passwords and personal signing backups must stay outside
 Third-party components retain their respective licenses and notices in [`android/app/src/main/assets/`](android/app/src/main/assets/), [`macos/licences/`](macos/licences/), and [`windows/Licenses/`](windows/Licenses/). Wallpaper artwork has its own licensing terms, separate from application code.
 
 TV client code is licensed under [MIT](android-tv/LICENSE); its third-party components and music retain their own licenses, described in [THIRD_PARTY.md](android-tv/THIRD_PARTY.md). The application code license for the other clients has not yet been specified.
-
-
