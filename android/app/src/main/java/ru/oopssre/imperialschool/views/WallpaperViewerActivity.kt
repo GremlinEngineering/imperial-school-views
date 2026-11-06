@@ -37,6 +37,8 @@ class WallpaperViewerActivity: Activity() {
     private var leaveFullScreenBack: (() -> Unit)?=null
     private var bitmap: Bitmap?=null
     private lateinit var root: LinearLayout
+    private lateinit var toolsPanel: LinearLayout
+    private var toolsDialog: AlertDialog?=null
     private lateinit var header: LinearLayout
     private lateinit var footer: LinearLayout
     private lateinit var picture: WallpaperImageView
@@ -74,22 +76,24 @@ class WallpaperViewerActivity: Activity() {
         @Suppress("DEPRECATION")
         window.decorView.systemUiVisibility=View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or if(!dark)View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR else 0
         window.statusBarColor=Color.TRANSPARENT;window.navigationBarColor=Color.TRANSPARENT
-        header=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL}
-        header.addView(button("Назад к настройкам"){finish()},LinearLayout.LayoutParams(-1,-2))
-        heading=label("Скачанные обои",20f).apply{typeface=resources.getFont(R.font.oswald_semibold);maxLines=2;ellipsize=android.text.TextUtils.TruncateAt.END};header.addView(heading)
-        val tools=LinearLayout(this).apply{orientation=LinearLayout.HORIZONTAL;isBaselineAligned=false}
-        filters=button("Фильтры"){showFilters()};fullscreen=button("На весь экран"){setFull(true)}
-        tools.addView(filters,LinearLayout.LayoutParams(0,-2,1f));tools.addView(fullscreen,LinearLayout.LayoutParams(0,-2,1f));header.addView(tools)
-        slideshow=button("Слайд-шоу"){if(playing){stopSlideshow();setFull(false)}else startSlideshow()};header.addView(slideshow,LinearLayout.LayoutParams(-1,-2))
+        header=LinearLayout(this).apply{orientation=LinearLayout.HORIZONTAL;gravity=Gravity.CENTER_VERTICAL;setPadding(dp(8),dp(4),dp(8),0)}
+        header.addView(button("‹"){finish()}.apply{contentDescription="Назад"},LinearLayout.LayoutParams(dp(48),-2))
+        heading=label("Сохранённые кадры",20f).apply{typeface=resources.getFont(R.font.oswald_semibold);maxLines=2;ellipsize=android.text.TextUtils.TruncateAt.END};header.addView(heading,LinearLayout.LayoutParams(0,-2,1f))
+        header.addView(button("⋮"){showTools()}.apply{contentDescription="Действия с изображением"},LinearLayout.LayoutParams(dp(48),-2))
+        toolsPanel=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(dp(12),0,dp(12),dp(12))}
+        filters=button("Фильтры"){toolsDialog?.dismiss();showFilters()}
+        fullscreen=button("На весь экран"){toolsDialog?.dismiss();setFull(true)}
+        slideshow=button("Слайд-шоу"){toolsDialog?.dismiss();if(playing){stopSlideshow();setFull(false)}else startSlideshow()}
+        details=button("Сведения о кадре"){toolsDialog?.dismiss();showDetails()}
+        for(control in listOf(filters,slideshow,fullscreen,details))toolsPanel.addView(control,LinearLayout.LayoutParams(-1,-2))
         root.addView(header,LinearLayout.LayoutParams(-1,-2))
         picture=WallpaperImageView(this).apply{onStep={step(it)};onTap={setFull(!full)}}
         root.addView(picture,LinearLayout.LayoutParams(-1,0,1f))
         footer=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL}
-        caption=label("Открываю сохранённые изображения…").apply{maxLines=3;ellipsize=android.text.TextUtils.TruncateAt.END;accessibilityLiveRegion=View.ACCESSIBILITY_LIVE_REGION_POLITE}
+        caption=label("Открываю сохранённые изображения…").apply{maxLines=2;ellipsize=android.text.TextUtils.TruncateAt.END;accessibilityLiveRegion=View.ACCESSIBILITY_LIVE_REGION_POLITE}
         footer.addView(caption)
-        details=button("Условия и сведения"){showDetails()};footer.addView(details,LinearLayout.LayoutParams(-1,-2))
         val nav=LinearLayout(this).apply{orientation=LinearLayout.HORIZONTAL;gravity=Gravity.CENTER_VERTICAL;isBaselineAligned=false}
-        previous=button("Назад"){step(-1)};next=button("Далее"){step(1)}
+        previous=button("‹"){step(-1)};next=button("›"){step(1)}
         previous.contentDescription="Предыдущие обои";next.contentDescription="Следующие обои"
         nav.addView(previous,LinearLayout.LayoutParams(0,-2,1f));count=label("").apply{gravity=Gravity.CENTER};nav.addView(count,LinearLayout.LayoutParams(0,-2,1f));nav.addView(next,LinearLayout.LayoutParams(0,-2,1f));footer.addView(nav)
         root.addView(footer,LinearLayout.LayoutParams(-1,-2));setContentView(root);root.requestApplyInsets()
@@ -108,6 +112,10 @@ class WallpaperViewerActivity: Activity() {
                 }}
             }catch(e: Exception){runOnUiThread{if(!isDestroyed){caption.text="Не удалось открыть скачанные обои. "+UiErrors.message(e);setEnabled(false)}}}
         }
+    }
+    private fun showTools(){
+        (toolsPanel.parent as? android.view.ViewGroup)?.removeView(toolsPanel)
+        toolsDialog=AlertDialog.Builder(this).setTitle("Изображение").setView(toolsPanel).setNegativeButton("Закрыть",null).show()
     }
     private fun setEnabled(ready: Boolean){previous.isEnabled=ready && index>0;next.isEnabled=ready && index<visible.lastIndex;details.isEnabled=ready;fullscreen.isEnabled=ready;filters.isEnabled=all.isNotEmpty();slideshow.isEnabled=ready && visible.size>1}
     private fun applyFilter(hash: String?=null){
@@ -202,5 +210,5 @@ class WallpaperViewerActivity: Activity() {
     @Deprecated("Legacy back for API 26–32") override fun onBackPressed(){if(full)setFull(false) else super.onBackPressed()}
     override fun onSaveInstanceState(out: Bundle){out.putString("hash",visible.getOrNull(index)?.image?.sha256);out.putString("filter",filter.json().toString());out.putBoolean("full",full);super.onSaveInstanceState(out)}
     override fun onPause(){stopSlideshow();super.onPause()}
-    override fun onDestroy(){stopSlideshow();leaveFullScreenBack?.invoke();leaveFullScreenBack=null;token++;executor.shutdownNow();picture.setImageDrawable(null);bitmap=null;super.onDestroy()}
+    override fun onDestroy(){stopSlideshow();leaveFullScreenBack?.invoke();leaveFullScreenBack=null;token++;executor.shutdownNow();picture.setImageDrawable(null);bitmap=null;toolsDialog?.dismiss();super.onDestroy()}
 }

@@ -66,7 +66,9 @@ internal class Repository(val context: Context) {
 
     }
     fun settings(target: String?=null): Selection = synchronized(prefsLock) {
-        migrate();profiles().select(target ?: editingTarget())
+        migrate();val saved=profiles().select(target ?: editingTarget())
+        saved.copy(notifyCollections=prefs.getString("notify_collections_preference",null)?.let{it=="1"} ?: saved.notifyCollections,
+            notifyApp=prefs.getString("notify_app_preference",null)?.let{it=="1"} ?: saved.notifyApp)
     }
     fun installed(): Boolean = synchronized(prefsLock){migrate();prefs.contains("profile_home") || prefs.contains("profile_lock")}
     fun savedProfiles(): Profiles = synchronized(prefsLock){migrate();profiles()}

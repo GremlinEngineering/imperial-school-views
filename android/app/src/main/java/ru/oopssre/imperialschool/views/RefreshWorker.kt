@@ -16,9 +16,8 @@ class RefreshWorker(context: Context,parameters: WorkerParameters): Worker(conte
         val force=(inputData.getBoolean("force",false) && runAttemptCount==0) || repo.number("catalogue_checked")==0L;val interval=if(online.any{it.source!="weather"})3600000 else 86400000
         return try{
             val data=repo.catalogue(Selection(source="online"),force || System.currentTimeMillis()<repo.number("catalogue_checked") || System.currentTimeMillis()-repo.number("catalogue_checked")>=interval)
-            val known=repo.text("known_collections").split('|').filter{it.isNotBlank()}.toSet();val added=data.collections.filter{it.id !in known}
-            if(known.isNotEmpty() && online.any{it.notifyCollections} && added.isNotEmpty())Notices.send(applicationContext,1,"Новые коллекции обоев",added.joinToString(", "){it.title})
-            repo.put("known_collections",(known+data.collections.map{it.id}).sorted().joinToString("|"))
+            val added=CollectionNotices.observe(repo,data)
+            if(online.any{it.notifyCollections} && added.isNotEmpty())Notices.send(applicationContext,1,"Новые обои для телефона",added.joinToString(", "){it.title})
             online.forEach{s->try{
                 if(s.source=="dynamic")Schedule.dynamic(applicationContext,Dynamic.collection(data,s),s,force)
                 else if(s.source=="weather")Schedule.weather(applicationContext,repo.weatherCollection(data,s),s,force)

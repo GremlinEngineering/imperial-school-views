@@ -1,0 +1,5 @@
+PASS 18 native Android checks; local image fixtures, no physical phone tested.
+APK SHA-256: 33c5bca76acde80559a47c34081954a615c56e3fc6ab63dab3465a74daf7efe1
+Upgrade: 1.3.9 -> 1.4.0, preserved independent home/lock settings.
+Android 9 / API 28 emulator, 720x1280, density 320.
+Image fixtures are local; no physical phone or live weather-server integration was tested in this device run.

@@ -58,8 +58,8 @@ class UiRegressionTest {
         val(controller,_)=setup();val a=controller.get();val c=data().collections.first{it.weather!=null && Weather.formats(it.weather).isNotEmpty()}
         val s=Selection(source="weather",collection=c.id,mode="weather",weatherSource="open-meteo",weatherCity=city)
         try{
-            render(a,s);val b=get<Button>(a,"viewSaved");val selector=get<Spinner>(a,"collection");val parent=b.parent as LinearLayout
-            assertTrue(b.isEnabled);assertTrue(parent.indexOfChild(b)==parent.indexOfChild(selector)+1)
+            render(a,s);val b=get<Button>(a,"viewSaved");val selector=get<Button>(a,"collection");val parent=b.parent as LinearLayout
+            assertTrue(b.isEnabled);assertTrue(parent.indexOfChild(b)>parent.indexOfChild(get<View>(a,"preview")))
             b.performClick();val intent=shadowOf(a).nextStartedActivity
             assertEquals(WallpaperViewerActivity::class.java.name,intent.component!!.className)
             assertEquals(s,Selection.parse(JSONObject(intent.getStringExtra("selection")!!)))
@@ -75,7 +75,7 @@ class UiRegressionTest {
         val(controller,_)=setup();val a=controller.get()
         try{
             set(a,"catalogue",dynamicData());set(a,"draft",Selection(source="dynamic",collection="dynamic-test",mode="dynamic",weatherSource="real",weatherDelivery="images"));set(a,"busy",false);call(a,"render")
-            assertEquals(1,get<Spinner>(a,"collection").adapter.count)
+            assertEquals("Динамическая тема",get<Button>(a,"collection").text.toString())
             assertEquals(View.GONE,get<View>(a,"weatherBox").visibility);assertEquals(View.GONE,get<View>(a,"zipCard").visibility);assertEquals(View.GONE,get<View>(a,"mode").visibility)
             assertTrue(get<Button>(a,"apply").isEnabled);assertTrue(get<Button>(a,"dynamicTab").isSelected);assertFalse(get<Button>(a,"ordinaryTab").isSelected)
             get<Button>(a,"viewSaved").performClick();assertEquals("dynamic",Selection.parse(JSONObject(shadowOf(a).nextStartedActivity.getStringExtra("selection")!!)).source)
@@ -94,7 +94,7 @@ class UiRegressionTest {
         val(controller,_)=setup();val a=controller.get();val before=get<Selection>(a,"draft")
         fun buttons(v: View): List<Button> = if(v is Button)listOf(v) else if(v is android.view.ViewGroup)(0 until v.childCount).flatMap{buttons(v.getChildAt(it))} else emptyList()
         try{
-            val all=buttons(a.window.decorView)
+            call(a,"showSettings");val all=buttons(get<View>(a,"settingsBody"))
             for((label,url) in listOf("Исходный код · GitHub" to "https://github.com/GremlinEngineering/imperial-school-views","Сообщить об ошибке" to "https://github.com/GremlinEngineering/imperial-school-views/issues")){
                 val button=all.single{it.text.toString()==label};assertTrue(button.minimumHeight>=48*a.resources.displayMetrics.density)
                 button.performClick();val intent=shadowOf(a).nextStartedActivity;assertEquals(android.content.Intent.ACTION_VIEW,intent.action);assertEquals(url,intent.data.toString())
@@ -136,28 +136,26 @@ class UiRegressionTest {
             println("AUDIT_MATRIX_STATES=$count")
         }finally{controller.destroy()}
     }
-    @Test fun screenDraftsSurviveSwitchAndActivityRecreation() {
+    @Test fun installedScreenSelectorNeverReplacesTheUnappliedCollectionOrCity() {
         val(controller,_)=setup();val a=controller.get();val c=data().collections.first{it.weather!=null && Weather.formats(it.weather).isNotEmpty()}
-        val paris=Selection(source="weather",collection=c.id,mode="weather",target="home",weatherSource="open-meteo",weatherCity=JSONObject(city).put("name","Париж").toString())
-        val tokyo=paris.copy(target="lock",weatherCity=JSONObject(city).put("name","Токио").toString())
+        val selection=Selection(source="weather",collection=c.id,mode="weather",target="home",weatherSource="open-meteo",weatherCity=city)
         try{
-            render(a,paris)
-            fun switch(target: String){val chooser=get<Spinner>(a,"target");val index=listOf("home","lock","both").indexOf(target);chooser.setSelection(index,false);chooser.onItemSelectedListener!!.onItemSelected(chooser,null,index,index.toLong())}
-            switch("lock");render(a,tokyo);switch("home")
-            assertEquals(paris.weatherCity,get<Selection>(a,"draft").weatherCity)
+            render(a,selection)
+            val chooser=get<Spinner>(a,"target");chooser.setSelection(1,false);chooser.onItemSelectedListener!!.onItemSelected(chooser,null,1,1)
+            assertEquals(selection,get<Selection>(a,"draft"));assertFalse(repo().installed())
             val state=android.os.Bundle();call(a,"onSaveInstanceState",state)
             val(next,_)=setup(state)
-            try{val restored=next.get();assertEquals(paris.weatherCity,get<Selection>(restored,"draft").weatherCity);assertEquals(tokyo.weatherCity,get<Map<String,Selection>>(restored,"drafts").getValue("lock").weatherCity)}finally{next.destroy()}
+            try{assertEquals(selection,get<Selection>(next.get(),"draft"))}finally{next.destroy()}
         }finally{controller.destroy()}
     }
-    @Test fun settingsPrecedePreviewAndControlsHaveAccessibleTargetsAndLabels() {
+    @Test fun previewPrecedesWeatherControlsAndSecondarySettingsStayOffTheMainPage() {
         val(controller,_)=setup();val a=controller.get();val c=data().collections.first{it.weather!=null && Weather.formats(it.weather).isNotEmpty()}
         try{
             render(a,Selection(source="weather",collection=c.id,mode="weather"))
             val root=a.window.decorView;val d=a.resources.displayMetrics.density;val w=(360*d).toInt();val h=(800*d).toInt()
             root.measure(View.MeasureSpec.makeMeasureSpec(w,View.MeasureSpec.EXACTLY),View.MeasureSpec.makeMeasureSpec(h,View.MeasureSpec.EXACTLY));root.layout(0,0,w,h)
-            assertTrue(get<View>(a,"collection").top<get<View>(a,"preview").top);assertTrue(get<View>(a,"weatherBox").top<get<View>(a,"preview").top)
-            for(field in listOf("cityButton","locationButton","apply","refresh","pause")){val v=get<View>(a,field);assertTrue(field+" height",v.height>=48*d);assertTrue(field+" width",v.width>=48*d);assertTrue(v.background is android.graphics.drawable.RippleDrawable)}
+            assertTrue(get<View>(a,"collection").top<get<View>(a,"preview").top);assertTrue(get<View>(a,"weatherBox").top>get<View>(a,"preview").top)
+            for(field in listOf("cityButton","locationButton","apply")){val v=get<View>(a,field);assertTrue(field+" height",v.height>=48*d);assertTrue(field+" width",v.width>=48*d);assertTrue(v.background is android.graphics.drawable.RippleDrawable)}
             for(field in listOf("target","weatherSource","weatherDelivery","collection","downloadNetwork"))assertTrue(get<View>(a,field).contentDescription.isNotBlank())
         }finally{controller.destroy()}
     }
@@ -169,10 +167,10 @@ class UiRegressionTest {
         val(controller,queue)=setup();val a=controller.get();val r=repo();val c=data().collections.first{it.weather!=null && Weather.formats(it.weather).isNotEmpty()}
         try{
             r.save(Selection(source="weather",collection=c.id,mode="weather",target="home"));r.save(Selection(source="weather",collection=c.id,mode="weather",target="lock",weatherSource="real"));r.setPaused("home",true)
-            render(a,r.settings("both"));assertEquals("Пауза",get<Button>(a,"pause").text.toString())
+            set(a,"managedTarget","both");render(a,r.settings("both"));assertEquals("Приостановить автосмену",get<Button>(a,"pause").text.toString())
             get<Button>(a,"pause").performClick();queue.runAll();shadowOf(Looper.getMainLooper()).idle()
             assertTrue(r.settings("home").paused);assertTrue(r.settings("lock").paused);assertEquals("game-world",r.settings("home").weatherSource);assertEquals("real",r.settings("lock").weatherSource)
-            assertEquals("Продолжить",get<Button>(a,"pause").text.toString())
+            assertEquals("Продолжить автосмену",get<Button>(a,"pause").text.toString())
         }finally{controller.destroy()}
     }
     @Test fun pausePreservesUnappliedCity() {
@@ -182,7 +180,7 @@ class UiRegressionTest {
             repo().save(saved);val draft=repo().settings("home").copy(weatherCity=JSONObject(city).put("name","Париж").put("latitude",48.85).put("longitude",2.35).put("timezone","Europe/Paris").toString())
             render(a,draft);get<Button>(a,"pause").performClick();queue.runAll();shadowOf(Looper.getMainLooper()).idle()
             assertTrue(repo().settings("home").paused)
-            assertEquals("Париж",JSONObject(get<Selection>(a,"draft").weatherCity).getString("name"));assertTrue(get<TextView>(a,"draftLabel").text.contains("не применены"))
+            assertEquals("Париж",JSONObject(get<Selection>(a,"draft").weatherCity).getString("name"));assertTrue(get<TextView>(a,"draftLabel").text.contains("не применён"))
             println("FIXED=pause preserves Paris draft while saved Berlin is paused")
         }finally{controller.destroy()}
     }
@@ -252,7 +250,7 @@ class UiRegressionTest {
             r.save(Selection(source="weather",collection=c.id,mode="weather",target="home",weatherSource="open-meteo",weatherCity=city))
             val draft=r.settings("home").copy(weatherCity=JSONObject(city).put("name","Париж").toString());render(a,draft)
             get<Button>(a,"refresh").performClick()
-            assertTrue(r.manual(r.settings("home")));assertEquals(city,r.settings("home").weatherCity);assertEquals(draft,get<Selection>(a,"draft"));assertTrue(get<Button>(a,"refresh").text.contains("установленные"));assertTrue(get<TextView>(a,"status").text.contains("форме ещё не применены"))
+            assertTrue(r.manual(r.settings("home")));assertEquals(city,r.settings("home").weatherCity);assertEquals(draft,get<Selection>(a,"draft"));assertTrue(get<TextView>(a,"status").text.contains("установленные обои"))
             println("VERIFIED=Refresh explicitly updates saved profile and preserves draft")
         }finally{controller.destroy()}
     }
@@ -272,4 +270,82 @@ class UiRegressionTest {
             println("FIXED=long status plus font200 leaves scroll viewport height=${page.height}")
         }finally{controller.destroy()}
     }
+    @Test fun cancellingDestinationChoicePreservesBothScreensAndTheSelectedCity(){
+        val(controller,_)=setup();val a=controller.get();val r=repo();val c=data().collections.first{it.weather!=null}
+        try{
+            r.save(Selection(source="weather",collection=c.id,mode="weather",target="home",weatherSource="real"))
+            r.save(Selection(source="weather",collection=c.id,mode="weather",target="lock",weatherSource="game-world"))
+            val saved=r.savedProfiles();val chosen=Selection(source="weather",collection=c.id,mode="weather",weatherSource="open-meteo",weatherCity=city)
+            render(a,chosen);get<Button>(a,"apply").performClick()
+            val dialog=org.robolectric.shadows.ShadowAlertDialog.getLatestAlertDialog()
+            assertEquals("Куда установить обои?",shadowOf(dialog).title.toString());assertEquals(3,dialog.listView.count)
+            dialog.getButton(android.content.DialogInterface.BUTTON_NEGATIVE).performClick()
+            assertEquals(saved,r.savedProfiles());assertEquals(chosen,get<Selection>(a,"draft"))
+        }finally{controller.destroy()}
+    }
+    @Test fun choosingLockAppliesThePreviewSelectionAndPreservesHome(){
+        val(controller,queue)=setup();val a=controller.get();val r=repo();val c=data().collections.first{it.weather!=null}
+        try{
+            r.save(Selection(source="weather",collection=c.id,mode="weather",target="home",weatherSource="real"))
+            val home=r.savedProfiles().home
+            val chosen=Selection(source="weather",collection=c.id,mode="weather",weatherSource="open-meteo",weatherCity=city,target="home")
+            render(a,chosen);get<Button>(a,"apply").performClick()
+            val dialog=org.robolectric.shadows.ShadowAlertDialog.getLatestAlertDialog();dialog.listView.performItemClick(null,1,1)
+            queue.runAll();shadowOf(Looper.getMainLooper()).idle()
+            assertEquals(home,r.savedProfiles().home);assertEquals(city,r.settings("lock").weatherCity)
+            assertEquals(chosen.collection,r.settings("lock").collection);assertFalse(r.savedProfiles().linked)
+        }finally{controller.destroy()}
+    }
+
+    @Test fun confirmedMissingFrameUsesTheResourcePlaceholderAndExplainsWhy(){
+        val(controller,_)=setup();val a=controller.get()
+        try{
+            set(a,"hasPreviewFrame",false);call(a,"showNoData","Кадр ещё не опубликован")
+            assertNotNull(get<ImageView>(a,"preview").drawable)
+            assertEquals("Кадр ещё не опубликован",get<TextView>(a,"caption").text.toString())
+        }finally{controller.destroy()}
+    }
+    @Test fun loadingDoesNotShowTheMissingImagePlaceholder(){
+        val(controller,_)=setup();val a=controller.get()
+        try{
+            set(a,"hasPreviewFrame",false);call(a,"showNoData","Нет кадра")
+            call(a,"showLoading","Загружаю текущий кадр…")
+            assertNull(get<ImageView>(a,"preview").drawable)
+            assertTrue(get<TextView>(a,"caption").text.contains("Загружаю"))
+        }finally{controller.destroy()}
+    }
+    @Test fun updateFailureKeepsTheAlreadyDisplayedFrameInsteadOfThePlaceholder(){
+        val(controller,_)=setup();val a=controller.get()
+        try{
+            val image=android.graphics.drawable.ColorDrawable(android.graphics.Color.BLUE)
+            get<ImageView>(a,"preview").setImageDrawable(image);set(a,"hasPreviewFrame",true)
+            call(a,"showNoData","Нет сети")
+            assertSame(image,get<ImageView>(a,"preview").drawable)
+            assertEquals("Сохранённый кадр · Нет сети",get<TextView>(a,"caption").text.toString())
+            call(a,"showLoading","Обновляю…");assertSame(image,get<ImageView>(a,"preview").drawable)
+        }finally{controller.destroy()}
+    }
+
+    @Test fun failedInitialWeatherFetchTransitionsFromLoadingToTheResourcePlaceholder(){
+        val(controller,_)=setup();val a=controller.get();val r=repo();val c=data().collections.first{it.weather!=null}
+        try{
+            val selected=Selection(source="weather",collection=c.id,mode="weather",weatherSource="real",weatherDelivery="images")
+            render(a,selected);assertNull(get<ImageView>(a,"preview").drawable)
+            r.put("weather_message_"+weatherScope(c.weather!!,selected),"Обновление отложено: Нет сети")
+            call(a,"pollWeather")
+            assertNotNull(get<ImageView>(a,"preview").drawable)
+            assertTrue(get<TextView>(a,"caption").text.contains("Нет сети"))
+        }finally{controller.destroy()}
+    }
+
+    @Test fun repeatedInstalledTargetCallbackDoesNotRebuildTheAdapter(){
+        val(controller,_)=setup();val a=controller.get()
+        try{
+            set(a,"managedTarget","lock");render(a,Selection())
+            val chooser=get<Spinner>(a,"target");val adapter=chooser.adapter
+            chooser.onItemSelectedListener!!.onItemSelected(chooser,null,1,1)
+            assertSame("Repeating the current target must not trigger another layout/selection callback",adapter,chooser.adapter)
+        }finally{controller.destroy()}
+    }
+
 }
