@@ -19,10 +19,21 @@ internal data class Collection(val id: String, val title: String, val schedule: 
     fun modes() = if(dynamic!=null)listOf("dynamic") else if(weather!=null)listOf("weather") else listOf("monthly", "seasonal").filter { schedule.containsKey(it) } + "daily"
 }
 internal data class Catalogue(val collections: List<Collection>, val scenes: List<Scene>, val featured: String? = null,val downloads: List<JSONObject> = emptyList()) {
+    /** The same device predicate drives browsing, installation and collection notices. */
+    fun availableOnPhone(c: Collection): Boolean = when {
+        c.dynamic!=null -> Dynamic.formats(c.dynamic).isNotEmpty()
+        c.weather!=null -> Weather.formats(c.weather).any { format ->
+            val availability=c.weather.optJSONObject("availability")?.optJSONObject(format)
+            availability==null || availability.optInt("ready",0)>0 || availability.keys().asSequence().any { availability.optJSONObject(it)?.optInt("ready",0)?.let { count -> count>0 }==true }
+        }
+        else -> scenes.any { it.collection==c.id && it.files.any { f -> f.height>f.width } }
+    }
+    fun phoneCollections() = collections.filter { availableOnPhone(it) }
     fun choose(collection: String, mode: String, date: LocalDate = LocalDate.now()): Scene {
-        if (mode == "featured") return scenes.firstOrNull { it.id == featured } ?: error("Сайт ещё не опубликовал обои дня")
+        if (mode == "featured") return scenes.firstOrNull { it.id == featured && it.files.any { f -> f.height>f.width } } ?: error("Обои дня пока недоступны для телефона")
         val pack = collections.firstOrNull { it.id == collection } ?: error("Коллекция недоступна. Выберите другую.")
-        val rows = scenes.filter { it.collection == collection }
+        val rows = scenes.filter { it.collection == collection && it.files.any { f -> f.height>f.width } }
+        requireView(rows.isNotEmpty(),"В коллекции пока нет обоев для телефона")
         if (mode == "daily") return rows[Math.floorMod(date.toEpochDay(), rows.size.toLong()).toInt()]
         val period = when (mode) {
             "monthly" -> date.monthValue.toString()

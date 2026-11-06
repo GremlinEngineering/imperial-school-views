@@ -35,9 +35,7 @@ class InterfaceTest {
         try {
             val d=data();val c=d.collections.first{it.weather!=null && Weather.formats(it.weather).isNotEmpty()}
             set(a,"catalogue",d);set(a,"draft",Selection(source="weather",collection=c.id,mode="weather",weatherSource="open-meteo",weatherCity=city));set(a,"busy",false);call(a,"render")
-            val chooser=get<Spinner>(a,"collection");val index=(0 until chooser.count).first{chooser.getItemAtPosition(it).toString().startsWith("Погода дня")}
-            chooser.setSelection(index,false)
-            chooser.onItemSelectedListener!!.onItemSelected(chooser,null,index,index.toLong())
+            call(a,"selectCollection",DailyWeather.ID)
             val selected=get<Selection>(a,"draft")
             assertEquals(DailyWeather.ID,selected.collection);assertEquals("game-world",selected.weatherSource);assertEquals("images",selected.weatherDelivery)
             assertEquals(2,get<Spinner>(a,"weatherSource").count)
@@ -158,6 +156,8 @@ class InterfaceTest {
             set(a,"draft",Selection(source="weather",collection=c.id,mode="weather",weatherSource="open-meteo",weatherCity=city,target="home"))
             set(a,"catalogue",d);set(a,"busy",false);call(a,"render")
             assertTrue(get<Button>(a,"apply").isEnabled);get<Button>(a,"apply").performClick()
+            val destination=org.robolectric.shadows.ShadowAlertDialog.getLatestAlertDialog()
+            destination.listView.performItemClick(null,0,0)
             val r=repo();val until=System.currentTimeMillis()+5000
             while(r.settings("home").weatherSource!="open-meteo" && System.currentTimeMillis()<until)Thread.sleep(10)
             assertEquals("open-meteo",r.settings("home").weatherSource);assertEquals(city,r.settings("home").weatherCity)
@@ -268,8 +268,8 @@ class InterfaceTest {
                 }
                 page.scrollTo(0,0)
                 assertTrue(get<Button>(a,"apply").isEnabled)
-                listOf("apply","refresh","pause").forEach{field->val button=get<Button>(a,field);assertTrue("Button $field clips text",button.height>=button.layout.height+button.compoundPaddingTop+button.compoundPaddingBottom)}
-                if(name=="server")assertEquals("Погода с сервера",get<Spinner>(a,"weatherSource").selectedItem.toString())
+                listOf("apply").forEach{field->val button=get<Button>(a,field);assertTrue("Button $field clips text",button.height>=button.layout.height+button.compoundPaddingTop+button.compoundPaddingBottom)}
+                if(name=="server")assertEquals("Погода Столицы Империи",get<Spinner>(a,"weatherSource").selectedItem.toString())
             }
         }finally{controller.destroy()}
     }

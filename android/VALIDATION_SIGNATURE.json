@@ -1,21 +1,31 @@
 {
-  "version": "1.3.9",
-  "build": 14,
-  "tests": 162,
+  "version": "1.4.0",
+  "build": 15,
+  "tests": 178,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "lint": {
-    "Fatal": 0,
-    "Error": 0,
-    "Warning": 19,
-    "Information": 0
+    "Warning": 14
   },
   "signature_verified": true,
   "signer_certificate_sha256": "69d0f5e426d31a438f82ef33f2339bd4ede8e682313405615589ac185b7146a8",
-  "same_signer_as_1_3_8": true,
+  "same_signer_as_1_3_9": true,
   "zipalign_16k_verified": true,
-  "apk_sha256": "a609325927b3adabed3dbaf4cca6f5a1ab0d896a2b38bfdea7607c063e5db632",
-  "apk_name": "imperial-school-views-android-1.3.9-a609325927b3.apk",
+  "apk_sha256": "33c5bca76acde80559a47c34081954a615c56e3fc6ab63dab3465a74daf7efe1",
+  "apk_bytes": 10725276,
+  "apk_name": "ImperialSchoolViews_Android_1.4.0.apk",
+  "native_android_checks": 18,
+  "native_android_passed": true,
+  "native_apk_sha256": "33c5bca76acde80559a47c34081954a615c56e3fc6ab63dab3465a74daf7efe1",
+  "emulator": {
+    "android_api": 28,
+    "width": 720,
+    "height": 1280,
+    "density": 320,
+    "uses_seeded_local_collections": true,
+    "upgrade_from": "1.3.9",
+    "upgrade_preserved_preferences": true
+  },
   "physical_device_tested": false
 }
