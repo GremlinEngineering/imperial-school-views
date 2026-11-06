@@ -1,0 +1,231 @@
+{
+  "assembly": {
+    "kind": "fixed_artistic_sketch_demo",
+    "live_weather_or_astronomy": false,
+    "canvas": [
+      3840,
+      2160
+    ],
+    "foundation": {
+      "file": "sources/clean.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "ef6d02f026278f89bc6aefb5353f662908ad32dfbee001da320ba18d7a6b06ba",
+      "transform": "Lanczos resize to output canvas"
+    },
+    "layers": [
+      {
+        "id": "station_fallback",
+        "asset": "station_day",
+        "order": 10,
+        "opacity": 1,
+        "file": "devices/desktop_3840x2160/layers/station_day.png",
+        "sha256": "6a88202d76b49eeecd1407167aa839acc3098b27cca1efeb014ff40dc5c90eae"
+      },
+      {
+        "id": "energy_harvest",
+        "asset": "energy_harvest_day",
+        "order": 13,
+        "opacity": 0.65,
+        "file": "devices/desktop_3840x2160/layers/energy_harvest_day.png",
+        "sha256": "b3ee95461f7179a6b9223797f341e121f2b0e4aacd6137ae7a0a87bebce4af1a"
+      },
+      {
+        "id": "garden_autumn",
+        "asset": "garden_autumn_day",
+        "order": 30,
+        "opacity": 1,
+        "file": "devices/desktop_3840x2160/layers/garden_autumn_day.png",
+        "sha256": "a2892ff516c6500e0cf4b515e7a22c25185acf01383f7a0732012d38ced190b3"
+      },
+      {
+        "id": "departure_convoy",
+        "asset": "departure_convoy_day",
+        "order": 64,
+        "opacity": 1,
+        "file": "devices/desktop_3840x2160/layers/departure_convoy_day.png",
+        "sha256": "5c7f3e33a3dd4d1ab634aabcf1f4e6b335dbfc622de7edbdd1a302059b869f7b"
+      },
+      {
+        "id": "signal_new_game",
+        "asset": "signal_new_game_day",
+        "order": 66,
+        "opacity": 1,
+        "file": "devices/desktop_3840x2160/layers/signal_new_game_day.png",
+        "sha256": "55f6f4f31ef4cbd7ab3f70723bcb48c8e58a1781bc9e1131835c4e81e332edee"
+      },
+      {
+        "id": "signal_new_recommendation",
+        "asset": "signal_new_recommendation_day",
+        "order": 67,
+        "opacity": 1,
+        "file": "devices/desktop_3840x2160/layers/signal_new_recommendation_day.png",
+        "sha256": "59925665aa1f129c38769b3bee5f8f33ab6d5bcf70339732b8daa68c47750259"
+      },
+      {
+        "id": "mission",
+        "asset": "signal_playing_day",
+        "order": 70,
+        "opacity": 1,
+        "file": "devices/desktop_3840x2160/layers/signal_playing_day.png",
+        "sha256": "2d0bac1861497b518b4cc63f1f72ac4c0fa95b3be70e40e37c687caec986f441"
+      },
+      {
+        "id": "front_pad_occlusion",
+        "asset": "front_pad_occlusion_day",
+        "order": 90,
+        "opacity": 1,
+        "file": "devices/desktop_3840x2160/layers/front_pad_occlusion_day.png",
+        "sha256": "e9aa4c639284403c8cadfbe122e29d07ca16e50233ae5e8060f079f5ec3ea949"
+      }
+    ],
+    "note": "Earth, clouds, atmosphere and stars retain the approved sketch appearance. No corner Moon is added. No theme or server generator is modified. 4K output dimensions do not imply new native 4K detail in the sketch.",
+    "frame": {
+      "file": "Orbital_Port_Full_Content_4K.jpg",
+      "bytes": 3237238,
+      "sha256": "af17a486c93b0ae14b8bae909c307bbdb5f93bdb933f5e90dc0e4b1bd0d70243"
+    }
+  },
+  "video": {
+    "encode_seconds": 14.241,
+    "peak_RSS_MiB": 1481.2,
+    "video_bytes": 1349489,
+    "command": [
+      "ffmpeg",
+      "-filter_threads",
+      "1",
+      "-filter_complex_threads",
+      "1",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      "-threads",
+      "2",
+      "-loop",
+      "1",
+      "-framerate",
+      "24",
+      "-i",
+      "/workspace/scratch/46c0795b73b7/orbital_video_trial/Orbital_Port_Full_Content_4K.jpg",
+      "-t",
+      "4",
+      "-an",
+      "-vf",
+      "scale=iw:ih:in_range=full:out_range=limited:in_color_matrix=bt601:out_color_matrix=bt709,format=yuv420p",
+      "-c:v",
+      "libx265",
+      "-preset",
+      "fast",
+      "-crf",
+      "18",
+      "-profile:v",
+      "main",
+      "-tag:v",
+      "hvc1",
+      "-x265-params",
+      "pools=2:frame-threads=1:rc-lookahead=8:bframes=2:ref=2:keyint=96:min-keyint=96:scenecut=0:open-gop=0:log-level=error",
+      "-colorspace",
+      "bt709",
+      "-color_primaries",
+      "bt709",
+      "-color_trc",
+      "bt709",
+      "-color_range",
+      "tv",
+      "-movflags",
+      "+faststart",
+      "/workspace/scratch/46c0795b73b7/orbital_video_trial/Orbital_Port_Full_Content_4K_HEVC.mp4"
+    ],
+    "ffprobe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "hevc",
+          "codec_long_name": "H.265 / HEVC (High Efficiency Video Coding)",
+          "profile": "Main",
+          "codec_type": "video",
+          "codec_tag_string": "hvc1",
+          "codec_tag": "0x31637668",
+          "width": 3840,
+          "height": 2160,
+          "coded_width": 3840,
+          "coded_height": 2160,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "16:9",
+          "pix_fmt": "yuv420p",
+          "level": 150,
+          "color_range": "tv",
+          "color_space": "bt709",
+          "chroma_location": "center",
+          "field_order": "progressive",
+          "refs": 1,
+          "view_ids_available": "",
+          "view_pos_available": "",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 49152,
+          "duration": "4.000000",
+          "bit_rate": "2689780",
+          "nb_frames": "96",
+          "extradata_size": 2489,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx265"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/workspace/scratch/46c0795b73b7/orbital_video_trial/Orbital_Port_Full_Content_4K_HEVC.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "4.000000",
+        "size": "1349489",
+        "bit_rate": "2698978",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2mp41",
+          "encoder": "Lavf61.7.103"
+        }
+      }
+    }
+  }
+}

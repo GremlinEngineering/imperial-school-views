@@ -1,0 +1,12 @@
+{
+  "version": "0.4.1",
+  "build": 6,
+  "core_checks": 73,
+  "same_signer_as_0_4_0": true,
+  "certificate_sha256": "67e2174516f404553dce739f482e87251f464c300a29d35789a9fb6e8bfbeeb5",
+  "apk_sha256": "8a86e3369d96de5fec630b5cd3fdbc2a01f28e052902dd2ce4a01c8abf17767d",
+  "apk_bytes": 17799805,
+  "bundled_assets_unchanged": 23,
+  "physical_yandex_tv_tested": false,
+  "new_emulator_run": false
+}

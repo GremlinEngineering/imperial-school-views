@@ -1,0 +1,342 @@
+{
+  "version": "0.6.0",
+  "build": 11,
+  "description": "Binary resources omitted from the source-only GitHub publication. Restore unchanged files from ImperialSchoolViewsTV_0.6.0_source.zip before building or running tests. No file contents are embedded here.",
+  "files": [
+    {
+      "path": "app/src/main/assets/music/01_blue_danube_fm.mp3",
+      "bytes": 2486434,
+      "sha256": "037bfea00245ee0e6f1606927ea6972fe7acae23ae5c441cf82bcf66d3c58d85"
+    },
+    {
+      "path": "app/src/main/assets/music/02_bwv639_fm.mp3",
+      "bytes": 2123528,
+      "sha256": "2703a063a386ead0bcf5e239225859223cc9a1c1b5c2b3e3ca5b9c42a7b6e6f1"
+    },
+    {
+      "path": "app/src/main/assets/music/03_mozart_romanze_fm.mp3",
+      "bytes": 3447376,
+      "sha256": "275769bb648dd66e1a9fc921fbbc9120511189aa8eb51885fc819d6f3d4ae211"
+    },
+    {
+      "path": "app/src/main/assets/music/04_beethoven_pathetique_i_fm.mp3",
+      "bytes": 5229709,
+      "sha256": "4c67d9d8430eb16dbd90ff429ace2421e39e4984c69126ac6b10ff5756595df7"
+    },
+    {
+      "path": "app/src/main/assets/music/05_berlioz_vallon_theme_fm.mp3",
+      "bytes": 912685,
+      "sha256": "ed46e76040d5f70ff00e1980ffd7974f13b887c358a4573f2cdea427bc425616"
+    },
+    {
+      "path": "app/src/main/assets/music/06_hanson_romantic_quote_fm.mp3",
+      "bytes": 166066,
+      "sha256": "88113bed9f556757b78115096bb163b0349c69d6d644d12eb43479d34ae0febd"
+    },
+    {
+      "path": "app/src/main/assets/music/07_gayane_adagio_quote_fm.mp3",
+      "bytes": 257721,
+      "sha256": "9b5f57dc05ccf692374f37a7696265e72471f4dc2b14c0d7e6f3c23922a45716"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/01_part_of_your_world_snes.mp3",
+      "bytes": 250309,
+      "sha256": "b46d5e302c09ee14b293193f06ad95f27462e013938c395df870613695ba2a50"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/02_kiss_the_girl_snes.mp3",
+      "bytes": 268988,
+      "sha256": "bdceb3a12ef2ef98f109b3e9091f6f282e665f7ceac270f77bae0d4e05c7cdf5"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/03_under_the_sea_snes.mp3",
+      "bytes": 350204,
+      "sha256": "76ce0aec3c0a6dae328661cce3342bc0b7af6f57c1eebf3160f90b4b5a8b93ba"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/04_path_of_the_wind_snes.mp3",
+      "bytes": 198108,
+      "sha256": "e6272c5bd4ef9a16fd547564d51ca696ae2823788a03bf977c82f3f6da978fbc"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/05_ocean_view_snes.mp3",
+      "bytes": 268929,
+      "sha256": "cc205c98330578a83bb492ea2f8cc3d624b320ff534068e8e9586d8615467680"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/06_ostavaysya_snes.mp3",
+      "bytes": 194126,
+      "sha256": "dcdf0e788af753407751079f7be38b2e695a62e08c054c79432313068d9d6f81"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/07_ashitaka_and_san_snes.mp3",
+      "bytes": 281880,
+      "sha256": "7700696d97321b91dc60e3be6198677c459cc72399aed643e3fd72add74abb7f"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/08_bygone_days_snes.mp3",
+      "bytes": 311867,
+      "sha256": "819882ce9c513e78733262fb5947ea51a85818b79cbbe466d1120c3201208ae0"
+    },
+    {
+      "path": "app/src/main/assets/music/tea/09_on_a_clear_day_snes.mp3",
+      "bytes": 285334,
+      "sha256": "deb8212b25a356e83e694602dec3ac4e9a64634963f65044e5dd63fa111d7958"
+    },
+    {
+      "path": "app/src/main/res/drawable/app_icon.png",
+      "bytes": 206066,
+      "sha256": "e7615517733a07366625e56c5c5cb406162e5dc86fc24a72ec6ffa9232145644"
+    },
+    {
+      "path": "app/src/main/res/drawable/tv_banner.png",
+      "bytes": 11344,
+      "sha256": "fcf61d51a36281e76d68f9386e6e54b95396ed231cd7d89bc8f68c195f7b47da"
+    },
+    {
+      "path": "app/src/main/res/font/literata.ttf",
+      "bytes": 224828,
+      "sha256": "286a2fcd05ba6d215728449dccee5c3f9802bf97954449e3ca63ca98b39e06f1"
+    },
+    {
+      "path": "app/src/main/res/font/oswald_semibold.ttf",
+      "bytes": 79420,
+      "sha256": "2b666ebfdb1273ec22bcb1bd8788e33a6aa8f7a7947a4ae9eab1d2c05e09284f"
+    },
+    {
+      "path": "app/src/main/res/font/ptmono.ttf",
+      "bytes": 177392,
+      "sha256": "d9c83e56c6c6eb444f3eb31eb0eeb68c286c433aa1c28fac9a4f11a85ddab166"
+    },
+    {
+      "path": "app/src/test/resources/png-regression.png",
+      "bytes": 84,
+      "sha256": "49784d26f9f08e4844a1ac526a168441063aae950e1a61e0cdd6617bf377e489"
+    },
+    {
+      "path": "artwork/accepted-tv-gamepad-icon.png",
+      "bytes": 1180183,
+      "sha256": "865d63e462637cd233c82f2d0ccfc9d280c1da51ece5bd14212270ce3ea07323"
+    },
+    {
+      "path": "docs/qa/about.png",
+      "bytes": 99361,
+      "sha256": "39ab72aa7299e03d3685278c5a7016569c57b0094bb62f70d2b4f9579c2f6a3f"
+    },
+    {
+      "path": "docs/qa/music.png",
+      "bytes": 93696,
+      "sha256": "5c8affc611b543e0549d250321cba39ab26ac83cafce80d07411ac329dc702fc"
+    },
+    {
+      "path": "docs/qa/settings.png",
+      "bytes": 74513,
+      "sha256": "fdfd4c49df341075c89a2faa845e52137e0ca2bb35904b87fb3c42e09f52e3fd"
+    },
+    {
+      "path": "docs/qa/tea_music.png",
+      "bytes": 106253,
+      "sha256": "a18d6e44310bacfe47a9055bdff5239fa63cbacdecb5e1c2b7c9cf85ecead6b7"
+    },
+    {
+      "path": "docs/qa/themes.png",
+      "bytes": 65841,
+      "sha256": "df4746f1812e2f94eb8ae56d8dd067cdfbb1f2fc41cb5722877147729004db40"
+    },
+    {
+      "path": "music/source/01_blue_danube_fm.vgm",
+      "bytes": 105620,
+      "sha256": "fa218780f5772d32fd035758fa878cf70ba66d0b4ade8388d275b873e6dcfd44"
+    },
+    {
+      "path": "music/source/02_bwv639_fm.vgm",
+      "bytes": 57164,
+      "sha256": "ca1aeda403a717ea397231661be107c34fd7b5ae949d2ab46a85a0689facfecb"
+    },
+    {
+      "path": "music/source/03_mozart_romanze_fm.vgm",
+      "bytes": 178092,
+      "sha256": "0a615f242e62ea29513d1027490979be979bc5a58518f2fd9c91c765e079cf6c"
+    },
+    {
+      "path": "music/source/04_beethoven_pathetique_i_fm.vgm",
+      "bytes": 457145,
+      "sha256": "5c1b019ac7c87bdd808d4588c5fa16ca4a6eb54bdfae404f92421c5e5ed70ef8"
+    },
+    {
+      "path": "music/source/05_berlioz_vallon_theme_fm.vgm",
+      "bytes": 23052,
+      "sha256": "46d7964fbcea2200013d012e330e10317cbdb6bc002d5f33d422801dea7e51e3"
+    },
+    {
+      "path": "music/source/06_hanson_romantic_quote_fm.vgm",
+      "bytes": 2801,
+      "sha256": "f4a8053bc83ba3deffb078a943565c497da4df319c06054dbd41a17deee5d7c1"
+    },
+    {
+      "path": "music/source/07_gayane_adagio_quote_fm.vgm",
+      "bytes": 3549,
+      "sha256": "6328be5697a1ccbcff95e25815d278ee6461e5409a0296d6dc3cf551bb556839"
+    },
+    {
+      "path": "music/source/MozartWA-KV525-mov-02.mid",
+      "bytes": 15041,
+      "sha256": "7222397a488d4ee6d43f6d7a10ce12bf1e871af115be8623c15f44c23e1c8691"
+    },
+    {
+      "path": "music/source/berlioz_vallon_theme.mid",
+      "bytes": 1850,
+      "sha256": "0b86158e4f3cfb79db2c5f262d3b15c7e79b43ea81747d627846b40f81640a58"
+    },
+    {
+      "path": "music/source/blue_danube.mid",
+      "bytes": 2315,
+      "sha256": "9de3cb52a3ef8a118369d22d49c33896080afd1113749e4c07c559a1502c4df4"
+    },
+    {
+      "path": "music/source/bwv639.mid",
+      "bytes": 4692,
+      "sha256": "9008cadf28ab434ec85c4fbd31c6573e10b7adc0c0a16223190f51b1658809af"
+    },
+    {
+      "path": "music/source/gayane_adagio_quote.mid",
+      "bytes": 431,
+      "sha256": "5cafe464d1b8b8316795d3c0651047e60c6a28ba26adb3b291fc3ae17635d0bd"
+    },
+    {
+      "path": "music/source/hanson_interlochen_quote.mid",
+      "bytes": 340,
+      "sha256": "5eef6fab0bbf3d07af81e08a78aa6178ef095fbc6bdc1060dbe1da4b0bdc24c9"
+    },
+    {
+      "path": "music/source/mozart-original-mids.zip",
+      "bytes": 80242,
+      "sha256": "aa37111c9f339532f26c29d6648bde8c39d92d785f87d14a33e9e9914fa472a7"
+    },
+    {
+      "path": "music/source/pathetique-1.mid",
+      "bytes": 37697,
+      "sha256": "cfe2b012227077a304a0ed282a98dceaca6a73bd0fb4d3f2249ac4bacbe30121"
+    },
+    {
+      "path": "music/teahouse/source/01_part_of_your_world_snes.mid",
+      "bytes": 490,
+      "sha256": "3896f49127b300053037775511448fcbb4a561a4304390af1ae17020cd4073ef"
+    },
+    {
+      "path": "music/teahouse/source/01_part_of_your_world_snes.snes-registers",
+      "bytes": 69122,
+      "sha256": "ebffa83a03f7536865e2d14485c77893877b072a08663409aa9459679556c727"
+    },
+    {
+      "path": "music/teahouse/source/02_kiss_the_girl_snes.mid",
+      "bytes": 878,
+      "sha256": "86af28b512bd531c76dfc9a2e841940588606a2f000e7addfcbc929606a85898"
+    },
+    {
+      "path": "music/teahouse/source/02_kiss_the_girl_snes.snes-registers",
+      "bytes": 72032,
+      "sha256": "a1f94d3b8f32871264d20952a4fb505adf2eb266ca5c0887ea85a6c3da4e0f38"
+    },
+    {
+      "path": "music/teahouse/source/03_under_the_sea_snes.mid",
+      "bytes": 2363,
+      "sha256": "c2dd5353a40db757fd7b9035d1288e96b7a8e5f692993d602ebb3fcfa9e6dbf7"
+    },
+    {
+      "path": "music/teahouse/source/03_under_the_sea_snes.snes-registers",
+      "bytes": 86300,
+      "sha256": "2a666835c0fa3a609f55bfbc0d2bd4c4b35f569e67812d96ea253962c507cf5f"
+    },
+    {
+      "path": "music/teahouse/source/04_path_of_the_wind_snes.mid",
+      "bytes": 580,
+      "sha256": "c6230d764c00902006434fcb30c2c0a6c1a0c91f7d28153e1b2ab3594282e19f"
+    },
+    {
+      "path": "music/teahouse/source/04_path_of_the_wind_snes.snes-registers",
+      "bytes": 69866,
+      "sha256": "96ff6cdf303a0cbc0729dfed18c435a08134f4bc39b0baad1c9dd95b89d4431f"
+    },
+    {
+      "path": "music/teahouse/source/05_ocean_view_snes.mid",
+      "bytes": 490,
+      "sha256": "c7d4d14d4aabd59954e507a43f934a382e3a0e9477cf4f009f8d4fc863126c15"
+    },
+    {
+      "path": "music/teahouse/source/05_ocean_view_snes.snes-registers",
+      "bytes": 69452,
+      "sha256": "3557a3ddca10a1277c5df19ef4697cee8e862cac321059c97d3e84372f9177b1"
+    },
+    {
+      "path": "music/teahouse/source/06_ostavaysya_snes.mid",
+      "bytes": 259,
+      "sha256": "52921a093a01c6d4f4e9a051e90b03bfc5f9e0c81e4c4ed7327626ea43bdd2b7"
+    },
+    {
+      "path": "music/teahouse/source/06_ostavaysya_snes.snes-registers",
+      "bytes": 67358,
+      "sha256": "83962154db9ab5849c91fdf0e1fd283aba634e99136d07e10b0cefbd0a6f123f"
+    },
+    {
+      "path": "music/teahouse/source/07_ashitaka_and_san_snes.mid",
+      "bytes": 454,
+      "sha256": "2c89fe53ec3e43a7806fd2c7261a0f3c35cc57ec26af376bb3c6eb04192d2841"
+    },
+    {
+      "path": "music/teahouse/source/07_ashitaka_and_san_snes.snes-registers",
+      "bytes": 68876,
+      "sha256": "1bb5c6e66273d0e690a1016aefb5b0a9cf7e53f6f70d1b6f1ff6da3f299437ff"
+    },
+    {
+      "path": "music/teahouse/source/08_bygone_days_snes.mid",
+      "bytes": 558,
+      "sha256": "8b0b58bf6b3b542abfcd00a2387e2ceb0686ec95138a53f28034df070c4fdfaa"
+    },
+    {
+      "path": "music/teahouse/source/08_bygone_days_snes.snes-registers",
+      "bytes": 69776,
+      "sha256": "3962f84492c10a946319991906128aabb4052c642db39b7ffcb9b8ae79380113"
+    },
+    {
+      "path": "music/teahouse/source/09_on_a_clear_day_snes.mid",
+      "bytes": 661,
+      "sha256": "74c13ab320bdc6ed6e0ce52cc45e277258630dc5126dfb363b587689184e0b5b"
+    },
+    {
+      "path": "music/teahouse/source/09_on_a_clear_day_snes.snes-registers",
+      "bytes": 71276,
+      "sha256": "52fb9488471aef13241fba38885e280e376bba8b83d171b72282baa15ab2536e"
+    },
+    {
+      "path": "tests/android/assets/fhd-scene.jpg",
+      "bytes": 1092356,
+      "sha256": "de8293401e7d53711264c22549cbee9e2ca63d503a5faba6d2a932b3d14c63e0"
+    },
+    {
+      "path": "tests/android/assets/png-regression.png",
+      "bytes": 84,
+      "sha256": "49784d26f9f08e4844a1ac526a168441063aae950e1a61e0cdd6617bf377e489"
+    },
+    {
+      "path": "tests/android/assets/video/A.mp4",
+      "bytes": 1349489,
+      "sha256": "6276d4578e30cc5965d6f0646b2e07e3c40f8e951bdcaf098963b1770e08a5c4"
+    },
+    {
+      "path": "tests/android/assets/video/B.mp4",
+      "bytes": 1302828,
+      "sha256": "0e07a6e5eab78947401badbd1a71d2295779171e313ad02f73f19c72d4fcb9c8"
+    },
+    {
+      "path": "vendor/dec-0.1.2.jar",
+      "bytes": 98115,
+      "sha256": "615c0c3efef990d77831104475fba6a1f7971388691d4bad1471ad84101f6d52"
+    },
+    {
+      "path": "vendor/test-json-20240303.jar",
+      "bytes": 78332,
+      "sha256": "3cf6cd6892e32e2b4c1c39e0f52f5248a2f5b37646fdfbb79a66b46b618414ed"
+    }
+  ]
+}

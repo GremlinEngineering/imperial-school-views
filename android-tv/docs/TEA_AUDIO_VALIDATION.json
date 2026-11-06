@@ -1,0 +1,6 @@
+{
+  "tuning_a4_hz": 440.0,
+  "sample_rate": 32000,
+  "dsp": "blargg snes_spc0.9.0, unmodified S-DSP",
+  "all_mp3_full_decode": true
+}

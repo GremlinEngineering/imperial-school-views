@@ -1,0 +1,19 @@
+{
+  "generator": "1.0.83",
+  "public_feed": {
+    "schema": 1,
+    "app_id": "ru.oopssre.imperialschool.viewstv",
+    "platform": "android",
+    "release": {
+      "version": "0.4.4",
+      "build": 9,
+      "sha256": "3171eb18485bfd4e2430ce4ea8d8830da43a675a32aba17fc8c4f6dab19e19c8",
+      "bytes": 20466528,
+      "url": "https://games.oopssre.ru/assets/arcade/views/downloads/ImperialSchoolViewsTV_0.4.4.apk"
+    }
+  },
+  "flat_input_pair": true,
+  "phone_untouched": true,
+  "both_videos_stored_and_exact": true,
+  "unchanged_second_publication": true
+}

@@ -1,0 +1,31 @@
+{
+  "version": "0.6.0",
+  "build": 11,
+  "android_sdk_platform": 36,
+  "min_sdk": 26,
+  "target_sdk": 36,
+  "apk_bytes": 17836669,
+  "apk_sha256": "e559045c066e687629ee4c16000a322fb1520700eb431734ce2a9588619f4c62",
+  "site_flat_pair_verified": true,
+  "same_publisher_certificate": true,
+  "certificate_sha256": "67e2174516f404553dce739f482e87251f464c300a29d35789a9fb6e8bfbeeb5",
+  "unchanged_asset_files": 23,
+  "unchanged_mp3": 16,
+  "embedded_mp4": 0,
+  "host_checks": 151,
+  "host_suites": [
+    73,
+    34,
+    44
+  ],
+  "live_snapshot_collections": {
+    "dynamic": 2,
+    "weather": 3,
+    "plain": 4
+  },
+  "instrumentation_apk_compiled": true,
+  "instrumentation_executed": false,
+  "physical_yandex_tv_tested": false,
+  "ui_review": "source navigation/copy audit; docs/UI_AUDIT_0.6.0.md",
+  "limits": "No Android TV emulator or physical TV available in this release environment."
+}
