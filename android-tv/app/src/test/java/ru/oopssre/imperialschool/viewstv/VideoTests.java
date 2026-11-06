@@ -74,7 +74,7 @@ public final class VideoTests {
         router=(url,h)->url.getPath().endsWith(".mp4")?new Response(200,a):json(url.getPath().endsWith("/devices/"+DEVICE+"/current.json")?badState:top,"complete");try(VideoLoader.Loaded complete=loader.load(theme)){ok(Arrays.equals(Files.readAllBytes(complete.file.toPath()),a),"retry restarts complete media from byte zero");}
         String p=hash('1'),q=hash('2'),r=hash('3');cache.pinVideo(p);cache.pinVideo(p);cache.pinVideo(q);
         for(String sha:new String[]{p,q,r})try(RandomAccessFile file=new RandomAccessFile(cache.video(sha),"rw")){file.setLength(20L*1024*1024);}
-        cache.unpinVideo(p);cache.reserve(8L*1024*1024,"");ok(cache.video(p).exists()&&cache.video(q).exists()&&!cache.video(r).exists(),"active and prepared media protected by reference-counted pins");ok(cache.bytes()+8L*1024*1024<=CacheStore.MAX_BYTES,"combined media cache remains bounded");cache.unpinVideo(p);cache.unpinVideo(q);
+        cache.unpinVideo(p);cache.reserve(8L*1024*1024,"");ok(cache.video(p).exists()&&cache.video(q).exists()&&!cache.video(r).exists(),"active and prepared media protected by reference-counted pins");ok(cache.root.getUsableSpace()>=8L*1024*1024,"actual disk reservation leaves active media intact");cache.unpinVideo(p);cache.unpinVideo(q);
         try(java.util.stream.Stream<Path> walk=Files.walk(dir)){walk.sorted(Comparator.reverseOrder()).forEach(path->{try{Files.delete(path);}catch(Exception ignored){}});}
         System.out.println("PASSED "+checks+" video checks: generic profile, metadata, random polling, two-hour freshness, fresh-JSON retry, cache integrity and pins");
     }

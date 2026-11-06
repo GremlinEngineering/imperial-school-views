@@ -7,4 +7,4 @@ for line in source.read_text().splitlines():
  match=re.match(r'INSTRUMENTATION_STATUS: proof_(\w+)=(.+)$',line)
  if match:
   name,data=match.groups()
-  if name in {'settings','music','tea_music','about','themes'}:(destination/(name+'.png')).write_bytes(base64.b64decode(data))
+  if re.fullmatch(r'[a-zA-Z0-9_]+',name):(destination/(name+'.png')).write_bytes(base64.b64decode(data))

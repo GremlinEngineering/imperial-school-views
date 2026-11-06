@@ -1,79 +1,56 @@
 # Imperial School Views · Android TV
 
-[Русский](README.md) · English · [About the project](../README.md)
+[Русский](README.md) · English · [About the project](https://github.com/GremlinEngineering/imperial-school-views)
 
-Version **0.6.0, build 11**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
+Version **0.7.0, build 12**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
 
-The app displays Imperial School wallpaper collections on a television and works as an Android system screensaver. It opens directly into the wallpaper scene. Dynamic scenes arrive ready to display from the server; no layers are composed on the TV.
-
-## Features
-
-- Ordinary, weather and dynamic collections, with PNG and JPEG support.
-- Server-published 3840×2160 HEVC video for dynamic themes.
-- Auto / 4K / Full HD image resolution and fit/fill settings.
-- Server weather, game-world weather and scheduled changes for ordinary collections.
-- Independent application and screensaver audio settings, volume and track controls.
-- Cache usage and cleanup, preserving the selected theme and settings.
-- Last verified image or video retained when an update fails.
+The app opens directly into an Imperial School wallpaper scene and also works as an Android system screensaver. Dynamic scenes arrive ready to display; the television does not compose their layers.
 
 ## Usage
 
-Hold OK for **one second** to open settings. Use arrows to move focus and a short OK press to select an item. Back returns to the previous page, closes settings to the scene, or exits from the scene. Focus and scroll position are restored after leaving a submenu.
+Hold OK for one second to open the menu. A short OK press leaves the scene unchanged. Use arrows to move focus, OK to select and Back to return. Focus and scroll position are restored.
 
-Choose a collection in **Wallpapers**, then the output mode, resolution and scaling in **Screen**. Weather and ordinary collections use images; the video preference is retained for dynamic themes.
+The main menu contains **Choose wallpapers**, **Music** when available, and **Settings**. The picker shows an image preview and short description alongside the collection list. Focus previews a collection; OK applies it and returns to the scene. Live scenes, weather and image collections remain available in every output mode. Current-collection settings beside the picker provide weather source or scheduled image changes.
 
-**Music** provides separate application and screensaver sound switches, volume and track controls. It appears for collections with a soundtrack. Credits are in **About → Music and authors**; technical information is in **Diagnostics**.
+Music retains separate app/screensaver switches and track controls. Left/right changes the selected volume setting inline. The television's system volume remains separate. About lists individual music credits rather than a full technical essay.
 
-**Cache** shows total usage, wallpaper storage and the downloaded app update. Cleanup removes cached images, clips, metadata and the update installer, then reloads the current scene. The selected theme, resolution and audio settings are preserved.
+## Settings
 
-Open the system screensaver settings to select the app using Android's controls. Pressing an arrow key exits the screensaver.
+- **Image display**: dynamic image/video output, Auto/4K/Full HD image resolution, fit/fill and a manual scene refresh.
+- **System screensaver**: Android's screensaver settings. An arrow key exits the screensaver.
+- **Storage**: usage and cleanup, preserving the selected collection and settings.
+- **About**: author, version, website, source code, app updates, music credits and diagnostics. Website and GitHub links include offline QR codes and readable addresses.
 
-## Data and updates
+Before enabling video, the app checks published metadata and declared hardware HEVC 4K support. The choice remains disabled until availability is established, with an explanation. This is a capability check, not proof of physical playback. There is no silent image fallback or software 1080p substitution.
 
-Wallpapers use a private cache limited to **64 MiB**. Entire collection archives and future scenes are not downloaded. The last verified scene remains available if the network fails.
+## Data and storage
 
-The next clip is downloaded and verified while the previous one keeps playing, then replaces it at a loop boundary. Video requires a published `desktop_3840x2160` profile and a `video` block for the dynamic theme. If no clip has been published, image mode can be selected.
+PNG retains its original format; JPEG and published HEVC 3840×2160 clips remain supported. Video uses the dynamic theme's standard `desktop_3840x2160` profile and `video` block. The next clip is verified and prepared while the current clip plays, then replaces it at a loop boundary. The last checked scene remains visible when an update fails.
 
-The application package includes seven station music fragments and nine teahouse fragments, with separate saved playlist positions. Playback stops for collections without music. App volume does not change the television's system volume.
+The arbitrary 64 MiB total cache cap has been removed. Retention keeps the latest collection/profile snapshots and live/prepared media. Obsolete files are removed before writing; storage pressure reclaims older unused snapshots. Real filesystem free space is checked. Image decode and video preparation/playback pin their files against eviction. The individual downloaded image/video limit remains 32 MiB.
 
-App updates are checked using the settings button. The package, signing certificate and checksum are verified before opening Android's system installer.
+Only the focused collection is previewed, after a short debounce. No collection ZIPs or future scenes are prefetched. Cleanup drains preview, image, video and decoder work before removing cache data and reloading the selected scene. Settings remain intact. Android may reclaim cache itself.
 
-## Build
+All sixteen previous music assets remain unchanged: seven station and nine teahouse tracks, with independent saved playlist positions. Unsupported collections stop music.
 
-Python 3, JDK 17+, Android SDK Platform 36 and Build Tools 36.0.0 are required. Gradle is not required.
+## Build and distribution
 
-Before building or running tests, copy dependencies and resources from `ImperialSchoolViewsTV_0.6.0_source.zip`, preserving their relative paths. File paths and checksums are listed in [BINARY_RESOURCES.json](BINARY_RESOURCES.json).
-
-From the repository root:
+Python 3, JDK 17+, Android SDK Platform 36 and Build Tools 36.0.0 are required. Gradle is not required. For a GitHub checkout, copy resources and dependencies from the complete source package; checksums are listed in `BINARY_RESOURCES.json`.
 
 ```sh
-cd android-tv
 export ANDROID_HOME=/path/to/android-sdk
 export IMPERIAL_TV_KEYSTORE=/private/path/imperial-tv.p12
 export IMPERIAL_TV_PASSWORD_FILE=/private/path/password.txt
 python3 build.py
-```
-
-Use your own signing key with alias `tv` and a password file outside the repository. A build signed with a different certificate cannot update an installed official application.
-
-The build creates an APK, `android-tv-release.json` and a website package in `dist/`. The APK is universal and does not depend on Google Play Services.
-
-## Website distribution
-
-`ImperialSchoolViewsTV_0.6.0_site.zip` contains the APK and `android-tv-release.json` at its root. Extract them into the existing `views.root/installers/` directory and run the regular site build. The phone client's `android-release.json` is a separate file.
-
-Official installers are distributed on [the project website](https://games.oopssre.ru/gremlin.html#views).
-
-## Checks and licensing
-
-Run the host checks with:
-
-```sh
 python3 test.py
 ```
 
-**151 checks passed**: 73 core, 34 video and 44 PNG/catalogue/cache regression checks. The Android test APK compiled; physical Yandex TV playback, audio focus and system update installation still require device testing.
+Signing material stays outside the source package. A different signing certificate cannot update the official application.
 
-Results and validation limits are in [VALIDATION_0.6.0.json](docs/VALIDATION_0.6.0.json). Remote-control and screensaver tests are described in [tests/android/README.md](tests/android/README.md).
+The website ZIP contains only the APK and `android-tv-release.json` at its root. Extract both into the existing `views.root/installers/`, then run the regular site build. The phone client's receipt is separate. The server builder creates public URLs and the release envelope. App-update checks do not depend on scene retrieval.
 
-Author: **Дмитрий Малыхин aka Timon_Crazy**. TV application code is [MIT](LICENSE). Third-party component and music licenses and credits are in [THIRD_PARTY.md](THIRD_PARTY.md).
+**215 host checks and 52 Android UI checks passed** on an API 28 emulator. Screenshots were inspected. This does not establish hardware HEVC 4K playback or physical Yandex TV behavior.
+
+Validation results and limitations are in [VALIDATION_0.7.0.json](docs/VALIDATION_0.7.0.json). Device checks are documented in [tests/android/README.md](tests/android/README.md). Historical reports apply only to their named versions.
+
+Author: **Дмитрий Малыхин aka Timon_Crazy**. Application code is [MIT](LICENSE). Third-party and music licenses remain applicable; see [THIRD_PARTY.md](THIRD_PARTY.md).

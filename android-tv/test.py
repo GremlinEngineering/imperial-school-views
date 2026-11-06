@@ -15,8 +15,8 @@ with tempfile.TemporaryDirectory(prefix='imperial-tv-tests-') as directory:
     subprocess.run([
         'java', '--module', 'jdk.compiler/com.sun.tools.javac.Main',
         '-encoding', 'UTF-8', '-classpath', os.pathsep.join([str(json_jar),str(root/'vendor/dec-0.1.2.jar')]), '-d', str(classes),
-        *[str(main / (name + '.java')) for name in ['TvDisplay', 'ImageFormat', 'PlaybackPolicy', 'Protocol', 'Sources', 'HoldGate', 'Release', 'CacheStore','BuildInfo','VideoInfo','VideoPolicy','VideoLoader','HttpTransport']],
-        str(test),str(test.with_name('VideoTests.java')),str(test.with_name('RegressionTests.java')),
+        *[str(main / (name + '.java')) for name in ['TvDisplay', 'ImageFormat', 'PlaybackPolicy', 'Protocol', 'Sources', 'HoldGate', 'Release', 'CacheStore','BuildInfo','VideoInfo','VideoPolicy','VideoLoader','HttpTransport','SceneCopy','ThemeText']],
+        str(test),str(test.with_name('VideoTests.java')),str(test.with_name('RegressionTests.java')),str(test.with_name('DesignTests.java')),
     ], check=True)
     subprocess.run([
         'java', '-cp', os.pathsep.join([str(classes), str(json_jar),str(root/'vendor/dec-0.1.2.jar')]),
@@ -28,3 +28,6 @@ with tempfile.TemporaryDirectory(prefix='imperial-tv-tests-') as directory:
 
     subprocess.run(['java','-cp',os.pathsep.join([str(classes),str(json_jar),str(root/'vendor/dec-0.1.2.jar')]),
         'ru.oopssre.imperialschool.viewstv.RegressionTests',str(root/'app/src/test/resources')],check=True)
+
+    subprocess.run(['java','-cp',os.pathsep.join([str(classes),str(json_jar),str(root/'vendor/dec-0.1.2.jar')]),
+        'ru.oopssre.imperialschool.viewstv.DesignTests',str(root/'app/src/test/resources')],check=True)

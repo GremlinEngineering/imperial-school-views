@@ -1,0 +1,30 @@
+{
+  "version": "0.7.0",
+  "build": 12,
+  "apk_bytes": 17861245,
+  "apk_sha256": "5c90a3cb9387e8d265e70a47cca89673f21af1d508a7b14b1a66c5e3dedb4deb",
+  "same_publisher_certificate": true,
+  "certificate_sha256": "67e2174516f404553dce739f482e87251f464c300a29d35789a9fb6e8bfbeeb5",
+  "site_flat_pair_verified": true,
+  "zip_alignment_verified": true,
+  "unchanged_asset_files": 23,
+  "unchanged_mp3": 16,
+  "embedded_mp4": 0,
+  "host_checks": 215,
+  "host_suites": [
+    73,
+    34,
+    44,
+    64
+  ],
+  "android_ui_checks": 52,
+  "instrumentation_executed": true,
+  "android_tested_apk_sha256": "5c90a3cb9387e8d265e70a47cca89673f21af1d508a7b14b1a66c5e3dedb4deb",
+  "emulator_api": 28,
+  "emulator_fixture_mode": true,
+  "physical_yandex_tv_tested": false,
+  "hardware_hevc_4k_tested": false,
+  "live_video_publication_tested": false,
+  "qr_urls_decoded": true,
+  "limits": "Android UI uses seeded image snapshots. Emulator screenshots and D-pad checks do not establish physical Yandex TV HEVC playback, real TV audio focus, or system update installation."
+}

@@ -14,11 +14,11 @@ The applications connect the wallpaper collections on [games.oopssre.ru](https:/
 - Provides local image viewing and a slideshow in the Android, macOS and Windows clients.
 - Uses platform-specific screen settings; Android supports separate home-screen and lock-screen profiles.
 
-Dynamic scenes are received as finished server-rendered images. The TV client 0.6.0 supports PNG, JPEG and published 4K HEVC video. The clients do not compose layers or calculate future scenes on the device.
+Dynamic scenes are received as finished server-rendered images. The TV client 0.7.0 supports PNG, JPEG and published 4K HEVC video. The clients do not compose layers or calculate future scenes on the device.
 
 ## Repository status
 
-The Android 1.3.9 source is in [`android/`](android/), Android TV / Yandex TV 0.6.0 (build 11) in [`android-tv/`](android-tv/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
+The Android 1.3.9 source is in [`android/`](android/), Android TV / Yandex TV 0.7.0 (build 12) in [`android-tv/`](android-tv/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
 
 Build instructions and platform features are in [`android/README.md`](android/README.md), [`android-tv/README.en.md`](android-tv/README.en.md), [`macos/README.md`](macos/README.md), and [`windows/README.en.md`](windows/README.en.md). The application features described above are not a claim that all platforms have identical capabilities.
 
@@ -37,3 +37,4 @@ Publisher signing keys, passwords and personal signing backups must stay outside
 Third-party components retain their respective licenses and notices in [`android/app/src/main/assets/`](android/app/src/main/assets/), [`macos/licences/`](macos/licences/), and [`windows/Licenses/`](windows/Licenses/). Wallpaper artwork has its own licensing terms, separate from application code.
 
 TV client code is licensed under [MIT](android-tv/LICENSE); its third-party components and music retain their own licenses, described in [THIRD_PARTY.md](android-tv/THIRD_PARTY.md). The application code license for the other clients has not yet been specified.
+

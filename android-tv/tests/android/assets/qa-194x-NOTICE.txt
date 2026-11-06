@@ -1,0 +1,4 @@
+QA image from the Imperial School wallpaper collection “Под крылом — целый мир · 194x / 19XX”.
+Source: https://games.oopssre.ru/assets/arcade/views/collections/194x-under-the-wing/files/month-01-display-3840x2160.jpg
+Wallpaper artwork retains the project's wallpaper licensing terms, separate from the MIT application code.
+This fixture and screenshots are used for interface validation, not as proof of current live weather or publication state.

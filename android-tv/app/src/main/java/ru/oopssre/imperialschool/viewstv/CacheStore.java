@@ -6,16 +6,22 @@ import java.security.*;
 import java.util.*;
 import org.json.*;
 
-/** Bounded, disposable private cache. There is no collection or ZIP storage. */
+/** Disposable latest-snapshot cache. There is no collection or ZIP storage. */
 public final class CacheStore {
-    public static final long MAX_BYTES=64L*1024*1024;
+    // Retain the latest snapshot per collection/profile, plus live and prepared media.
+    // Space is checked on the actual filesystem rather than against an arbitrary total.
+    public static final class SpaceException extends IOException {
+        SpaceException(){super("Недостаточно места на телевизоре");}
+    }
     private static final Object LOCK=new Object();
-    private static final Map<String,Integer> VIDEO_PINS=new HashMap<>();
+    private static final Map<String,Integer> MEDIA_PINS=new HashMap<>();
     public final File root,images,videos,json;
     public CacheStore(File parent){root=new File(parent,"imperial-tv");images=new File(root,"images");videos=new File(root,"videos");json=new File(root,"json");images.mkdirs();videos.mkdirs();json.mkdirs();cleanupParts();}
     public File video(String sha){Protocol.require(Protocol.hash(sha),"Неверный хеш видео");return new File(videos,sha+".mp4");}
-    public void pinVideo(String sha){synchronized(LOCK){String key=video(sha).getAbsolutePath();VIDEO_PINS.put(key,VIDEO_PINS.getOrDefault(key,0)+1);}}
-    public void unpinVideo(String sha){synchronized(LOCK){String key=video(sha).getAbsolutePath();int n=VIDEO_PINS.getOrDefault(key,0);if(n<=1)VIDEO_PINS.remove(key);else VIDEO_PINS.put(key,n-1);}}
+    public void pinVideo(String sha){synchronized(LOCK){String key=video(sha).getAbsolutePath();MEDIA_PINS.put(key,MEDIA_PINS.getOrDefault(key,0)+1);}}
+    public void unpinVideo(String sha){synchronized(LOCK){String key=video(sha).getAbsolutePath();int n=MEDIA_PINS.getOrDefault(key,0);if(n<=1)MEDIA_PINS.remove(key);else MEDIA_PINS.put(key,n-1);}}
+    public void pinImage(String sha){synchronized(LOCK){for(String format:new String[]{"jpg","png"}){String key=new File(images,sha+"."+format).getAbsolutePath();MEDIA_PINS.put(key,MEDIA_PINS.getOrDefault(key,0)+1);}}}
+    public void unpinImage(String sha){synchronized(LOCK){for(String format:new String[]{"jpg","png"}){String key=new File(images,sha+"."+format).getAbsolutePath();int n=MEDIA_PINS.getOrDefault(key,0);if(n<=1)MEDIA_PINS.remove(key);else MEDIA_PINS.put(key,n-1);}}}
     public boolean valid(VideoInfo info)throws IOException {File f=video(info.sha);return f.isFile()&&f.length()==info.bytes&&sha(f).equals(info.sha);}
     public void saveVideo(VideoInfo info)throws IOException,JSONException {synchronized(LOCK){atomic(new File(root,"video-state-"+info.frame.theme+"-"+info.frame.device+".json"),info.json().toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));video(info.sha).setLastModified(System.currentTimeMillis());}}
     public VideoInfo cachedVideo(Protocol.Theme theme){synchronized(LOCK){try{VideoInfo v=VideoInfo.saved(new JSONObject(new String(read(new File(root,"video-state-"+theme.id+"-"+Protocol.DEFAULT_DEVICE+".json"),100000),java.nio.charset.StandardCharsets.UTF_8)));if(v.frame.theme.equals(theme.id)&&valid(v)){video(v.sha).setLastModified(System.currentTimeMillis());return v;}}catch(Exception ignored){}return null;}}
@@ -32,7 +38,43 @@ public final class CacheStore {
     File snapshot(String theme,String device){Protocol.require(theme.matches("[a-z0-9][a-z0-9_-]{0,79}")&&Protocol.id(device),"Неверная область кеша");return new File(root,"state-"+theme+"-"+device+".json");}
     public void save(Protocol.Frame f)throws IOException,JSONException {synchronized(LOCK){atomic(snapshot(f.theme,f.device),f.json().toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));image(f).setLastModified(System.currentTimeMillis());}}
     public long bytes(){synchronized(LOCK){long n=0;for(File folder:new File[]{root,images,videos,json}){File[] files=folder.listFiles();if(files!=null)for(File f:files)if(f.isFile())n+=f.length();}return n;}}
-    public void reserve(long incoming,String pinned)throws IOException {synchronized(LOCK){long total=bytes();List<File> rows=new ArrayList<>();for(File folder:new File[]{images,videos})rows.addAll(Arrays.asList(Optional.ofNullable(folder.listFiles()).orElse(new File[0])));rows.sort(Comparator.comparingLong(File::lastModified));for(File file:rows){if(total+incoming<=MAX_BYTES)break;if((file.getName().equals(pinned+".jpg")||file.getName().equals(pinned+".png"))||VIDEO_PINS.containsKey(file.getAbsolutePath())||file.getName().endsWith(".part"))continue;long n=file.length();if(file.delete())total-=n;}if(total+incoming>MAX_BYTES)throw new IOException("Недостаточно места в кеше");}}
+    Set<String> retainedMedia() {
+        Set<String> keep=new HashSet<>();
+        File[] snapshots=root.listFiles();
+        if(snapshots!=null)for(File snapshot:snapshots){
+            String name=snapshot.getName();
+            if(!name.startsWith("state-")&&!name.startsWith("video-state-"))continue;
+            try{
+                JSONObject j=new JSONObject(new String(read(snapshot,100000),java.nio.charset.StandardCharsets.UTF_8));
+                if(name.startsWith("video-state-"))keep.add(video(VideoInfo.saved(j).sha).getName());
+                else keep.add(image(Protocol.savedFrame(j)).getName());
+            }catch(Exception ignored){}
+        }
+        return keep;
+    }
+    public void reserve(long incoming,String pinned)throws IOException {
+        synchronized(LOCK){
+            if(incoming<0)throw new IllegalArgumentException("Negative reservation");
+            Set<String> retained=retainedMedia();
+            List<File> rows=new ArrayList<>();
+            for(File folder:new File[]{images,videos})rows.addAll(Arrays.asList(Optional.ofNullable(folder.listFiles()).orElse(new File[0])));
+            rows.sort(Comparator.comparingLong(File::lastModified));
+            for(File file:rows){
+                if(protectedMedia(file,pinned))continue;
+                if(!retained.contains(file.getName()))file.delete();
+            }
+            // Under storage pressure older snapshots can be fetched again. Live files stay pinned.
+            for(File file:rows){
+                if(root.getUsableSpace()>=incoming)break;
+                if(!protectedMedia(file,pinned))file.delete();
+            }
+            if(root.getUsableSpace()<incoming)throw new SpaceException();
+        }
+    }
+    boolean protectedMedia(File file,String pinned){
+        return file.getName().equals(pinned+".jpg")||file.getName().equals(pinned+".png")
+                ||MEDIA_PINS.containsKey(file.getAbsolutePath())||file.getName().endsWith(".part");
+    }
     public static long directoryBytes(File directory){
         if(!directory.exists())return 0;
         if(Files.isSymbolicLink(directory.toPath()))return 0;
@@ -42,7 +84,7 @@ public final class CacheStore {
     /** Call after stopping cache users and draining their workers. Preferences are outside this directory. */
     public static void clearDirectory(File directory)throws IOException {
         synchronized(LOCK){
-            if(!VIDEO_PINS.isEmpty())throw new IOException("Кеш ещё используется. Повторите очистку.");
+            if(!MEDIA_PINS.isEmpty())throw new IOException("Кеш ещё используется. Повторите очистку.");
             if(!directory.isDirectory())return;
             final Path root=directory.toPath();
             Files.walkFileTree(root,new SimpleFileVisitor<Path>(){
