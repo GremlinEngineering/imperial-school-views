@@ -1,0 +1,111 @@
+[
+  {
+    "id": "01_part_of_your_world_snes",
+    "title": "Part of Your World",
+    "composer": "Alan Menken",
+    "source": "01_part.mid",
+    "start": 0,
+    "seconds": 18,
+    "scale": 1,
+    "lead_channel": 0,
+    "lead_sample": 1
+  },
+  {
+    "id": "02_kiss_the_girl_snes",
+    "title": "Kiss the Girl",
+    "composer": "Alan Menken",
+    "source": "02_kiss.mid",
+    "start": 8.5,
+    "seconds": 17.5,
+    "scale": 1.04,
+    "channels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "lead_channel": 0,
+    "lead_sample": 0
+  },
+  {
+    "id": "03_under_the_sea_snes",
+    "title": "Under the Sea",
+    "composer": "Alan Menken",
+    "source": "03_under.mid",
+    "start": 9.8,
+    "seconds": 17.2,
+    "scale": 1.04,
+    "channels": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "lead_channel": 1,
+    "lead_sample": 0
+  },
+  {
+    "id": "04_path_of_the_wind_snes",
+    "title": "Path of the Wind",
+    "composer": "Joe Hisaishi",
+    "source": "04_path.mid",
+    "start": 0,
+    "seconds": 18,
+    "scale": 1.03,
+    "lead_sample": 1
+  },
+  {
+    "id": "05_ocean_view_snes",
+    "title": "A Town with an Ocean View",
+    "composer": "Joe Hisaishi",
+    "source": "05_ocean.mid",
+    "start": 0,
+    "seconds": 18,
+    "scale": 1.02,
+    "lead_sample": 1
+  },
+  {
+    "id": "06_ostavaysya_snes",
+    "title": "Оставайся, мальчик, с нами",
+    "composer": "Роберт Амирханян",
+    "source": "06_stay.mid",
+    "start": 0,
+    "seconds": 14,
+    "scale": 1,
+    "lead_channel": 0,
+    "lead_sample": 1
+  },
+  {
+    "id": "07_ashitaka_and_san_snes",
+    "title": "Ashitaka and San",
+    "composer": "Joe Hisaishi",
+    "source": "07_ashitaka.mid",
+    "start": 0,
+    "seconds": 18,
+    "scale": 1.02,
+    "lead_sample": 1,
+    "plucked_chords": false
+  },
+  {
+    "id": "08_bygone_days_snes",
+    "title": "The Bygone Days",
+    "composer": "Joe Hisaishi",
+    "source": "08_bygone.mid",
+    "start": 0,
+    "seconds": 18,
+    "scale": 1,
+    "lead_track": 0,
+    "lead_sample": 2
+  },
+  {
+    "id": "09_on_a_clear_day_snes",
+    "title": "On a Clear Day",
+    "composer": "Joe Hisaishi",
+    "source": "09_clear.mid",
+    "start": 0,
+    "seconds": 18,
+    "scale": 1.02,
+    "lead_track": 1,
+    "lead_sample": 1
+  }
+]

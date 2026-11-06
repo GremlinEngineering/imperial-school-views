@@ -1,0 +1,6 @@
+INSTRUMENTATION_STATUS: stream=Physical Full HD detection and both display profiles passed; fetching live orbital frame
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=Live orbital frame downloaded, verified and decoded; checking tea TV readiness
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=PASS 32 TV auto-resolution checks: upgrade, both exact devices, live orbital JPEG/cache/decode, tea readiness and saved selection; tea_waiting=true
+INSTRUMENTATION_CODE: -1

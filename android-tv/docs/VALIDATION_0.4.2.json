@@ -1,0 +1,13 @@
+{
+  "version": "0.4.2",
+  "build": 7,
+  "apk_bytes": 18844432,
+  "apk_sha256": "e81605550feda72f664dc14e0997365b0bac169027016ed1ec1c2b7920ed7780",
+  "same_signature_as_0_4_1": true,
+  "bundled_video_bytes": 1032438,
+  "video_stored_uncompressed": true,
+  "music_assets_unchanged": 16,
+  "core_checks_passed": 73,
+  "device_instrumentation_compiled": true,
+  "physical_yandex_tv_tested": false
+}

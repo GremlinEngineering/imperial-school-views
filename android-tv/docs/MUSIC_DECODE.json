@@ -1,0 +1,37 @@
+[
+  {
+    "file": "01_blue_danube_fm.mp3",
+    "duration": "184.868571",
+    "size": "2486434"
+  },
+  {
+    "file": "02_bwv639_fm.mp3",
+    "duration": "159.895510",
+    "size": "2123528"
+  },
+  {
+    "file": "03_mozart_romanze_fm.mp3",
+    "duration": "258.977959",
+    "size": "3447376"
+  },
+  {
+    "file": "04_beethoven_pathetique_i_fm.mp3",
+    "duration": "397.087347",
+    "size": "5229709"
+  },
+  {
+    "file": "05_berlioz_vallon_theme_fm.mp3",
+    "duration": "69.982041",
+    "size": "912685"
+  },
+  {
+    "file": "06_hanson_romantic_quote_fm.mp3",
+    "duration": "14.236735",
+    "size": "166066"
+  },
+  {
+    "file": "07_gayane_adagio_quote_fm.mp3",
+    "duration": "21.080816",
+    "size": "257721"
+  }
+]

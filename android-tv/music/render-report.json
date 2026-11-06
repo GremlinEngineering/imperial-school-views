@@ -1,0 +1,86 @@
+[
+  {
+    "file": "01_blue_danube_fm.mp3",
+    "title": "Голубой Дунай — орбитальный вальс, FM-вариации",
+    "composer": "Johann Strauss II",
+    "duration": 184.868571,
+    "bytes": 2486434,
+    "voices": 6,
+    "stolen_notes": 0,
+    "source": "blue_danube.mid",
+    "cycles": 4,
+    "time_scale": 1.15
+  },
+  {
+    "file": "02_bwv639_fm.mp3",
+    "title": "Бах BWV 639 — тихая орбита, FM-аранжировка",
+    "composer": "Johann Sebastian Bach",
+    "duration": 159.89551,
+    "bytes": 2123528,
+    "voices": 6,
+    "stolen_notes": 0,
+    "source": "bwv639.mid",
+    "cycles": 1,
+    "time_scale": 1.32
+  },
+  {
+    "file": "03_mozart_romanze_fm.mp3",
+    "title": "Моцарт — Маленькая ночная серенада, II. Romanze, FM",
+    "composer": "Wolfgang Amadeus Mozart",
+    "duration": 258.977959,
+    "bytes": 3447376,
+    "voices": 6,
+    "stolen_notes": 6,
+    "source": "MozartWA-KV525-mov-02.mid",
+    "cycles": 1,
+    "time_scale": 1.05
+  },
+  {
+    "file": "04_beethoven_pathetique_i_fm.mp3",
+    "title": "Бетховен — Патетическая соната, I, FM",
+    "composer": "Ludwig van Beethoven",
+    "duration": 397.087347,
+    "bytes": 5229709,
+    "voices": 6,
+    "stolen_notes": 21,
+    "source": "pathetique-1.mid",
+    "cycles": 1,
+    "time_scale": 1.05
+  },
+  {
+    "file": "05_berlioz_vallon_theme_fm.mp3",
+    "title": "Берлиоз — Vallon sonore, тема, FM-вариации",
+    "composer": "Hector Berlioz",
+    "duration": 69.982041,
+    "bytes": 912685,
+    "voices": 6,
+    "stolen_notes": 0,
+    "source": "berlioz_vallon_theme.mid",
+    "cycles": 1,
+    "time_scale": 1
+  },
+  {
+    "file": "06_hanson_romantic_quote_fm.mp3",
+    "title": "Гансон — Романтическая симфония, краткая FM-цитата",
+    "composer": "Howard Hanson",
+    "duration": 14.236735,
+    "bytes": 166066,
+    "voices": 6,
+    "stolen_notes": 0,
+    "source": "hanson_interlochen_quote.mid",
+    "cycles": 1,
+    "time_scale": 1
+  },
+  {
+    "file": "07_gayane_adagio_quote_fm.mp3",
+    "title": "Хачатурян — Гаянэ, краткая FM-цитата",
+    "composer": "Aram Khachaturian",
+    "duration": 21.080816,
+    "bytes": 257721,
+    "voices": 6,
+    "stolen_notes": 0,
+    "source": "gayane_adagio_quote.mid",
+    "cycles": 1,
+    "time_scale": 1
+  }
+]

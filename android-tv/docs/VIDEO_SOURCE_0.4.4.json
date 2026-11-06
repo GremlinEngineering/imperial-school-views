@@ -1,0 +1,218 @@
+{
+  "assembly": {
+    "canvas": [
+      3840,
+      2160
+    ],
+    "kind": "artistic_AB_playback_test",
+    "A": {
+      "title": "Осенняя оранжерея, шесть кораблей",
+      "source": "Orbital_Port_Full_Content_4K.jpg"
+    },
+    "B": {
+      "title": "Зелёная оранжерея, корабль Самус, без каравана",
+      "foundation": "sources/clean.png",
+      "layers": [
+        "station_day",
+        "energy_harvest_day",
+        "garden_summer_day",
+        "life_guest_6_day",
+        "front_pad_occlusion_day"
+      ]
+    },
+    "note": "Фиксированные художественные примеры для испытания смены двух MP4. Данные погоды и астрономии не имитируются."
+  },
+  "video": {
+    "encode_seconds": 15.196,
+    "clips": {
+      "A": {
+        "file": "Orbital_Port_Test_A_4K_HEVC.mp4",
+        "bytes": 1349489,
+        "sha256": "6276d4578e30cc5965d6f0646b2e07e3c40f8e951bdcaf098963b1770e08a5c4",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "hevc",
+              "codec_long_name": "H.265 / HEVC (High Efficiency Video Coding)",
+              "profile": "Main",
+              "codec_type": "video",
+              "codec_tag_string": "hvc1",
+              "codec_tag": "0x31637668",
+              "width": 3840,
+              "height": 2160,
+              "coded_width": 3840,
+              "coded_height": 2160,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "sample_aspect_ratio": "1:1",
+              "display_aspect_ratio": "16:9",
+              "pix_fmt": "yuv420p",
+              "level": 150,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "chroma_location": "center",
+              "field_order": "progressive",
+              "refs": 1,
+              "view_ids_available": "",
+              "view_pos_available": "",
+              "id": "0x1",
+              "r_frame_rate": "24/1",
+              "avg_frame_rate": "24/1",
+              "time_base": "1/12288",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 49152,
+              "duration": "4.000000",
+              "bit_rate": "2689780",
+              "nb_frames": "96",
+              "extradata_size": 2489,
+              "extradata_hash": "SHA256:f3c2468522b72e856cd9d6cab90f51ec5dc192cbf09351db42913a7d0ef49b8e",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "VideoHandler",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "Lavc61.19.101 libx265"
+              }
+            }
+          ],
+          "format": {
+            "filename": "orbital_video_pair_trial/Orbital_Port_Test_A_4K_HEVC.mp4",
+            "nb_streams": 1,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "4.000000",
+            "size": "1349489",
+            "bit_rate": "2698978",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "isom",
+              "minor_version": "512",
+              "compatible_brands": "isomiso2mp41",
+              "encoder": "Lavf61.7.103"
+            }
+          }
+        }
+      },
+      "B": {
+        "file": "Orbital_Port_Test_B_4K_HEVC.mp4",
+        "bytes": 1302828,
+        "sha256": "0e07a6e5eab78947401badbd1a71d2295779171e313ad02f73f19c72d4fcb9c8",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "hevc",
+              "codec_long_name": "H.265 / HEVC (High Efficiency Video Coding)",
+              "profile": "Main",
+              "codec_type": "video",
+              "codec_tag_string": "hvc1",
+              "codec_tag": "0x31637668",
+              "width": 3840,
+              "height": 2160,
+              "coded_width": 3840,
+              "coded_height": 2160,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "sample_aspect_ratio": "1:1",
+              "display_aspect_ratio": "16:9",
+              "pix_fmt": "yuv420p",
+              "level": 150,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "chroma_location": "center",
+              "field_order": "progressive",
+              "refs": 1,
+              "view_ids_available": "",
+              "view_pos_available": "",
+              "id": "0x1",
+              "r_frame_rate": "24/1",
+              "avg_frame_rate": "24/1",
+              "time_base": "1/12288",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 49152,
+              "duration": "4.000000",
+              "bit_rate": "2596458",
+              "nb_frames": "96",
+              "extradata_size": 2489,
+              "extradata_hash": "SHA256:f3c2468522b72e856cd9d6cab90f51ec5dc192cbf09351db42913a7d0ef49b8e",
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "VideoHandler",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "Lavc61.19.101 libx265"
+              }
+            }
+          ],
+          "format": {
+            "filename": "orbital_video_pair_trial/Orbital_Port_Test_B_4K_HEVC.mp4",
+            "nb_streams": 1,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "4.000000",
+            "size": "1302828",
+            "bit_rate": "2605656",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "isom",
+              "minor_version": "512",
+              "compatible_brands": "isomiso2mp41",
+              "encoder": "Lavf61.7.103"
+            }
+          }
+        }
+      }
+    }
+  }
+}
