@@ -45,8 +45,16 @@ public enum Contracts {
         try require(["ready", "stale"].contains(descriptor.j("format_status").j(device).s("status")), "Этот формат темы ещё не готов")
         try require(state.n("schema") == 1 && state.s("schema_version") == "0.2" && state.s("type") == "dynamic-state" && state.s("theme_id") == id && state.s("device") == device, "Неверный кадр динамической темы")
         guard let at = DataModel.date(state.s("at")), let until = DataModel.date(state.s("valid_until")), at <= now.addingTimeInterval(60), now < until else { throw ViewsError("Кадр темы истёк; сохранён последний кадр") }
-        let file = state.j("image"), spec = collection.j("formats").j(device); try DataModel.validateFile(file)
-        try require(["jpg", "jpeg"].contains(file.s("format")) && file.s("url") == prefix + "current.jpg" && file.s("sha256") == descriptor.j("files").j(device).s("sha256") && file.n("width") == spec.n("width") && file.n("height") == spec.n("height"), "Кадр не соответствует описанию темы")
+        let primary = state.j("image"), published = descriptor.j("files").j(device), spec = collection.j("formats").j(device)
+        let useCompatibility = primary.s("format") == "png"
+        if useCompatibility {
+            try DataModel.validateFile(primary)
+            try require(primary.s("url") == prefix + "current.png" && primary.s("sha256") == published.s("sha256") && primary.n("width") == spec.n("width") && primary.n("height") == spec.n("height"), "Кадр не соответствует описанию темы")
+        }
+        let file = useCompatibility ? state.j("compatibility_image") : primary
+        let expected = useCompatibility ? published.j("compatibility_image") : published
+        try DataModel.validateFile(file)
+        try require(["jpg", "jpeg"].contains(file.s("format")) && file.s("url") == prefix + "current.jpg" && file.s("sha256") == expected.s("sha256") && file.n("width") == spec.n("width") && file.n("height") == spec.n("height"), "Кадр не соответствует описанию темы")
         return file
     }
     public static func package(_ manifest: JSON, id: String, format: String, version: String) throws {
