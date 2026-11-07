@@ -30,13 +30,7 @@ public struct SettingsPresentation {
         return result
     }
     public var condition: String { profile.s("weather_provider") == "open-meteo" ? "open-meteo" : profile.s("weather_source", "game-world") }
-    public var hint: String {
-        switch profile.s("source") {
-        case "weather":
-            return showCity ? "Для погоды в городе нужна скачанная коллекция." : ""
-        default: return ""
-        }
-    }
+    public var hint: String { showCity ? "Для погоды в городе нужна скачанная коллекция." : "" }
     public static func frameSelection(_ profile: JSON) -> [String] {
         let source = profile.s("source")
         var selection = [source, profile.s("mode")]
