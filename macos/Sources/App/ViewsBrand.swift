@@ -38,7 +38,7 @@ import CoreText
 final class ViewsBrandSurface: NSView {
     override func draw(_ dirtyRect: NSRect) {
         ViewsBrand.paper.setFill()
-        NSRectFill(dirtyRect)
+        NSBezierPath(rect: dirtyRect).fill()
     }
 
     override func viewDidChangeEffectiveAppearance() {
