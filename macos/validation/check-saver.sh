@@ -24,7 +24,7 @@ ATTACHED=1
 APP="$MOUNT/Imperial School Views.app"
 SAVER="$APP/Contents/PlugIns/Imperial School Views.saver"
 codesign --verify --deep --strict "$APP"
-xcrun lipo -verify_arch arm64 x86_64 "$APP/Contents/MacOS/ImperialSchoolViews"
-xcrun lipo -verify_arch arm64 x86_64 "$SAVER/Contents/MacOS/ImperialSchoolSaver"
+xcrun lipo "$APP/Contents/MacOS/ImperialSchoolViews" -verify_arch arm64 x86_64
+xcrun lipo "$SAVER/Contents/MacOS/ImperialSchoolSaver" -verify_arch arm64 x86_64
 "$KIT/validation/check-engine.sh" "$WORK/fixtures"
 "$WORK/saver-checks" "$SAVER" "$WORK/fixtures"
