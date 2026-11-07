@@ -1,0 +1,40 @@
+name: macOS design audit
+
+on:
+  push:
+    branches: ['codex/macos-design-audit']
+
+permissions:
+  contents: read
+
+jobs:
+  appkit:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Render production AppKit views
+        shell: bash
+        run: |
+          cd macos
+          swift build --build-system native
+          BIN=$(swift build --show-bin-path --build-system native)
+          SOURCES=()
+          for SOURCE in Sources/App/*.swift; do
+            if [[ "$SOURCE" != "Sources/App/Main.swift" ]]; then SOURCES+=("$SOURCE"); fi
+          done
+          xcrun swiftc -swift-version 5 -parse-as-library -I "$BIN/Modules" -I Native/include \
+            Sources/Core/*.swift "${SOURCES[@]}" validation/DesignAudit.swift \
+            "$BIN"/ViewsNative.build/*.o "$BIN"/ZIPFoundation.build/*.o \
+            -framework AppKit -framework CoreLocation -framework ColorSync -framework ImageIO \
+            -framework UserNotifications -framework UniformTypeIdentifiers -lcompression -lz \
+            -o "$RUNNER_TEMP/design-audit"
+          mkdir "$RUNNER_TEMP/design-screens"
+          "$RUNNER_TEMP/design-audit" "$PWD" "$RUNNER_TEMP/design-screens" "$PWD/validation/DesignAuditCatalogue.json"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: macos-design-screens
+          path: ${{ runner.temp }}/design-screens/*.png
+          if-no-files-found: error
