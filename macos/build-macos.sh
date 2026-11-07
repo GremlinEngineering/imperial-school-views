@@ -41,7 +41,7 @@ for ARCH in arm64 x86_64; do
     OBJECTS+=("$OBJECT")
   done
   /usr/bin/xcrun swiftc -swift-version 5 -sdk "$SDK" -target "$ARCH-apple-macos12.0" -O -parse-as-library -module-name ZIPFoundation -emit-module -emit-module-path "$DIR/ZIPFoundation.swiftmodule" -emit-library -static "$KIT"/vendor/ZIPFoundation/Sources/ZIPFoundation/*.swift -o "$DIR/libZIPFoundation.a"
-  /usr/bin/xcrun swiftc -swift-version 5 -sdk "$SDK" -target "$ARCH-apple-macos12.0" -O -parse-as-library -I "$KIT/Native/include" -I "$DIR" -L "$DIR" -lZIPFoundation "$KIT"/Sources/Core/*.swift "$KIT"/Sources/App/*.swift "${OBJECTS[@]}" -framework AppKit -framework CoreLocation -framework ColorSync -framework ImageIO -framework UserNotifications -framework UniformTypeIdentifiers -lcompression -lz -o "$DIR/ImperialSchoolViews"
+  /usr/bin/xcrun swiftc -swift-version 5 -sdk "$SDK" -target "$ARCH-apple-macos12.0" -O -parse-as-library -I "$KIT/Native/include" -I "$DIR" -L "$DIR" -lZIPFoundation "$KIT"/Sources/Core/*.swift "$KIT"/Sources/App/*.swift "${OBJECTS[@]}" -framework AppKit -framework CoreText -framework CoreLocation -framework ColorSync -framework ImageIO -framework UserNotifications -framework UniformTypeIdentifiers -lcompression -lz -o "$DIR/ImperialSchoolViews"
   if [ "$APP_ONLY" != 1 ]; then
     /usr/bin/xcrun clang -target "$ARCH-apple-macos12.0" -isysroot "$SDK" -fobjc-arc -fblocks -bundle -O2 -framework ScreenSaver -framework AppKit -framework ColorSync "$KIT/screensaver/ImperialSchoolSaverView.m" -o "$DIR/ImperialSchoolSaver"
   fi
