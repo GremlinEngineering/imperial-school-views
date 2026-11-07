@@ -29,3 +29,12 @@ jobs:
         run: |
           ./macos/build-macos.sh --output "$RUNNER_TEMP/views-dist"
           bash macos/validation/check-saver.sh "$RUNNER_TEMP/views-dist/"*.dmg
+      - name: Save the verified site package
+        uses: actions/upload-artifact@v7
+        with:
+          name: macos-site-package
+          path: |
+            ${{ runner.temp }}/views-dist/*.dmg
+            ${{ runner.temp }}/views-dist/release.json
+          if-no-files-found: error
+          compression-level: 0
