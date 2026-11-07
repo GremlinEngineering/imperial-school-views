@@ -132,7 +132,7 @@ static BOOL HashOK(id value) {
     [self resolveRoot];
     NSDictionary *settings=self.root?ReadJSON([self.root URLByAppendingPathComponent:@"settings.json"]):nil;
     NSDictionary *feed=self.root?ReadJSON([self.root URLByAppendingPathComponent:@"saver-state.json"]):nil;
-    NSString *status=@"В приложении включите «Подготавливать кадры для хранителя» и нажмите «Сохранить хранитель».";
+    NSString *status=@"В приложении включите «Подготавливать кадры для хранителя» и нажмите «Сохранить настройки».";
     if([settings[@"saver"] isKindOfClass:NSDictionary.class]){
         if(![settings[@"saver"][@"enabled"] boolValue])status=@"Хранитель выключен в приложении.";
         else if([feed[@"schema"] integerValue]==1&&[feed[@"configuration_revision"] isEqual:settings[@"configuration_revision"]]&&[feed[@"targets"] isKindOfClass:NSDictionary.class]&&[feed[@"targets"] count])status=@"Данные приложения подключены автоматически.";
