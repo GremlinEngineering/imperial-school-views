@@ -125,6 +125,7 @@ import Foundation
         inherited.settings["saver"] = ["enabled":true,"mode":"inherit"]
         let boundary = Date().addingTimeInterval(export == nil ? 300 : 10)
         var schedule = forecast, weatherFiles: [JSON] = []
+        schedule["package_version"] = "v1"
         for (index, image) in images.enumerated() {
             var entry = file
             entry["width"] = 8; entry["height"] = 6; entry["bytes"] = image.count; entry["sha256"] = hashes[index]
@@ -142,6 +143,12 @@ import Foundation
             return url.path.hasSuffix("current.json") ? current : schedule
         }
         inherited.fetchImage = { _ in throw ViewsError("Cached forecast JPEG requested from the network") }
+        var draft = profile; draft["weather_delivery"] = "zip"
+        let draftFrame = try await inherited.resolve(draft,display:inherited.displays.values[0],force:false,preview:true)
+        let pairKey = DataModel.sha(Data("sample-weather|real|macbook".utf8))
+        let savedPair = await inherited.store.json("native-pairs/\(pairKey).json")
+        try expect(draftFrame.file.s("sha256") == hashes[0], "Draft preview did not select the scheduled weather JPEG")
+        try expect(inherited.current.isEmpty && inherited.packages.isEmpty && inherited.pairs.isEmpty && inherited.memo.isEmpty && savedPair == nil && NSWorkspace.shared.calls == 0,"Draft preview changed the installed wallpaper or started an archive download")
         await complete(inherited)
         let inheritedFeed = await inherited.store.json("saver-state.json") ?? [:]
         let inheritedTarget = inheritedFeed.j("targets").j("d1")
@@ -149,7 +156,8 @@ import Foundation
         try expect(inheritedTarget.rows("frames").map { $0.s("sha256") } == hashes, "Inherited saver did not receive both cached forecast frames")
         try await exportSaver(inherited,as:"inherit")
         inherited.shutdown()
+        print("PASS preview: scheduled weather frame without applying settings or starting a ZIP download")
         print("PASS saver: inherited desktop weather publishes the cached forecast schedule")
-        print("Engine scenarios: 10 passed")
+        print("Engine scenarios: 11 passed")
     }
 }
