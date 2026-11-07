@@ -53,6 +53,10 @@ private final class SettingsForm: NSStackView { override var isFlipped: Bool { t
         rebuildTargets(); loadTarget(); updateState()
     }
     required init?(coder:NSCoder) { nil }
+    override func showWindow(_ sender: Any?) {
+        super.showWindow(sender)
+        updatePreview()
+    }
     func label(_ title: String, size: CGFloat = 13, secondary: Bool = false, bold: Bool = false) -> NSTextField {
         let v = NSTextField(wrappingLabelWithString:title)
         v.font = .systemFont(ofSize:size, weight:bold ? .semibold : .regular)
@@ -341,7 +345,7 @@ private final class SettingsForm: NSStackView { override var isFlipped: Bool { t
         }
     }
     func updatePreview() {
-        guard selectedPane != 2, !isSaver || saverDraft.b("enabled") else { clearPreviewRequest(); return }
+        guard window?.isVisible == true, selectedPane != 2, !isSaver || saverDraft.b("enabled") else { clearPreviewRequest(); return }
         let d = engine.displays.values.first { $0.id == wallpaperTarget } ?? engine.displays.values.first
         guard let d else { clearPreviewRequest(); showPreview(nil,title:"Просмотр",detail:"",empty:"Ожидаю экран…"); return }
         let selection = SettingsPresentation.frameSelection(staged)
