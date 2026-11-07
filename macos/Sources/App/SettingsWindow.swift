@@ -149,7 +149,7 @@ private final class SettingsForm: NSStackView { override var isFlipped: Bool { t
         previewTitle.font = .systemFont(ofSize:15,weight:.semibold); attach(previewTitle,to:right)
         refresh.title = "Обновить"; bind(refresh,#selector(refreshNow)); attach(refresh,to:right)
         NSLayoutConstraint.activate([previewTitle.leadingAnchor.constraint(equalTo:right.leadingAnchor),previewTitle.topAnchor.constraint(equalTo:right.topAnchor,constant:2),refresh.trailingAnchor.constraint(equalTo:right.trailingAnchor),refresh.centerYAnchor.constraint(equalTo:previewTitle.centerYAnchor),previewTitle.trailingAnchor.constraint(lessThanOrEqualTo:refresh.leadingAnchor,constant:-12)])
-        let picture = NSBox(); picture.boxType = .custom; picture.borderType = .lineBorder; picture.borderColor = .separatorColor; picture.cornerRadius = 8; picture.fillColor = .black; picture.contentViewMargins = .zero
+        let picture = NSBox(); picture.boxType = .custom; picture.borderWidth = 1; picture.borderColor = .separatorColor; picture.cornerRadius = 8; picture.fillColor = .black; picture.contentViewMargins = .zero
         preview.imageScaling = .scaleProportionallyUpOrDown; picture.contentView = preview; attach(picture,to:right)
         NSLayoutConstraint.activate([picture.leadingAnchor.constraint(equalTo:right.leadingAnchor),picture.trailingAnchor.constraint(equalTo:right.trailingAnchor),picture.topAnchor.constraint(equalTo:right.topAnchor,constant:36),picture.heightAnchor.constraint(equalToConstant:290)])
         attach(previewEmpty,to:preview); previewEmpty.alignment = .center; previewEmpty.textColor = .white; previewEmpty.font = .systemFont(ofSize:13)
