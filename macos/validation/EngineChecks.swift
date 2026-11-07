@@ -73,6 +73,83 @@ import Foundation
         h.downloadCollection(profile,target:"d2"); try expect(Set(h.packages.keys) == Set([hashB]),"Download used first monitor instead of selected monitor"); for t in Array(h.packages.values) { await t.value }
         h.downloadCollection(profile,target:"all"); try expect(Set(h.packages.keys) == Set([hashA,hashB]),"All-monitors download skipped a format"); for t in Array(h.packages.values) { await t.value }; h.shutdown()
         print("PASS downloads: selected monitor and all monitor formats")
-        print("Engine scenarios: 8 passed")
+
+        let dynamicRoot = fixtures.appendingPathComponent("dynamic-0.2")
+        let dynamicPath = "dynamic/test-theme/devices/landscape/"
+        let dynamicCollection = try DataModel.read(dynamicRoot.appendingPathComponent("manifest-v3.json")).rows("collections")[0]
+        let dynamicDescriptor = try DataModel.read(dynamicRoot.appendingPathComponent(dynamicCollection.s("current_url")))
+        let dynamicState = try DataModel.read(dynamicRoot.appendingPathComponent(dynamicPath + "current.json"))
+        let images = try ["current.jpg", "current-preview.jpg"].map { try Data(contentsOf: dynamicRoot.appendingPathComponent(dynamicPath + $0)) }
+        let hashes = images.map(DataModel.sha)
+        let export = CommandLine.arguments.dropFirst(2).first.map { URL(fileURLWithPath:$0, isDirectory:true) }
+        func exportSaver(_ e: Engine, as name: String) async throws {
+            guard let export else { return }
+            try await e.store.save(e.settings,path:"settings.json")
+            try FileManager.default.createDirectory(at:export,withIntermediateDirectories:true)
+            try FileManager.default.copyItem(at:e.root,to:export.appendingPathComponent(name))
+        }
+
+        let own = engine()
+        own.catalog["collections"] = [dynamicCollection]
+        own.settings["saver"] = ["enabled":true,"mode":"own","profile":DataModel.profile(["mode":"weather","collection":"test-theme"])]
+        for (index, image) in images.enumerated() {
+            var state = dynamicState, descriptor = dynamicDescriptor, files = descriptor.j("files")
+            var compatibility = state.j("image")
+            compatibility["bytes"] = image.count; compatibility["sha256"] = hashes[index]
+            var primary = compatibility
+            primary["format"] = "png"; primary["url"] = dynamicPath + "current.png"; primary["sha256"] = DataModel.sha(Data("primary-\(index)".utf8))
+            state["at"] = DataModel.stamp(now); state["valid_until"] = DataModel.stamp(now.addingTimeInterval(600))
+            state["image"] = primary; state["compatibility_image"] = compatibility
+            primary["compatibility_image"] = compatibility
+            files["landscape"] = primary; descriptor["files"] = files
+            own.fetchJSON = { url in url.path.hasSuffix(dynamicPath + "current.json") ? state : descriptor }
+            own.fetchImage = { url in
+                try expect(url.path.hasSuffix(dynamicPath + "current.jpg") && url.query == "v=\(hashes[index])", "Expected the published compatibility JPEG")
+                return image
+            }
+            try await own.publishSaver(force:true)
+            let output = await own.store.json("saver-state.json") ?? [:]
+            let target = output.j("targets").j("d1")
+            try expect(target.rows("frames").map { $0.s("sha256") } == [hashes[index]], "Own saver feed did not refresh to the compatibility JPEG")
+            try await exportSaver(own,as:index == 0 ? "own-first" : "own-next")
+        }
+        try expect(own.current.isEmpty && NSWorkspace.shared.calls == 0,"Own saver changed the desktop")
+        own.shutdown()
+        print("PASS saver: own dynamic collection publishes consecutive compatibility JPEGs")
+
+        let inherited = engine()
+        var weather = collection
+        weather["formats"] = ["macbook":["width":8,"height":6]]
+        inherited.catalog["collections"] = [weather]
+        let weatherCatalog = inherited.catalog
+        inherited.settings["saver"] = ["enabled":true,"mode":"inherit"]
+        let boundary = Date().addingTimeInterval(export == nil ? 300 : 10)
+        var schedule = forecast, weatherFiles: [JSON] = []
+        for (index, image) in images.enumerated() {
+            var entry = file
+            entry["width"] = 8; entry["height"] = 6; entry["bytes"] = image.count; entry["sha256"] = hashes[index]
+            entry["url"] = "collections/sample-weather/files/forecast-\(index).jpg"
+            _ = try await inherited.store.putImage(image,file:entry)
+            weatherFiles.append(entry)
+        }
+        schedule["intervals"] = weatherFiles.enumerated().map { index, entry -> JSON in
+            let from = index == 0 ? boundary.addingTimeInterval(-360) : boundary
+            let until = index == 0 ? boundary : boundary.addingTimeInterval(360)
+            return ["status":"ready","valid_from":DataModel.stamp(from),"valid_until":DataModel.stamp(until),"file":entry]
+        }
+        inherited.fetchJSON = { url in
+            if url.path.hasSuffix("manifest-v3.json") { return weatherCatalog }
+            return url.path.hasSuffix("current.json") ? current : schedule
+        }
+        inherited.fetchImage = { _ in throw ViewsError("Cached forecast JPEG requested from the network") }
+        await complete(inherited)
+        let inheritedFeed = await inherited.store.json("saver-state.json") ?? [:]
+        let inheritedTarget = inheritedFeed.j("targets").j("d1")
+        try expect(inherited.current["d1"]?.file.s("sha256") == hashes[0] && inheritedTarget.j("fallback").s("sha256") == hashes[0], "Saver did not inherit the current desktop frame")
+        try expect(inheritedTarget.rows("frames").map { $0.s("sha256") } == hashes, "Inherited saver did not receive both cached forecast frames")
+        try await exportSaver(inherited,as:"inherit")
+        inherited.shutdown()
+        print("PASS saver: inherited desktop weather publishes the cached forecast schedule")
+        print("Engine scenarios: 10 passed")
     }
 }
