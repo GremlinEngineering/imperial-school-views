@@ -9,6 +9,11 @@
 
 Android SDK build tools and platform are external build dependencies, subject to the Android SDK licenses. They are not redistributed in this source archive.
 
+## Runtime components in 0.8.7
+
+- AndroidX Media3 1.8.1 (ExoPlayer and HLS), Apache License 2.0. Source: https://github.com/androidx/media
+- The APK includes Game Music Emu and the blargg S-DSP core for theme music. Their license notices are included in the APK as `libgme-LICENSE.txt` and `snes_spc-LICENSE.txt`.
+
 ## Music added in 0.2.0
 
 Seven bundled FM recordings, not commercial film/game soundtracks. Complete

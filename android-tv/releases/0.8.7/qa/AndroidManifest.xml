@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ru.oopssre.imperialschool.viewstv.navigationprobe">
+  <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34"/>
+  <application android:label="NavigationProbe"/>
+  <instrumentation android:name=".NavigationProbe" android:targetPackage="ru.oopssre.imperialschool.viewstv"/>
+</manifest>
