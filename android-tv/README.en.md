@@ -2,22 +2,23 @@
 
 [Русский](README.md) · English · [About the project](https://github.com/GremlinEngineering/imperial-school-views)
 
-Version **0.7.0, build 12**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
+Version **0.8.7, build 21**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
 
-The app opens directly into an Imperial School wallpaper scene and also works as an Android system screensaver. Dynamic scenes arrive ready to display; the television does not compose their layers.
+The app displays Imperial School wallpapers and works as an Android system screensaver. If a frame is unavailable at launch, the app opens the menu and keeps it visible when the frame arrives. Dynamic scenes arrive ready to display; the television does not compose their layers.
 
 ## Usage
 
-Hold OK for one second to open the menu. A short OK press leaves the scene unchanged. Use arrows to move focus, OK to select and Back to return. Focus and scroll position are restored.
+Hold OK for one second to open the menu. A short OK press leaves the scene unchanged. Use arrows to move focus, OK to select and Back to return. On the wallpaper screen, press Back twice within two seconds to exit the app. Focus and scroll position are restored.
 
 The main menu contains **Choose wallpapers**, **Music** when available, and **Settings**. The picker shows an image preview and short description alongside the collection list. Focus previews a collection; OK applies it and returns to the scene. Live scenes, weather and image collections remain available in every output mode. Current-collection settings beside the picker provide weather source or scheduled image changes.
 
-Music retains separate app/screensaver switches and track controls. Left/right changes the selected volume setting inline. The television's system volume remains separate. About lists individual music credits rather than a full technical essay.
+Music offers themed radio stations and downloadable tracks. Selecting a station opens Music and focuses its volume control. Left/right changes app volume. The app and screensaver have separate audio switches.
 
 ## Settings
 
 - **Image display**: dynamic image/video output, Auto/4K/Full HD image resolution, fit/fill and a manual scene refresh.
 - **System screensaver**: Android's screensaver settings. An arrow key exits the screensaver.
+- **Proxy** — SOCKS5 or HTTP with separate switches for radio and other external connections.
 - **Storage**: usage and cleanup, preserving the selected collection and settings.
 - **About**: author, version, website, source code, app updates, music credits and diagnostics. Website and GitHub links include offline QR codes and readable addresses.
 
@@ -31,26 +32,14 @@ The arbitrary 64 MiB total cache cap has been removed. Retention keeps the lates
 
 Only the focused collection is previewed, after a short debounce. No collection ZIPs or future scenes are prefetched. Cleanup drains preview, image, video and decoder work before removing cache data and reloading the selected scene. Settings remain intact. Android may reclaim cache itself.
 
-All sixteen previous music assets remain unchanged: seven station and nine teahouse tracks, with independent saved playlist positions. Unsupported collections stop music.
+Theme music packs are downloaded from the site and cached for offline playback. Internet radio uses AndroidX Media3.
 
 ## Build and distribution
 
-Python 3, JDK 17+, Android SDK Platform 36 and Build Tools 36.0.0 are required. Gradle is not required. For a GitHub checkout, copy resources and dependencies from the complete source package; checksums are listed in `BINARY_RESOURCES.json`.
+The [recovered 0.8.7 sources](releases/0.8.7/README.md) rebuild the release from the official 0.8.6 APK. The Java project, `build.py`, `test.py` and `BINARY_RESOURCES.json` in this directory are for 0.7.0.
 
-```sh
-export ANDROID_HOME=/path/to/android-sdk
-export IMPERIAL_TV_KEYSTORE=/private/path/imperial-tv.p12
-export IMPERIAL_TV_PASSWORD_FILE=/private/path/password.txt
-python3 build.py
-python3 test.py
-```
+Extract the APK and `android-tv-release.json` from `ImperialSchoolViewsTV_0.8.7_site.zip` into `views.root/installers/`, then run the regular site build.
 
-Signing material stays outside the source package. A different signing certificate cannot update the official application.
-
-The website ZIP contains only the APK and `android-tv-release.json` at its root. Extract both into the existing `views.root/installers/`, then run the regular site build. The phone client's receipt is separate. The server builder creates public URLs and the release envelope. App-update checks do not depend on scene retrieval.
-
-**215 host checks and 52 Android UI checks passed** on an API 28 emulator. Screenshots were inspected. This does not establish hardware HEVC 4K playback or physical Yandex TV behavior.
-
-Validation results and limitations are in [VALIDATION_0.7.0.json](docs/VALIDATION_0.7.0.json). Device checks are documented in [tests/android/README.md](tests/android/README.md). Historical reports apply only to their named versions.
+The 0.8.7 package was checked for its version, certificate and hashes. Host checks covered menu transitions. The emulator run stopped during APK installation. Reports in `docs/` apply to their named versions.
 
 Author: **Дмитрий Малыхин aka Timon_Crazy**. Application code is [MIT](LICENSE). Third-party and music licenses remain applicable; see [THIRD_PARTY.md](THIRD_PARTY.md).

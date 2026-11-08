@@ -14,11 +14,11 @@ The applications connect the wallpaper collections on [games.oopssre.ru](https:/
 - Provides local image viewing and a slideshow in the Android, macOS and Windows clients.
 - Uses platform-specific screen settings; Android supports separate home-screen and lock-screen profiles.
 
-Dynamic scenes are received as finished server-rendered images. The TV client 0.7.0 supports PNG, JPEG and published 4K HEVC video. The clients do not compose layers or calculate future scenes on the device.
+Dynamic scenes are received as finished server-rendered images. The TV client supports PNG, JPEG and published 4K HEVC video. The clients do not compose layers or calculate future scenes on the device.
 
 ## Repository status
 
-The Android 1.4.0 source is in [`android/`](android/), Android TV / Yandex TV 0.7.0 (build 12) in [`android-tv/`](android-tv/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
+The Android 1.4.0 source is in [`android/`](android/), the Android TV / Yandex TV 0.8.7 release sources in [`android-tv/releases/0.8.7/`](android-tv/releases/0.8.7/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
 
 Build instructions and platform features are in [`android/README.md`](android/README.md), [`android-tv/README.en.md`](android-tv/README.en.md), [`macos/README.md`](macos/README.md), and [`windows/README.en.md`](windows/README.en.md). The application features described above are not a claim that all platforms have identical capabilities.
 
