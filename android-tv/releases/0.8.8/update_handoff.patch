@@ -1,0 +1,350 @@
+--- a/smali/ru/oopssre/imperialschool/viewstv/BuildInfo.smali
++++ b/smali/ru/oopssre/imperialschool/viewstv/BuildInfo.smali
+@@ -4,9 +4,9 @@
+ 
+ 
+ # static fields
+-.field public static final CODE:I = 0x15
++.field public static final CODE:I = 0x16
+ 
+-.field public static final VERSION:Ljava/lang/String; = "0.8.7"
++.field public static final VERSION:Ljava/lang/String; = "0.8.8"
+ 
+ 
+ # direct methods
+--- a/smali/ru/oopssre/imperialschool/viewstv/HttpTransport.smali
++++ b/smali/ru/oopssre/imperialschool/viewstv/HttpTransport.smali
+@@ -66,7 +66,7 @@
+ 
+     const-string v0, "User-Agent"
+ 
+-    const-string v1, "ImperialSchoolViewsTV/0.8.7"
++    const-string v1, "ImperialSchoolViewsTV/0.8.8"
+ 
+     invoke-virtual {p0, v0, v1}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+ 
+--- a/smali/ru/oopssre/imperialschool/viewstv/MainActivity.smali
++++ b/smali/ru/oopssre/imperialschool/viewstv/MainActivity.smali
+@@ -6,6 +6,10 @@
+ .implements Lru/oopssre/imperialschool/viewstv/TvScene$Host;
+ 
+ 
++# static fields
++.field private static updateFromDream:Z
++
++
+ # instance fields
+ .field scene:Lru/oopssre/imperialschool/viewstv/TvScene;
+ 
+@@ -20,6 +24,42 @@
+     return-void
+ .end method
+ 
++.method static openUpdateFromDream(Lru/oopssre/imperialschool/viewstv/WallpaperDream;)V
++    .locals 3
++
++    new-instance v0, Landroid/content/Intent;
++
++    const-class v1, Lru/oopssre/imperialschool/viewstv/MainActivity;
++
++    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
++
++    const v1, 0x34000000
++
++    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
++
++    const/4 v1, 0x1
++
++    sput-boolean v1, Lru/oopssre/imperialschool/viewstv/MainActivity;->updateFromDream:Z
++
++    :try_start_0
++    invoke-virtual {p0, v0}, Lru/oopssre/imperialschool/viewstv/WallpaperDream;->launch(Landroid/content/Intent;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    invoke-virtual {p0}, Lru/oopssre/imperialschool/viewstv/WallpaperDream;->leave()V
++
++    return-void
++
++    :catch_0
++    move-exception v0
++
++    const/4 v1, 0x0
++
++    sput-boolean v1, Lru/oopssre/imperialschool/viewstv/MainActivity;->updateFromDream:Z
++
++    throw v0
++.end method
++
+ 
+ # virtual methods
+ .method public context()Landroid/content/Context;
+@@ -78,6 +118,25 @@
+     return-void
+ .end method
+ 
++.method protected onActivityResult(IILandroid/content/Intent;)V
++    .locals 1
++
++    invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
++
++    const/16 v0, 0x881
++
++    if-ne p1, v0, :cond_0
++
++    iget-object v0, p0, Lru/oopssre/imperialschool/viewstv/MainActivity;->scene:Lru/oopssre/imperialschool/viewstv/TvScene;
++
++    if-eqz v0, :cond_0
++
++    invoke-virtual {v0}, Lru/oopssre/imperialschool/viewstv/TvScene;->finishInstallPermission()V
++
++    :cond_0
++    return-void
++.end method
++
+ .method public onBackPressed()V
+     .locals 1
+ 
+@@ -212,6 +271,43 @@
+     return-void
+ .end method
+ 
++.method public onWindowFocusChanged(Z)V
++    .locals 2
++
++    invoke-super {p0, p1}, Landroid/app/Activity;->onWindowFocusChanged(Z)V
++
++    if-eqz p1, :cond_0
++
++    sget-boolean v0, Lru/oopssre/imperialschool/viewstv/MainActivity;->updateFromDream:Z
++
++    if-eqz v0, :cond_0
++
++    iget-object v0, p0, Lru/oopssre/imperialschool/viewstv/MainActivity;->scene:Lru/oopssre/imperialschool/viewstv/TvScene;
++
++    if-eqz v0, :cond_0
++
++    const/4 v1, 0x0
++
++    sput-boolean v1, Lru/oopssre/imperialschool/viewstv/MainActivity;->updateFromDream:Z
++
++    invoke-virtual {v0}, Lru/oopssre/imperialschool/viewstv/TvScene;->updatesMenu()V
++
++    invoke-virtual {v0}, Lru/oopssre/imperialschool/viewstv/TvScene;->install()V
++
++    :cond_0
++    return-void
++.end method
++
++.method openInstallPermission(Landroid/content/Intent;)V
++    .locals 1
++
++    const/16 v0, 0x881
++
++    invoke-virtual {p0, p1, v0}, Lru/oopssre/imperialschool/viewstv/MainActivity;->startActivityForResult(Landroid/content/Intent;I)V
++
++    return-void
++.end method
++
+ .method public window()Landroid/view/Window;
+     .locals 1
+ 
+--- a/smali/ru/oopssre/imperialschool/viewstv/RadioPlayback.smali
++++ b/smali/ru/oopssre/imperialschool/viewstv/RadioPlayback.smali
+@@ -114,7 +114,7 @@
+ 
+     invoke-direct {v0}, Landroidx/media3/datasource/DefaultHttpDataSource$Factory;-><init>()V
+ 
+-    const-string v1, "ImperialSchoolViewsTV/0.8.7"
++    const-string v1, "ImperialSchoolViewsTV/0.8.8"
+ 
+     .line 62
+     invoke-virtual {v0, v1}, Landroidx/media3/datasource/DefaultHttpDataSource$Factory;->setUserAgent(Ljava/lang/String;)Landroidx/media3/datasource/DefaultHttpDataSource$Factory;
+--- a/smali/ru/oopssre/imperialschool/viewstv/TvScene.smali
++++ b/smali/ru/oopssre/imperialschool/viewstv/TvScene.smali
+@@ -96,8 +96,6 @@
+ .field page:Ljava/lang/String;
+ 
+ .field panel:Landroid/widget/ScrollView;
+-
+-.field pendingInstall:Z
+ 
+ .field placeholder:Landroid/widget/TextView;
+ 
+@@ -2859,6 +2857,35 @@
+     return-void
+ .end method
+ 
++.method finishInstallPermission()V
++    .locals 1
++
++    iget-object v0, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->context:Landroid/content/Context;
++
++    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Landroid/content/pm/PackageManager;->canRequestPackageInstalls()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    invoke-virtual {p0}, Lru/oopssre/imperialschool/viewstv/TvScene;->install()V
++
++    return-void
++
++    :cond_0
++    const-string v0, "\u0420\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0443 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0432 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u0445 Android"
++
++    iput-object v0, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->updateStatus:Ljava/lang/String;
++
++    invoke-virtual {p0}, Lru/oopssre/imperialschool/viewstv/TvScene;->refreshDetails()V
++
++    return-void
++.end method
++
+ .method focusFirst()V
+     .locals 1
+ 
+@@ -3325,7 +3352,7 @@
+ 
+     invoke-virtual {p0, v0, v1}, Lru/oopssre/imperialschool/viewstv/TvScene;->beginPage(Ljava/lang/String;Ljava/lang/String;)V
+ 
+-    const-string v0, "0.8.7"
++    const-string v0, "0.8.8"
+ 
+     :try_start_0
+     iget-object v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->context:Landroid/content/Context;
+@@ -3458,15 +3485,27 @@
+ 
+     const-string v0, "package:"
+ 
+-    .line 306
+     :try_start_0
++    iget-object v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->host:Lru/oopssre/imperialschool/viewstv/TvScene$Host;
++
++    instance-of v2, v1, Lru/oopssre/imperialschool/viewstv/WallpaperDream;
++
++    if-eqz v2, :cond_0
++
++    check-cast v1, Lru/oopssre/imperialschool/viewstv/WallpaperDream;
++
++    invoke-static {v1}, Lru/oopssre/imperialschool/viewstv/MainActivity;->openUpdateFromDream(Lru/oopssre/imperialschool/viewstv/WallpaperDream;)V
++
++    return-void
++
++    :cond_0
+     iget-object v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->updater:Lru/oopssre/imperialschool/viewstv/Updater;
+ 
+     invoke-virtual {v1}, Lru/oopssre/imperialschool/viewstv/Updater;->ready()Lru/oopssre/imperialschool/viewstv/Release;
+ 
+     move-result-object v1
+ 
+-    if-nez v1, :cond_0
++    if-nez v1, :cond_1
+ 
+     const/4 v0, 0x0
+ 
+@@ -3480,7 +3519,7 @@
+ 
+     return-void
+ 
+-    :cond_0
++    :cond_1
+     iget-object v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->context:Landroid/content/Context;
+ 
+     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+@@ -3491,14 +3530,12 @@
+ 
+     move-result v1
+ 
+-    if-nez v1, :cond_1
+-
+-    const/4 v1, 0x1
+-
+-    iput-boolean v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->pendingInstall:Z
++    if-nez v1, :cond_2
+ 
+     iget-object v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->host:Lru/oopssre/imperialschool/viewstv/TvScene$Host;
+ 
++    check-cast v1, Lru/oopssre/imperialschool/viewstv/MainActivity;
++
+     new-instance v2, Landroid/content/Intent;
+ 
+     const-string v3, "android.settings.MANAGE_UNKNOWN_APP_SOURCES"
+@@ -3527,21 +3564,11 @@
+ 
+     invoke-direct {v2, v3, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+ 
+-    const/high16 v0, 0x10000000
+-
+-    invoke-virtual {v2, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+-
+-    move-result-object v0
+-
+-    invoke-interface {v1, v0}, Lru/oopssre/imperialschool/viewstv/TvScene$Host;->launch(Landroid/content/Intent;)V
+-
+-    return-void
+-
+-    :cond_1
+-    const/4 v0, 0x0
+-
+-    iput-boolean v0, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->pendingInstall:Z
+-
++    invoke-virtual {v1, v2}, Lru/oopssre/imperialschool/viewstv/MainActivity;->openInstallPermission(Landroid/content/Intent;)V
++
++    return-void
++
++    :cond_2
+     iget-object v0, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->host:Lru/oopssre/imperialschool/viewstv/TvScene$Host;
+ 
+     iget-object v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->updater:Lru/oopssre/imperialschool/viewstv/Updater;
+@@ -7669,27 +7696,6 @@
+ 
+     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+ 
+-    iget-boolean v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->pendingInstall:Z
+-
+-    if-eqz v1, :cond_3
+-
+-    iget-object v1, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->context:Landroid/content/Context;
+-
+-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+-
+-    move-result-object v1
+-
+-    invoke-virtual {v1}, Landroid/content/pm/PackageManager;->canRequestPackageInstalls()Z
+-
+-    move-result v1
+-
+-    if-eqz v1, :cond_3
+-
+-    iput-boolean v0, p0, Lru/oopssre/imperialschool/viewstv/TvScene;->pendingInstall:Z
+-
+-    invoke-virtual {p0}, Lru/oopssre/imperialschool/viewstv/TvScene;->install()V
+-
+-    :cond_3
+     :goto_0
+     return-void
+ .end method
+@@ -8140,7 +8146,7 @@
+ 
+     invoke-virtual {p0, v0, v1}, Lru/oopssre/imperialschool/viewstv/TvScene;->beginPage(Ljava/lang/String;Ljava/lang/String;)V
+ 
+-    const-string v0, "\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0430 \u0432\u0435\u0440\u0441\u0438\u044f 0.8.7"
++    const-string v0, "\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0430 \u0432\u0435\u0440\u0441\u0438\u044f 0.8.8"
+ 
+     invoke-virtual {p0, v0}, Lru/oopssre/imperialschool/viewstv/TvScene;->message(Ljava/lang/String;)V
+ 
+--- a/smali/ru/oopssre/imperialschool/viewstv/Updater.smali
++++ b/smali/ru/oopssre/imperialschool/viewstv/Updater.smali
+@@ -601,7 +601,7 @@
+ 
+     move-result-object v1
+ 
+-    const v2, 0x10000001
++    const/4 v2, 0x1
+ 
+     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+ 
