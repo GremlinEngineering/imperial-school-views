@@ -26,7 +26,7 @@ class Android:
         self.permitted = permitted
         self.available = available
         self.active_dream = dreaming
-        self.static = {'updateFromDream': False}
+        self.static = {'updateFromDream': False, 'SDK_INT': 28}
         self.events = []
         self.failure = None
 
@@ -50,6 +50,8 @@ class Android:
             return self
         elif method == 'canRequestPackageInstalls':
             return self.permitted
+        elif method == 'getApkContentsSigners':
+            return obj.signers
         elif method == 'getPackageName':
             return PACKAGE
         elif method == 'parse':
@@ -110,7 +112,7 @@ class Android:
                 regs[p[0]] = getattr(regs[p[1]], field(p[2]))
             elif op.startswith('iput-'):
                 setattr(regs[p[1]], field(p[2]), regs[p[0]])
-            elif op.startswith('sget-'):
+            elif op.startswith('sget'):
                 regs[p[0]] = self.static[field(p[1])]
             elif op.startswith('sput-'):
                 self.static[field(p[1])] = regs[p[0]]
@@ -146,6 +148,8 @@ class Android:
             elif op == 'if-eqz' and not regs[p[0]] or op == 'if-nez' and regs[p[0]]:
                 i = labels[p[1]]
             elif op == 'if-ne' and regs[p[0]] != regs[p[1]]:
+                i = labels[p[2]]
+            elif op == 'if-lt' and regs[p[0]] < regs[p[1]]:
                 i = labels[p[2]]
             elif op == 'return-void':
                 return
@@ -190,3 +194,14 @@ for dreaming in (False, True):
     a.run('TvScene', 'install', a.dream.scene if dreaming else a.scene)
     assert not a.static['updateFromDream'] and a.events[-1][0] == 'status' and a.active_dream == dreaming
 print('PASS install handoff: ordinary app, dream dismissal, no duplicate launch, permission granted or declined, missing APK, failed activity launch.')
+
+modern = Record(signingInfo=Record(signers=['current']), signatures=['legacy'])
+legacy = Record(signingInfo=None, signatures=['legacy'])
+missing = Record(signingInfo=None, signatures=None)
+a = Android()
+assert a.run('Updater', 'apkSigners', modern) == ['current']
+assert a.run('Updater', 'apkSigners', legacy) == ['legacy']
+assert a.run('Updater', 'apkSigners', missing) is None
+a.static['SDK_INT'] = 26
+assert a.run('Updater', 'apkSigners', modern) == ['legacy']
+print('PASS signer selection for Android 8, Android 9 and missing signing data.')
