@@ -2,7 +2,7 @@
 
 [Русский](README.md) · English · [About the project](https://github.com/GremlinEngineering/imperial-school-views)
 
-Version **0.8.7, build 21**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
+Version **0.8.8, build 22**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
 
 The app displays Imperial School wallpapers and works as an Android system screensaver. If a frame is unavailable at launch, the app opens the menu and keeps it visible when the frame arrives. Dynamic scenes arrive ready to display; the television does not compose their layers.
 
@@ -13,6 +13,8 @@ Hold OK for one second to open the menu. A short OK press leaves the scene uncha
 The main menu contains **Choose wallpapers**, **Music** when available, and **Settings**. The picker shows an image preview and short description alongside the collection list. Focus previews a collection; OK applies it and returns to the scene. Live scenes, weather and image collections remain available in every output mode. Current-collection settings beside the picker provide weather source or scheduled image changes.
 
 Music offers themed radio stations and downloadable tracks. Selecting a station opens Music and focuses its volume control. Left/right changes app volume. The app and screensaver have separate audio switches.
+
+Starting an update from the screensaver dismisses it before opening the Android installer. On versions 0.8.6 and 0.8.7, exit the screensaver after selecting Install if it covers the installer.
 
 ## Settings
 
@@ -36,10 +38,10 @@ Theme music packs are downloaded from the site and cached for offline playback. 
 
 ## Build and distribution
 
-The [recovered 0.8.7 sources](releases/0.8.7/README.md) rebuild the release from the official 0.8.6 APK. The Java project, `build.py`, `test.py` and `BINARY_RESOURCES.json` in this directory are for 0.7.0.
+The [0.8.8 patch sources](releases/0.8.8/README.md) rebuild the release from the official 0.8.7 APK. The Java project, `build.py`, `test.py` and `BINARY_RESOURCES.json` in this directory are for 0.7.0.
 
-Extract the APK and `android-tv-release.json` from `ImperialSchoolViewsTV_0.8.7_site.zip` into `views.root/installers/`, then run the regular site build.
+Extract the APK and `android-tv-release.json` from `ImperialSchoolViewsTV_0.8.8_site.zip` into `views.root/installers/`, then run the regular site build.
 
-The 0.8.7 package was checked for its version, certificate and hashes. Host checks covered menu transitions. The emulator run stopped during APK installation. Reports in `docs/` apply to their named versions.
+The [0.8.8 release notes](releases/0.8.8/README.md) describe the installer handoff checks. Reports in `docs/` apply to their named versions.
 
 Author: **Дмитрий Малыхин aka Timon_Crazy**. Application code is [MIT](LICENSE). Third-party and music licenses remain applicable; see [THIRD_PARTY.md](THIRD_PARTY.md).
