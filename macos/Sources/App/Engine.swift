@@ -90,17 +90,19 @@ struct Frame { var file: JSON, rule: JSON, url: URL; var until: Date?; var sched
         }
     }
     func resource(_ path: String) throws -> URL { try DataModel.resource(path, manifest: settings.s("manifest_url", DataModel.manifestURL)) }
-    func json(_ path: String, force: Bool) async throws -> JSON {
+    func json(_ path: String, force: Bool, remember: Bool = true) async throws -> JSON {
         if !force, let m = memo[path], Date().timeIntervalSince(m.0) < 55 { return m.1 }
         let revision = generation
-        let value = try await fetchJSON(resource(path)); try Task.checkCancellation(); guard revision == generation else { throw CancellationError() }; memo[path] = (Date(), value); return value
+        let value = try await fetchJSON(resource(path)); try Task.checkCancellation(); guard revision == generation else { throw CancellationError() }
+        if remember { memo[path] = (Date(), value) }
+        return value
     }
     func image(_ file: JSON, network: Bool = true) async throws -> URL {
         if let url = await store.cached(file) { return url }; try require(network, "Этот кадр ещё не скачан")
         var url = try resource(file.s("url")); var c = URLComponents(url: url, resolvingAgainstBaseURL: false)!; c.queryItems = [URLQueryItem(name: "v", value: file.s("sha256"))]; url = c.url!
         let data = try await fetchImage(url); try Task.checkCancellation(); return try await store.putImage(data, file: file)
     }
-    func resolve(_ p: JSON, display: Display, force: Bool) async throws -> Frame {
+    func resolve(_ p: JSON, display: Display, force: Bool, preview: Bool = false) async throws -> Frame {
         let revision = generation, now = Date(), id = p.s("collection"), online = p.s("source") != "local"
         if p.s("mode") != "weather" {
             let data: JSON
@@ -110,7 +112,7 @@ struct Frame { var file: JSON, rule: JSON, url: URL; var until: Date?; var sched
             return Frame(file: file, rule: item, url: try await image(file, network: online), until: Calendar.current.nextDate(after: now, matching: DateComponents(hour: 0), matchingPolicy: .nextTime), schedule: nil)
         }
         if id == "__weather_day__" {
-            let source = p.s("weather_source", "game-world"), document = try await json("weather/daily/\(source)/current.json", force: force); try Contracts.daily(document, source: source, at: now)
+            let source = p.s("weather_source", "game-world"), document = try await json("weather/daily/\(source)/current.json", force: force, remember: !preview); try Contracts.daily(document, source: source, at: now)
             let rows: [JSON] = document.j("files").compactMap { _, v in v as? JSON }; let file = try DataModel.bestFile(rows.filter { $0.n("width") > $0.n("height") }, width: display.width, height: display.height, format: p.s("weather_format", "auto"))
             return Frame(file: file, rule: document, url: try await image(file), until: DataModel.date(document.s("valid_until")), schedule: nil)
         }
@@ -118,47 +120,63 @@ struct Frame { var file: JSON, rule: JSON, url: URL; var until: Date?; var sched
         let format = try Contracts.format(collection, width: display.width, height: display.height, requested: p.s("weather_format", "auto"))
         if collection.s("type") == "dynamic" {
             try Contracts.endpoint(collection.s("current_url"), expected: "dynamic/\(id)/current.json")
-            let descriptor = try await json(collection.s("current_url"), force: force)
+            let descriptor = try await json(collection.s("current_url"), force: force, remember: !preview)
             try require(descriptor.s("status") == "ready", "Динамическая тема ещё не опубликована")
             let path = descriptor.j("states").s(format); try Contracts.endpoint(path, expected: "dynamic/\(id)/devices/\(format)/current.json")
-            let state = try await json(path, force: force), file = try Contracts.dynamic(descriptor: descriptor, state: state, collection: collection, device: format, at: now)
+            let state = try await json(path, force: force, remember: !preview), file = try Contracts.dynamic(descriptor: descriptor, state: state, collection: collection, device: format, at: now)
             var rule = state; rule["collection"] = id; rule["rendition"] = format; rule["title"] = collection.s("title")
             return Frame(file: file, rule: rule, url: try await image(file), until: DataModel.date(state.s("valid_until")), schedule: nil)
         }
-        if p.s("weather_provider") == "open-meteo" { return try await local(p, collection: collection, format: format, now: now, force: force) }
+        if p.s("weather_provider") == "open-meteo" { return try await local(p, collection: collection, format: format, now: now, force: force, preview: preview) }
         let source = p.s("weather_source", "game-world"), s = try Contracts.source(collection, id: source), key = DataModel.sha(Data("\(id)|\(source)|\(format)".utf8)), path = "native-pairs/\(key).json"
         let savedPair = await store.json(path); var pair = pairs[key] ?? savedPair ?? [:]
         do {
-            let current = try await json(s.s("current_url"), force: force)
+            let current = try await json(s.s("current_url"), force: force, remember: !preview)
             // A newly observed identity invalidates the old forecast immediately,
             // even if the new forecast is temporarily unavailable.
             if !pair.isEmpty && Contracts.identity(current) != Contracts.identity(pair.j("current")) {
-                invalidateSchedule(collection:id,source:source,format:format)
-                pair = [:]; pairs[key] = [:]; try await store.save([:], path: path)
+                pair = [:]
+                if !preview {
+                    invalidateSchedule(collection:id,source:source,format:format)
+                    pairs[key] = [:]; try await store.save([:], path: path)
+                }
             }
-            let forecast = try await json(s.j("forecasts").s(format), force: force); try Contracts.weatherPair(current: current, forecast: forecast, collection: collection, source: source, format: format)
+            let forecast = try await json(s.j("forecasts").s(format), force: force, remember: !preview); try Contracts.weatherPair(current: current, forecast: forecast, collection: collection, source: source, format: format)
             try Task.checkCancellation(); guard revision == generation else { throw CancellationError() }
-            pair = ["current":current,"forecast":forecast]; pairs[key] = pair; try await store.save(pair, path: path)
+            pair = ["current":current,"forecast":forecast]
+            if !preview { pairs[key] = pair; try await store.save(pair, path: path) }
         } catch is CancellationError { throw CancellationError() } catch { if pair.isEmpty { throw error } }
         try Contracts.weatherPair(current: pair.j("current"), forecast: pair.j("forecast"), collection: collection, source: source, format: format)
         let forecast = pair.j("forecast"), row = try Contracts.interval(forecast, at: now), file = row.j("file")
         let url = try await image(file)
-        if p.s("weather_delivery") == "zip", !forecast.s("package_version").isEmpty { queuePackage(collection: collection, format: format, version: forecast.s("package_version")) }
+        if !preview, p.s("weather_delivery") == "zip", !forecast.s("package_version").isEmpty { queuePackage(collection: collection, format: format, version: forecast.s("package_version")) }
         var rule = row; rule["collection"] = id; rule["rendition"] = format; rule["source_id"] = source
         return Frame(file: file, rule: rule, url: url, until: DataModel.date(row.s("valid_until")), schedule: forecast)
     }
-    func local(_ p: JSON, collection: JSON, format: String, now: Date, force: Bool) async throws -> Frame {
+    func local(_ p: JSON, collection: JSON, format: String, now: Date, force: Bool, preview: Bool) async throws -> Frame {
         let city = try City(p.j("weather_city")); let id = collection.s("id")
         guard let d = catalog.rows("downloads").first(where: { $0.s("collection") == id && $0.s("rendition") == format && $0.s("format") == "zip" }) else { throw ViewsError("Погодный ZIP этого формата ещё не опубликован") }
-        guard let receipt = await store.packageReceipt(d.s("sha256")), receipt.s("version") == d.s("version"), receipt.s("id") == id, receipt.s("format") == format, !receipt.rows("variants").isEmpty else { queuePackage(collection: collection, format: format, version: d.s("version"),repair:true); throw ViewsError("Скачивается пакет для погоды в выбранном городе") }
+        guard let receipt = await store.packageReceipt(d.s("sha256")), receipt.s("version") == d.s("version"), receipt.s("id") == id, receipt.s("format") == format, !receipt.rows("variants").isEmpty else {
+            if preview { throw ViewsError("Для предпросмотра скачайте коллекцию") }
+            queuePackage(collection: collection, format: format, version: d.s("version"),repair:true); throw ViewsError("Скачивается пакет для погоды в выбранном городе")
+        }
         var c = URLComponents(string: "https://api.open-meteo.com/v1/forecast")!; c.queryItems = [URLQueryItem(name:"latitude",value:String(city.latitude)),URLQueryItem(name:"longitude",value:String(city.longitude)),URLQueryItem(name:"hourly",value:"weather_code"),URLQueryItem(name:"timeformat",value:"unixtime"),URLQueryItem(name:"timezone",value:"UTC"),URLQueryItem(name:"past_days",value:"1"),URLQueryItem(name:"forecast_days",value:"3")]
         let cache = "native-meteo/" + DataModel.sha(Data(c.url!.absoluteString.utf8)) + ".json"; var saved = await store.json(cache) ?? [:]
         if force || now.timeIntervalSince(DataModel.date(saved.s("fetched_at")) ?? .distantPast) >= 3600 {
-            if force || now.timeIntervalSince(lastRequest[cache] ?? .distantPast) >= 180 { lastRequest[cache] = now; do { let data = try await fetchJSON(c.url!); try Task.checkCancellation(); saved = ["fetched_at":DataModel.stamp(),"data":data]; try await store.save(saved, path: cache) } catch is CancellationError { throw CancellationError() } catch { if saved.isEmpty { throw error } } }
+            if force || now.timeIntervalSince(lastRequest[cache] ?? .distantPast) >= 180 {
+                if !preview { lastRequest[cache] = now }
+                do {
+                    let data = try await fetchJSON(c.url!); try Task.checkCancellation(); saved = ["fetched_at":DataModel.stamp(),"data":data]
+                    if !preview { try await store.save(saved, path: cache) }
+                } catch is CancellationError { throw CancellationError() } catch { if saved.isEmpty { throw error } }
+            }
         }
         let schedule = try LocalWeather.schedule(saved.j("data"), city: city, variants: receipt.rows("variants"), now: now), row = try Contracts.interval(schedule, at: now), file = row.j("file")
         var rule = row; rule["collection"] = id; rule["rendition"] = format; rule["city"] = city.name
-        guard let local = await store.cached(file) else { queuePackage(collection:collection,format:format,version:d.s("version"),repair:true); throw ViewsError("Восстанавливается повреждённый погодный пакет") }
+        guard let local = await store.cached(file) else {
+            if preview { throw ViewsError("Кадр недоступен. Скачайте коллекцию заново") }
+            queuePackage(collection:collection,format:format,version:d.s("version"),repair:true); throw ViewsError("Восстанавливается повреждённый погодный пакет")
+        }
         return Frame(file: file, rule: rule, url: local, until: DataModel.date(row.s("valid_until")), schedule: schedule)
     }
     func queuePackage(collection: JSON, format: String, version: String, repair: Bool = false) {

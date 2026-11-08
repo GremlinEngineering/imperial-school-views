@@ -28,7 +28,8 @@ import Darwin
         guard let running = NSRunningApplication.runningApplications(withBundleIdentifier:"ru.oopssre.imperial-school.views").first(where:{ $0.processIdentifier != ProcessInfo.processInfo.processIdentifier }), let url = running.bundleURL else {
             startupFailure("Другой экземпляр приложения занимает файл запуска. Завершите ImperialSchoolViews в «Мониторинге системы» и откройте приложение снова."); return
         }
-        running.activate(options:[.activateIgnoringOtherApps])
+        if #available(macOS 14.0, *) { running.activate(options:[]) }
+        else { running.activate(options:[.activateIgnoringOtherApps]) }
         let config = NSWorkspace.OpenConfiguration(); config.activates = true; config.createsNewApplicationInstance = false
         // A Launch Services reopen request reaches applicationShouldHandleReopen;
         // activating an accessory process alone does not reopen its window.

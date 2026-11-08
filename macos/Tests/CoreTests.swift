@@ -36,6 +36,30 @@ final class CoreTests: XCTestCase {
         XCTAssertThrowsError(try Contracts.dynamic(descriptor:descriptor,state:state,collection:catalog.rows("collections")[0],device:"landscape",at:now.addingTimeInterval(7200)))
         broken = state; var image = state.j("image"); image["sha256"] = String(repeating:"0",count:64); broken["image"] = image; XCTAssertThrowsError(try Contracts.dynamic(descriptor:descriptor,state:broken,collection:catalog.rows("collections")[0],device:"landscape",at:now))
     }
+    func testDynamicServerCompatibilityJPEGContract() throws {
+        let collection = try json("dynamic-0.2/manifest-v3.json").rows("collections")[0]
+        let now = DataModel.date("2026-10-31T10:10:00Z")!
+        var descriptor = try json("dynamic-0.2/dynamic/test-theme/current.json")
+        var state = try json("dynamic-0.2/dynamic/test-theme/devices/landscape/current.json")
+        let jpeg = state.j("image")
+        var png = jpeg
+        png["format"] = "png"
+        png["url"] = "dynamic/test-theme/devices/landscape/current.png"
+        png["sha256"] = String(repeating:"a",count:64)
+        state["image"] = png
+        state["compatibility_image"] = jpeg
+        var files = descriptor.j("files")
+        png["compatibility_image"] = jpeg
+        files["landscape"] = png
+        descriptor["files"] = files
+        let file = try Contracts.dynamic(descriptor:descriptor,state:state,collection:collection,device:"landscape",at:now)
+        XCTAssertEqual(file.s("url"),jpeg.s("url"))
+        XCTAssertEqual(file.s("sha256"),jpeg.s("sha256"))
+        var invalidJPEG = jpeg
+        invalidJPEG["sha256"] = String(repeating:"b",count:64)
+        state["compatibility_image"] = invalidJPEG
+        XCTAssertThrowsError(try Contracts.dynamic(descriptor:descriptor,state:state,collection:collection,device:"landscape",at:now))
+    }
     func testDailyNotReadyAndExpiredHoldWallpaper() throws {
         let d = try json("daily-1.0.13/real-ready.json"), t = DataModel.date(d.s("valid_from"))!.addingTimeInterval(1)
         XCTAssertNoThrow(try Contracts.daily(d,source:"real",at:t)); XCTAssertThrowsError(try Contracts.daily(d,source:"game-world",at:t)); XCTAssertThrowsError(try Contracts.daily(d,source:"real",at:DataModel.date(d.s("valid_until"))!))

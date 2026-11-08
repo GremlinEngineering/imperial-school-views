@@ -30,17 +30,18 @@ public struct SettingsPresentation {
         return result
     }
     public var condition: String { profile.s("weather_provider") == "open-meteo" ? "open-meteo" : profile.s("weather_source", "game-world") }
-    public var hint: String {
-        switch profile.s("source") {
-        case "weather":
-            if dynamic { return "Готовый кадр приходит с сервера. Если новый кадр ещё не готов, текущие обои сохраняются." }
-            if showCity { return "Условия берутся из прогноза Open-Meteo для выбранного города. Погодная коллекция скачивается целиком." }
-            if condition == "game-world" { return "Кадр меняется по погоде и времени игрового мира. Город на компьютере не используется." }
-            return "Кадр меняется по условиям, опубликованным сервером. Выбирать город на компьютере не нужно."
-        case "local": return "Используются только скачанные изображения. Новую коллекцию можно импортировать из ZIP."
-        case "online": return profile.s("mode") == "daily" ? "Коллекция с сайта. Каждый день выбирается следующий кадр." : "Коллекция с сайта. Кадры меняются по выбранному расписанию."
-        default: return "Каждый день — обои, выбранные на сайте. Коллекцию выбирать не нужно."
+    public var hint: String { showCity ? "Для погоды в городе нужна скачанная коллекция." : "" }
+    public static func frameSelection(_ profile: JSON) -> [String] {
+        let source = profile.s("source")
+        var selection = [source, profile.s("mode")]
+        if source != "day" { selection.append(profile.s("collection")) }
+        if source != "weather" { return selection + [profile.s("format", "auto")] }
+        selection += [profile.s("weather_format", "auto"), profile.s("weather_provider"), profile.s("weather_source")]
+        if profile.s("weather_provider") == "open-meteo" {
+            let city = profile.j("weather_city")
+            selection += [String(city.n("latitude")), String(city.n("longitude")), city.s("timezone"), city.s("name")]
         }
+        return selection
     }
     public static func settingCondition(_ choice: String, in profile: JSON) -> JSON {
         var p = profile
