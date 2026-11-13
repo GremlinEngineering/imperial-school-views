@@ -2,7 +2,7 @@
 
 [Русский](README.md) · English · [About the project](https://github.com/GremlinEngineering/imperial-school-views)
 
-Version **0.8.8, build 22**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
+Version **0.8.9, build 23**. Android TV / Yandex TV, Android 8.0+ (API 26), application ID `ru.oopssre.imperialschool.viewstv`.
 
 The app displays Imperial School wallpapers and works as an Android system screensaver. If a frame is unavailable at launch, the app opens the menu and keeps it visible when the frame arrives. Dynamic scenes arrive ready to display; the television does not compose their layers.
 
@@ -17,6 +17,8 @@ Music offers themed radio stations and downloadable tracks. Selecting a station 
 Starting an update from the screensaver dismisses it before opening the Android installer. On versions 0.8.6 and 0.8.7, exit the screensaver after selecting Install if it covers the installer.
 
 ## Settings
+
+- **Appearance**. Light and evening themes in the blog palette.
 
 - **Image display**: dynamic image/video output, Auto/4K/Full HD image resolution, fit/fill and a manual scene refresh.
 - **System screensaver**: Android's screensaver settings. An arrow key exits the screensaver.
@@ -38,9 +40,9 @@ Theme music packs are downloaded from the site and cached for offline playback. 
 
 ## Build and distribution
 
-The [0.8.8 patch sources](releases/0.8.8/README.md) rebuild the release from the official 0.8.7 APK. The Java project, `build.py`, `test.py` and `BINARY_RESOURCES.json` in this directory are for 0.7.0.
+The [0.8.9 release sources](releases/0.8.9/README.md) rebuild the release from the official 0.8.8 APK. The Java project, `build.py`, `test.py` and `BINARY_RESOURCES.json` in this directory are for 0.7.0.
 
-Extract the APK and `android-tv-release.json` from `ImperialSchoolViewsTV_0.8.8_site.zip` into `views.root/installers/`, then run the regular site build.
+Download the [official 0.8.9 APK](https://games.oopssre.ru/assets/arcade/views/downloads/ImperialSchoolViewsTV_0.8.9.apk) from the site.
 
 The [0.8.8 release notes](releases/0.8.8/README.md) describe the installer handoff checks. Reports in `docs/` apply to their named versions.
 

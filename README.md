@@ -18,7 +18,7 @@ Dynamic scenes are received as finished server-rendered images. The TV client su
 
 ## Repository status
 
-The Android 1.4.0 source is in [`android/`](android/), the Android TV / Yandex TV 0.8.8 release sources in [`android-tv/releases/0.8.8/`](android-tv/releases/0.8.8/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
+The Android 1.4.0 source is in [`android/`](android/), the Android TV / Yandex TV 0.8.9 release sources in [`android-tv/releases/0.8.9/`](android-tv/releases/0.8.9/), macOS 2.0.7 in [`macos/`](macos/), and Windows 1.2.0 (build 4) in [`windows/`](windows/).
 
 Build instructions and platform features are in [`android/README.md`](android/README.md), [`android-tv/README.en.md`](android-tv/README.en.md), [`macos/README.md`](macos/README.md), and [`windows/README.en.md`](windows/README.en.md). The application features described above are not a claim that all platforms have identical capabilities.
 
