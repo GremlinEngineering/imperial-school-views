@@ -18,7 +18,7 @@
 
 ## Состояние репозитория
 
-Исходники Android 1.4.0 находятся в [`android/`](android/), восстановленные исходники Android TV / Яндекс ТВ 0.8.7 — в [`android-tv/releases/0.8.7/`](android-tv/releases/0.8.7/), macOS 2.0.7 — в [`macos/`](macos/), Windows 1.2.0 (build 4) — в [`windows/`](windows/).
+Исходники Android 1.4.0 находятся в [`android/`](android/), исходники релиза Android TV / Яндекс ТВ 0.8.9 — в [`android-tv/releases/0.8.9/`](android-tv/releases/0.8.9/), macOS 2.0.7 — в [`macos/`](macos/), Windows 1.2.0 (build 4) — в [`windows/`](windows/).
 
 Инструкции сборки и возможности клиентов: [`Android`](android/README.ru.md), [`Android TV`](android-tv/README.md), [`macOS`](macos/README.ru.md) и [`Windows`](windows/README.md). Перечень выше не означает одинаковую реализацию всех функций на каждой платформе.
 
