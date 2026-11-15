@@ -40,20 +40,15 @@ cd macos
 ./build-macos.sh
 ```
 
-The `dist/` directory receives a universal Apple Silicon/Intel DMG and
-`release.json`. Dependencies are included. Local ad-hoc signing is the default.
-The build does not start the app or change the desktop wallpaper.
+The `dist/` directory receives a universal Apple Silicon and Intel DMG. Dependencies are included. Local ad-hoc signing is the default.
 
-Options: `--app-only`, `--output DIRECTORY`, `--development`, `--signed`.
-Developer ID signing and notarization use your own `DEVELOPER_ID_APPLICATION`
-and `NOTARY_KEYCHAIN_PROFILE` environment variables.
+Pass `--app-only` to build the application without a disk image.
 
 ## Install
 
 Quit the previous client from its menu-bar icon. Drag the app from the DMG into
 Applications, eject the disk image, then open the app from Applications.
-Settings and downloaded collections remain in
-`~/Library/Application Support/Imperial School Views`.
+Settings and downloaded collections are retained.
 
 Install the screen saver from its pane, then select it in macOS System Settings.
 
@@ -65,8 +60,7 @@ screen saver on macOS.
 
 Third-party components: ZIPFoundation 0.9.20 and Brotli 1.2.1 (MIT), system zlib;
 astronomical equations adapted from Astral 3.2 (Apache-2.0). License texts and
-notices are in [`licences/`](licences/). The application code license has not yet
-been specified; wallpaper artwork has separate licensing terms.
+notices are in [`licences/`](licences/). Original application code is licensed under [MIT](../LICENSE). Wallpaper artwork has separate terms.
 
 [Collections and downloads](https://games.oopssre.ru/) · [Blog](https://oopssre.ru/) ·
 [Telegram](https://t.me/oopsSRE) · [VK](https://vk.ru/club238642156)

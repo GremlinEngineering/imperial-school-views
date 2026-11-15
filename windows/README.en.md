@@ -33,13 +33,7 @@ cd windows
 .\build-windows.ps1
 ```
 
-Alternatively run `build-windows.cmd`. The build publishes a self-contained x64 client,
-adds the `.scr` apphost and produces `dist/imperial-school-views-windows-1.2.0-setup.exe`
-and `dist/windows-release.json`. End users do not need a separate .NET installation.
-The installer supports upgrading previous versions while retaining user data.
-
-`windows-release.json` follows the existing six-field contract: `schema`, `app_id`,
-`platform`, `version`, `build`, `sha256`.
+Alternatively, run `build-windows.cmd`. The installer is in `dist/`. It includes the x64 client and screensaver. It retains user data when upgrading. End users do not need a separate .NET installation.
 
 ## Development checks
 
@@ -55,10 +49,8 @@ See [VALIDATION.md](VALIDATION.md) for the scope and recorded results.
 
 ## Data and licensing
 
-Data stays in `%LOCALAPPDATA%\Imperial School\Views`; logs are in `app.log`.
 Select the screensaver from the application; Windows controls its idle timeout and
 sign-in requirements. The Russian README contains detailed profile and viewer instructions.
 
 Third-party notices are in [Licenses/](Licenses/) and font licenses in
-[Desktop/Assets/](Desktop/Assets/). The application code license has not yet been
-specified. Wallpaper artwork has separate terms.
+[Desktop/Assets/](Desktop/Assets/). Original application code is licensed under [MIT](../LICENSE). Wallpaper artwork has separate terms.

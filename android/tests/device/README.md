@@ -2,10 +2,10 @@
 
 Use a disposable emulator or test device only: the runner replaces the application's settings and local collections with deterministic fixtures. The fixture image is supplied locally and is not published with the source.
 
-Build the app with your own test signing key. Use the same key for the app and test APK, then:
+Build the app for testing with your own signing key. Use the same signing configuration for the app and the instrumentation APK. Set `ANDROID_HOME` to your SDK directory and `IMPERIAL_SIGNING_PROPERTIES` to your local signing configuration, then:
 
 ```sh
-python3 tests/device/build.py --image /absolute/path/to/portrait.jpg
+python3 tests/device/build.py --image ./portrait.jpg
 adb install -r dist/ImperialSchoolViews_Android_1.4.0.apk
 adb install -r tests/device/build/test.apk
 adb shell am instrument -w ru.oopssre.imperialschool.views.test/ru.oopssre.imperialschool.views.test.PhoneUiTest

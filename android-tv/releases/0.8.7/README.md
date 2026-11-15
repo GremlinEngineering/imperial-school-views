@@ -4,21 +4,18 @@
 
 `smali/` содержит 212 классов приложения, восстановленных из релизного байткода. Java-проект в `../../app/` соответствует версии 0.7.0. Оригинальный Java/C++ проект 0.8.x пока отсутствует.
 
-Воспроизводимая сборка использует официальный APK 0.8.6 как вход. Скрипт проверяет SHA-256, заменяет классы приложения восстановленными исходниками, проверяет сценарии навигации, собирает DEX и выставляет версию 0.8.7. Ресурсы, зависимости AndroidX и нативные библиотеки берутся из входного APK. Личный список станций и значение локального кода также берутся из входного APK.
+Воспроизводимая сборка использует официальный APK 0.8.6 как вход. Скрипт проверяет SHA-256, заменяет классы приложения восстановленными исходниками, проверяет сценарии навигации, собирает DEX и выставляет версию 0.8.7. Ресурсы, зависимости AndroidX и нативные библиотеки берутся из входного APK.
 
 ## Сборка
 
-Нужны Python 3.8+, JDK 17+, Apktool 2.12.1 и Android Build Tools 36.0.0. Входной `ImperialSchoolViewsTV_0.8.6.apk` находится в официальном пакете `ImperialSchoolViewsTV_0.8.6_site.zip`.
+Нужны Python 3.8+, JDK 17+, Apktool 2.12.1 и Android Build Tools 36.0.0. Для сборки нужен официальный APK версии 0.8.6.
 
 Из каталога `android-tv/releases/0.8.7`:
 
 ```sh
 export ANDROID_BUILD_TOOLS=/path/to/android-sdk/build-tools/36.0.0
 ./rebuild_unsigned.sh /path/to/ImperialSchoolViewsTV_0.8.6.apk \
-  /path/to/apktool_2.12.1.jar "$ANDROID_BUILD_TOOLS" /tmp/ImperialSchoolViewsTV_0.8.7_unsigned.apk
-```
-
-```sh
+  /path/to/apktool_2.12.1.jar "$ANDROID_BUILD_TOOLS" ImperialSchoolViewsTV_0.8.7_unsigned.apk
 ```
 
 ## Проверки

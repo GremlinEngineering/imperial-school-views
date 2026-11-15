@@ -27,30 +27,7 @@ export ANDROID_HOME=/абсолютный/путь/к/Android/sdk
 ./gradlew :app:testDebugUnitTest :app:assembleDebug
 ```
 
-Отладочный APK появится в `app/build/outputs/apk/debug/`. Подписанная release-сборка:
-
-```sh
-./build-android.sh
-```
-
-Скрипт использует существующие настройки подписи либо создаёт личный ключ вне репозитория в `~/.config/imperial-school-views/`. Для другого существующего файла настроек:
-
-```sh
-IMPERIAL_SIGNING_PROPERTIES=/path/to/your/signing.properties ./build-android.sh
-```
-
-Пример файла (значения заполняются только локально, файл в Git не добавляется):
-
-```properties
-storeFile=android-release.jks
-storePassword=YOUR_LOCAL_PASSWORD
-keyAlias=YOUR_LOCAL_ALIAS
-keyPassword=YOUR_LOCAL_PASSWORD
-```
-
-Относительный путь `storeFile` считается от папки файла настроек. Сборка с личным ключом не обновляет официально установленное приложение: для обновления требуется тот же ключ подписи.
-
-Готовый APK находится в `dist/`.
+Отладочный APK появится в `app/build/outputs/apk/debug/`.
 
 В приложении есть ссылки на [репозиторий](https://github.com/GremlinEngineering/imperial-school-views) и [сообщения об ошибках](https://github.com/GremlinEngineering/imperial-school-views/issues).
 
@@ -58,6 +35,6 @@ keyPassword=YOUR_LOCAL_PASSWORD
 
 В `VALIDATION.md` указаны результаты проверки и её границы. Выпуск 1.4.0 прошёл 178 теста JVM/Robolectric. Результаты проверки готового APK и обновления поверх 1.3.9 записаны в отчёте. Физический телефон не использовался.
 
-Контракт сервера: `docs/CLIENT_API_1.7.0.md` и `docs/DYNAMIC_1.3.8.md`. Лицензии сторонних компонентов сохранены в `app/src/main/assets/`.
+Авторский код приложения распространяется по лицензии [MIT](../LICENSE). Уведомления о сторонних компонентах прилагаются к клиенту Android.
 
 [Коллекции и загрузки](https://games.oopssre.ru/) · [Блог](https://oopssre.ru/)

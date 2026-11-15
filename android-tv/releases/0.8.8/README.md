@@ -15,7 +15,7 @@
 ```sh
 export ANDROID_BUILD_TOOLS=/path/to/android-sdk/build-tools/36.0.0
 ./rebuild_unsigned.sh /path/to/ImperialSchoolViewsTV_0.8.7.apk \
-  /path/to/apktool_2.12.1.jar "$ANDROID_BUILD_TOOLS" /tmp/ImperialSchoolViewsTV_0.8.8_unsigned.apk
+  /path/to/apktool_2.12.1.jar "$ANDROID_BUILD_TOOLS" ImperialSchoolViewsTV_0.8.8_unsigned.apk
 ```
 
 ## Проверки

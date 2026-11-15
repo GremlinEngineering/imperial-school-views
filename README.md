@@ -30,10 +30,9 @@ Build instructions and platform features are in [`android/README.md`](android/RE
 
 Official application installers and large wallpaper collections are distributed on the [website](https://games.oopssre.ru/).
 
-## Signing and licensing
-
-Use a separate signing configuration for your own builds.
+## Licensing
 
 Third-party components retain their respective licenses and notices in [`android/app/src/main/assets/`](android/app/src/main/assets/), [`macos/licences/`](macos/licences/), and [`windows/Licenses/`](windows/Licenses/). Wallpaper artwork has its own licensing terms, separate from application code.
 
 Original client code for Android, Android TV, macOS and Windows is licensed under [MIT](LICENSE). The TV client's third-party components and music retain the licenses listed in [THIRD_PARTY.md](android-tv/THIRD_PARTY.md).
+

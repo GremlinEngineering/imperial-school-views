@@ -23,30 +23,7 @@ export ANDROID_HOME=/absolute/path/to/Android/sdk
 ./gradlew :app:testDebugUnitTest :app:assembleDebug
 ```
 
-The debug APK is written to `app/build/outputs/apk/debug/`. For a signed release:
-
-```sh
-./build-android.sh
-```
-
-The script uses an existing signing configuration or creates a personal key outside the repository under `~/.config/imperial-school-views/`. To use a different existing configuration:
-
-```sh
-IMPERIAL_SIGNING_PROPERTIES=/path/to/your/signing.properties ./build-android.sh
-```
-
-Example configuration (replace the placeholders locally; never commit the filled file):
-
-```properties
-storeFile=android-release.jks
-storePassword=YOUR_LOCAL_PASSWORD
-keyAlias=YOUR_LOCAL_ALIAS
-keyPassword=YOUR_LOCAL_PASSWORD
-```
-
-A relative `storeFile` resolves against the configuration file's directory. A personally signed build cannot update the official installed application unless it uses the same signing key.
-
-The APK is created in `dist/`.
+The debug APK is written to `app/build/outputs/apk/debug/`.
 
 The application links to [this repository](https://github.com/GremlinEngineering/imperial-school-views) and its [issue tracker](https://github.com/GremlinEngineering/imperial-school-views/issues).
 
@@ -54,6 +31,6 @@ The application links to [this repository](https://github.com/GremlinEngineering
 
 See `VALIDATION.md` for the recorded validation and its limits. Release 1.4.0 passed 178 JVM/Robolectric tests. The validation record also covers the built APK and the upgrade from 1.3.9. A physical phone was not used.
 
-Server contract notes are in `docs/CLIENT_API_1.7.0.md` and `docs/DYNAMIC_1.3.8.md`. Third-party license notices are kept in `app/src/main/assets/`.
+Original application code is licensed under [MIT](../LICENSE). Third-party notices are included with the Android client.
 
 [Wallpaper collections and downloads](https://games.oopssre.ru/) · [Blog](https://oopssre.ru/)

@@ -97,19 +97,11 @@ JSON поддерживает HTTP gzip/deflate/Brotli и опубликован
 защищены от очистки. Метаданные истории ограничены 96 записями. Импортированные
 обычные коллекции автоматически не удаляются. Журнал — `app.log` в папке данных.
 
-## Для сайта
-
-Сборщик создаёт в `dist/` актуальный Setup.exe и плоский
-`windows-release.json` с шестью полями: `schema`, `app_id`, `platform`, `version`,
-`build`, `sha256`. Выпуск связывается по SHA-256; EXE можно переименовать.
-
-
 ## Сборка и проверки
 
 Версия **1.2.0**, build **4**. .NET SDK **10.0.403**, NSIS 3.x.
 На Windows запустить `build-windows.cmd` или `build-windows.ps1`.
-Сборщик компилирует клиент, добавляет `.scr`, упаковывает Setup.exe и создаёт
-`windows-release.json`. Проверки отдельно:
+Установщик с приложением и заставкой появится в `dist/`. Для запуска проверок выполните команду ниже.
 
 ```text
 dotnet run --project Checks/Checks.csproj -c Release
@@ -124,4 +116,4 @@ dotnet run --project Checks/Checks.csproj -c Release -- --live
 Границы фактически выполненной проверки — в `VALIDATION.md`.
 Исходники: https://github.com/GremlinEngineering/imperial-school-views
 Лицензии компонентов — `Licenses/`, шрифтов — `Desktop/Assets/`.
-Код приложения не получил новую лицензию; права на иллюстрации определяются отдельно.
+Авторский код приложения распространяется по лицензии [MIT](../LICENSE). Для иллюстраций действуют отдельные условия.
