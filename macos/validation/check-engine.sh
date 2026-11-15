@@ -21,4 +21,4 @@ LIBRARIES=(-lz)
 if [ "$(uname -s)" = Linux ]; then LIBRARIES+=(-lcrypto); fi
 for FILE in "$BIN"/ViewsNative.build/*.o "$BIN"/ZIPFoundation.build/*.o; do OBJECTS+=("$FILE"); done
 "$SWIFTC" -swift-version 5 -parse-as-library -I "$BIN/Modules" -I "$KIT/Native/include" -I "$KIT/vendor/ZIPFoundation/Sources/CZLib" "$KIT"/Sources/Core/*.swift "$WORK/Engine.swift" "$KIT/validation/EnginePlatformStubs.swift" "$KIT/validation/EngineChecks.swift" "${OBJECTS[@]}" "${LIBRARIES[@]}" -o "$WORK/engine-checks"
-"$WORK/engine-checks" "$KIT/Tests/Fixtures"
+"$WORK/engine-checks" "$KIT/Tests/Fixtures" "$@"

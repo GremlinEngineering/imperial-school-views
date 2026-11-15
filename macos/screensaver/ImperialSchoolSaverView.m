@@ -126,13 +126,13 @@ static BOOL HashOK(id value) {
 - (BOOL)hasConfigureSheet {return YES;}
 - (NSWindow *)configureSheet {
     if(!self.settingsSheet){self.settingsSheet=[[NSWindow alloc] initWithContentRect:NSMakeRect(0,0,540,230) styleMask:NSWindowStyleMaskTitled backing:NSBackingStoreBuffered defer:NO];self.settingsSheet.title=@"Виды и обои · Хранитель";
-        NSTextField *text=[NSTextField wrappingLabelWithString:@"Коллекцию и расписание выбирайте в приложении: «Экран или хранитель» → «Хранитель экрана».\n\nДанные находятся автоматически. Хранитель читает общий кеш приложения; выбирать папку не нужно."];text.frame=NSMakeRect(22,108,496,102);[self.settingsSheet.contentView addSubview:text];
+        NSTextField *text=[NSTextField wrappingLabelWithString:@"Откройте раздел «Хранитель» в приложении «Виды и обои». Там можно использовать обои рабочего стола или выбрать свою коллекцию."];text.frame=NSMakeRect(22,108,496,102);[self.settingsSheet.contentView addSubview:text];
         self.dataStatus=[NSTextField wrappingLabelWithString:@""];self.dataStatus.frame=NSMakeRect(22,56,496,46);[self.settingsSheet.contentView addSubview:self.dataStatus];
         NSButton *done=[NSButton buttonWithTitle:@"Готово" target:self action:@selector(closeSettings:)];done.frame=NSMakeRect(410,16,108,32);done.keyEquivalent=@"\r";[self.settingsSheet.contentView addSubview:done];}
     [self resolveRoot];
     NSDictionary *settings=self.root?ReadJSON([self.root URLByAppendingPathComponent:@"settings.json"]):nil;
     NSDictionary *feed=self.root?ReadJSON([self.root URLByAppendingPathComponent:@"saver-state.json"]):nil;
-    NSString *status=@"Данные пока недоступны. Включите хранитель в приложении и нажмите «Применить».";
+    NSString *status=@"В приложении включите «Подготавливать кадры для хранителя» и нажмите «Сохранить настройки».";
     if([settings[@"saver"] isKindOfClass:NSDictionary.class]){
         if(![settings[@"saver"][@"enabled"] boolValue])status=@"Хранитель выключен в приложении.";
         else if([feed[@"schema"] integerValue]==1&&[feed[@"configuration_revision"] isEqual:settings[@"configuration_revision"]]&&[feed[@"targets"] isKindOfClass:NSDictionary.class]&&[feed[@"targets"] count])status=@"Данные приложения подключены автоматически.";
