@@ -36,4 +36,4 @@ Use a separate signing configuration for your own builds.
 
 Third-party components retain their respective licenses and notices in [`android/app/src/main/assets/`](android/app/src/main/assets/), [`macos/licences/`](macos/licences/), and [`windows/Licenses/`](windows/Licenses/). Wallpaper artwork has its own licensing terms, separate from application code.
 
-TV client code is licensed under [MIT](android-tv/LICENSE); its third-party components and music retain their own licenses, described in [THIRD_PARTY.md](android-tv/THIRD_PARTY.md). The application code license for the other clients has not yet been specified.
+Original client code for Android, Android TV, macOS and Windows is licensed under [MIT](LICENSE). The TV client's third-party components and music retain the licenses listed in [THIRD_PARTY.md](android-tv/THIRD_PARTY.md).

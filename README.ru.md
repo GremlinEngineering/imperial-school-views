@@ -36,4 +36,4 @@
 
 Лицензии и уведомления сторонних компонентов сохранены в [`android/app/src/main/assets/`](android/app/src/main/assets/), [`macos/licences/`](macos/licences/) и [`windows/Licenses/`](windows/Licenses/). Для изображений обоев действуют отдельные условия, отличные от условий для кода приложения.
 
-Код TV-клиента распространяется по [MIT](android-tv/LICENSE); сторонние компоненты и музыка сохраняют собственные лицензии, перечисленные в [THIRD_PARTY.md](android-tv/THIRD_PARTY.md). Лицензия кода остальных клиентов пока не определена.
+Авторский код клиентов для Android, Android TV, macOS и Windows распространяется по лицензии [MIT](LICENSE). Для сторонних компонентов и музыки ТВ-клиента действуют лицензии, перечисленные в [THIRD_PARTY.md](android-tv/THIRD_PARTY.md).
